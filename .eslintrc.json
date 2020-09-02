@@ -40,6 +40,7 @@
         "no-unused-vars": "error"
     },
     "extends": [
+        "plugin:react/recommended"
     ],
     "settings": {
         "react": {

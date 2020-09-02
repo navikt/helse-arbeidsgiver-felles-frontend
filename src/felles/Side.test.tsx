@@ -1,7 +1,7 @@
 import React from 'react';
-import { Side } from './Side';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { Side } from './Side';
 
 describe('Side', () => {
 
