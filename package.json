@@ -1,0 +1,73 @@
+{
+  "name": "helse-arbeidsgiver-felles-frontend",
+  "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
+  "version": "0.1.0",
+  "author": "NAVIKT",
+  "license": "MIT",
+  "main": "lib/Felles.js",
+  "files": [
+    "lib",
+    "src/felles"
+  ],
+  "scripts": {
+    "start:parcel": "parcel src/index.html --open --port 8000",
+    "start:ts": "tsc --watch",
+    "start": "run-p start:parcel start:ts",
+    "build:webpack": "webpack",
+    "build:declarations": "tsc --project tsconfig.build.json",
+    "build": "run-s build:webpack build:declarations lint",
+    "lint": "eslint src/**/*.ts*",
+    "lint:fix": "eslint src/**/*.ts* --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-arrow-functions": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/history": "^4.7.3",
+    "@types/react": "^16.9.11",
+    "@types/react-collapse": "^4.0.2",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router-dom": "^5.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.6.5",
+    "eslint-plugin-typescript": "^0.14.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "regenerator-runtime": "^0.13.7",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.10"
+  },
+  "peerDependencies": {}
+}
