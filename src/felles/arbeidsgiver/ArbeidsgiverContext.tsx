@@ -4,6 +4,6 @@ interface ArbeidsgiverProviderProps {
     children: React.ReactNode
 }
 
-export const ArbeidsgiverProvider = (props: ArbeidsgiverProviderProps) => {
+export const ArbeidsgiverContext = (props: ArbeidsgiverProviderProps) => {
     return (<div>{ props.children }</div>);
 };
