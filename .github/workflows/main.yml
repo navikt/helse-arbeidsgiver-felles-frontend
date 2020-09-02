@@ -28,3 +28,6 @@ jobs:
         
       - name: Test linting
         run: npm run-script lint
+
+      - name: Deploy pakke
+        run: npm publish

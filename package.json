@@ -1,5 +1,5 @@
 {
-  "name": "helse-arbeidsgiver-felles-frontend",
+  "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
   "version": "0.1.0",
   "author": "NAVIKT",
@@ -21,6 +21,10 @@
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": "git://github.com/navikt/helse-arbeidsgiver-felles-frontend.git",
   "browserslist": {
     "production": [
       ">0.2%",
