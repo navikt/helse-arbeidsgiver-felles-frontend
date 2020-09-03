@@ -21,7 +21,9 @@
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
