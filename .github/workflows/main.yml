@@ -29,7 +29,8 @@ jobs:
       - name: Test linting
         run: npm run-script lint
 
+      - name: Authenticate
+        run: npm login --registry=https://npm.pkg.github.com/
+
       - name: Deploy pakke
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

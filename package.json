@@ -21,10 +21,7 @@
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
-  },
-  "repository": "git://github.com/navikt/helse-arbeidsgiver-felles-frontend.git",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "browserslist": {
     "production": [
       ">0.2%",
