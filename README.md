@@ -1,6 +1,6 @@
 # helse-arbeidsgiver-felles-frontend
 
-Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver
+Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver.
 
 ## Slik starter du lokalt
 
@@ -36,10 +36,10 @@ Git label
 
 ## Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan rettes mot:
+#### For NAV-ansatte
 
-* tbd
+Interne henvendelser sendes via Slack i kanalen #helse-arbeidsgiver
 
-### For NAV-ansatte
+#### For alle andre
 
-Interne henvendelser kan sendes via Slack i kanalen #helse-arbeidsgiver
+Eksterne henvendelser gjøres ved ved å lage en ny issue.
