@@ -1,15 +1,8 @@
 {
   "collectCoverage": true,
+  "coverageDirectory": "../coverage",
+  "rootDir": "./src",
   "coveragePathIgnorePatterns": [
-    "index.tsx",
-    "App.tsx",
-    "Kvittering.tsx",
-    "KvitteringExcel.tsx",
-    "SykepengerBulk.tsx",
-    "MottattSoknad.tsx",
-    "Hjelpetekst*.tsx",
-    "IngenData.tsx",
-    "CoronaTopptekst.tsx"
   ],
   "coverageThreshold": {
     "global": {

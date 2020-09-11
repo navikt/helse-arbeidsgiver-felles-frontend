@@ -1,9 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {Side} from "./felles/Side";
 
 const App = () => {
-    return (<Side>Helse-Arbeidsgiver-felles.frontend</Side>);
+    return (
+        <div>
+            <h1>helse-arbeidsgiver-frontend-felles</h1>
+        </div>
+    );
 };
 
 render(<App />, document.getElementById('app'));
