@@ -1,10 +1,12 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "NAVIKT",
   "license": "MIT",
-  "main": "dist/index.js",
+  "files": [
+    "dist/index.js"
+  ],
   "scripts": {
     "dev": "parcel public/index.html",
     "build": "parcel build src/index.ts",
