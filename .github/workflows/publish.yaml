@@ -20,8 +20,8 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '11.x'
-          registry-url: https://npm.pkg.github.com/
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
           scope: '@navikt'
 
       # Runs a single command using the runners shell
@@ -39,5 +39,5 @@ jobs:
 
       - name: Publiser
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
