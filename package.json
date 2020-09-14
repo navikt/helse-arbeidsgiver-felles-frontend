@@ -4,6 +4,7 @@
   "version": "0.1.12",
   "author": "NAVIKT",
   "license": "MIT",
+  "private": false,
   "files": [
     "lib/index.js"
   ],
@@ -18,6 +19,10 @@
     "type": "git",
     "url": "git+https://github.com/navikt/helse-arbeidsgiver-felles-frontend.git"
   },
+  "bugs": {
+    "url": "https://github.com/navikt/helse-arbeidsgiver-felles-frontend/issues"
+  },
+  "homepage": "https://github.com/navikt/helse-arbeidsgiver-felles-frontend",
   "browserslist": {
     "production": [
       ">0.2%",
