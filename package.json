@@ -5,9 +5,7 @@
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
-  "files": [
-    "lib/index.js"
-  ],
+  "main": "lib/index.js",
   "scripts": {
     "dev": "parcel public/index.html",
     "build": "parcel build src/index.ts --out-dir lib",
