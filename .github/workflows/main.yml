@@ -27,5 +27,7 @@ jobs:
         run: npm test
       - name: SonarCube
         run: node run-sonar.js
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Linting
         run: npm run-script lint
