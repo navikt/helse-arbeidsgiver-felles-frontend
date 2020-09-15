@@ -11,7 +11,7 @@
     "build": "parcel build src/index.ts --out-dir lib",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
-    "test": "jest"
+    "test": "jest --color --watchAll=false --coverage"
   },
   "repository": {
     "type": "git",
