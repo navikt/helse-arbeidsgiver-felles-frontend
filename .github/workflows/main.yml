@@ -14,7 +14,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    
+    env:
+      SONAR_TOKEN: ${{ secrets.SONARTOKEN }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -22,9 +23,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Bygg
         run: npm install
-
       - name: Test
         run: npm test
-        
+      - name: SonarCube
+        run: node run-sonar.js
       - name: Linting
         run: npm run-script lint
