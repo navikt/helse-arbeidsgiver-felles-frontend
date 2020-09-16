@@ -1,6 +1,6 @@
-# helse-arbeidsgiver-felles-frontend
-
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=navikt_helse-arbeidsgiver-felles-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=navikt_helse-arbeidsgiver-felles-frontend)
+
+# helse-arbeidsgiver-felles-frontend
 
 Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver.
 
