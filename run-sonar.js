@@ -10,7 +10,8 @@ scanner(
             'sonar.sources': 'src',
             'sonar.javascript.lcov.reportPaths': 'coverage/lcov.info',
             'sonar.coverage.exclusions': '*.test.*',
-            'sonar.test.inclusions': '*.test.*'
+            'sonar.test.inclusions': '*.test.*',
+            'sonar.test.exclusions': './app.tsx,./index.ts',
         }
     },
     () => process.exit()
