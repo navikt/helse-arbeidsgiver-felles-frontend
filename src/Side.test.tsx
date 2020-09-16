@@ -10,4 +10,9 @@ describe('Side', () => {
         expect(screen.getByText('Barn'))
     })
 
+    it('should not show children', async () => {
+        render(<Side />);
+        expect(screen.queryAllByText('Barn')).toEqual([])
+    })
+
 })
