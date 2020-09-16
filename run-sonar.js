@@ -9,7 +9,8 @@ scanner(
             'sonar.projectKey': 'navikt_helse-arbeidsgiver-felles-frontend',
             'sonar.sources': 'src',
             'sonar.javascript.lcov.reportPaths': 'coverage/lcov.info',
-            'sonar.coverage.exclusions': '*.test.*'
+            'sonar.coverage.exclusions': '*.test.*',
+            'sonar.test': '*.test.*'
         }
     },
     () => process.exit()
