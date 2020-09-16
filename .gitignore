@@ -5,3 +5,4 @@ node_modules
 *.iml
 lcov.info
 coverage
+.DS_Store
