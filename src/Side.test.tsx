@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Side } from './Side';
+import {Side, tull} from './Side';
 
 describe('Side', () => {
 
@@ -11,8 +11,11 @@ describe('Side', () => {
     })
 
     it('should not show children', async () => {
-        render(<Side />);
-        expect(screen.queryAllByText('Barn')).toEqual([])
+        expect(screen.queryAllByText('Tall'))
+    })
+
+    it('should not show children2', async () => {
+        expect(screen.queryAllByText('Tall'))
     })
 
     it('tulletest', async () => {
