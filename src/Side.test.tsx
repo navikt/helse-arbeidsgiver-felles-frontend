@@ -15,4 +15,8 @@ describe('Side', () => {
         expect(screen.queryAllByText('Barn')).toEqual([])
     })
 
+    it('tulletest', async () => {
+        expect(2+2).toEqual(4);
+    })
+
 })
