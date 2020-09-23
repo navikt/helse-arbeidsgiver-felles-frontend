@@ -1,5 +1,4 @@
 import { Side } from './Side';
-import { ArbeidsgiverContext } from './arbeidsgiver/ArbeidsgiverContext';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -9,4 +8,4 @@ import { ArbeidsgiverContext } from './arbeidsgiver/ArbeidsgiverContext';
  *
  */
 
-export { Side, ArbeidsgiverContext }
+export { Side, ArbeidsgiverProvider }

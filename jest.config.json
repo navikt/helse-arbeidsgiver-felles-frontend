@@ -2,6 +2,9 @@
   "collectCoverage": true,
   "coverageDirectory": "../coverage",
   "rootDir": "./src",
+  "globals": {
+    "window": true
+  },
   "coveragePathIgnorePatterns": [
   ],
   "coverageThreshold": {
@@ -13,6 +16,7 @@
     }
   },
   "moduleNameMapper": {
-    "^.+\\.(css|less|scss|sass)$": "babel-jest"
+    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
   }
 }
