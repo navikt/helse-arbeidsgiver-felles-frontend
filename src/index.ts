@@ -1,5 +1,7 @@
 import { Side } from './Side';
 import { ArbeidsgiverContext } from './arbeidsgiver/ArbeidsgiverContext';
+import { fetchFeatureToggles } from './utils/fetchFeatureToggles';
+import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -9,4 +11,4 @@ import { ArbeidsgiverContext } from './arbeidsgiver/ArbeidsgiverContext';
  *
  */
 
-export { Side, ArbeidsgiverContext }
+export { Side, ArbeidsgiverContext, fetchFeatureToggles, FeatureToggleProvider }
