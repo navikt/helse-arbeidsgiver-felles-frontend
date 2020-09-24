@@ -1,4 +1,7 @@
-import { Side } from './Side';
+import { ArbeidsgiverProvider } from './context/ArbeidsgiverContext';
+import ArbeidsgiverAPI from './api/ArbeidsgiverAPI';
+import LoginExpiryAPI from './api/LoginExpiryAPI';
+import InnloggetSide from './components/InnloggetSide';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -8,4 +11,5 @@ import { Side } from './Side';
  *
  */
 
-export { Side, ArbeidsgiverProvider }
+export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI }
+

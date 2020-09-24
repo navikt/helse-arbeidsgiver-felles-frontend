@@ -1,14 +1,13 @@
+import React from 'react';
 import { AlertStripeAdvarsel } from 'nav-frontend-alertstriper';
 import { Link, useHistory } from 'react-router-dom';
-import React from 'react';
 import Bedriftsmeny from '@navikt/bedriftsmeny';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import { History } from 'history';
 import { Column, Container, Row } from 'nav-frontend-grid';
-import './InnloggetSide.less';
 import Lenke from 'nav-frontend-lenker';
+import './InnloggetSide.sass';
 import { useArbeidsgiver } from '../context/ArbeidsgiverContext';
-import TimeoutAdvarsel from '../components/login/TimeoutAdvarsel';
 
 interface SideProps {
   children: React.ReactNode,
@@ -37,7 +36,7 @@ const InnloggetSide = (props: SideProps) => {
                 setArbeidsgiverId(org.OrganizationNumber);
                 setFirma(org.Name);
               }}
-              sidetittel={t(Keys.MY_PAGE)}
+              sidetittel={"Sidetittel"}
               organisasjoner={arbeidsgivere}
             />
 
@@ -51,7 +50,6 @@ const InnloggetSide = (props: SideProps) => {
               </Row>
             </Container>
 
-            <TimeoutAdvarsel/>
 
             <Container className={'innloggetside__innhold'}>
                 { props.children }

@@ -1,22 +1,13 @@
 {
-  "collectCoverage": true,
-  "coverageDirectory": "../coverage",
   "rootDir": "./src",
   "globals": {
     "window": true
   },
-  "coveragePathIgnorePatterns": [
-  ],
-  "coverageThreshold": {
-    "global": {
-      "branches": 50,
-      "functions": 50,
-      "lines": 50,
-      "statements": 50
-    }
-  },
   "moduleNameMapper": {
-    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
-    "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    "\\.(css|jpg|png|svg|less)$": "<rootDir>/node_modules/jest-css-modules",
+    "nav-(.*)-style": "<rootDir>/node_modules/jest-css-modules"
+  },
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
   }
 }
