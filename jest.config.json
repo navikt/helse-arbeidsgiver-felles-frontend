@@ -3,10 +3,6 @@
   "globals": {
     "window": true
   },
-  "moduleNameMapper": {
-    "\\.(css|jpg|png|svg|less)$": "<rootDir>/node_modules/jest-css-modules",
-    "nav-(.*)-style": "<rootDir>/node_modules/jest-css-modules"
-  },
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
