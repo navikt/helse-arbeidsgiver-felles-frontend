@@ -6,6 +6,10 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
+  "moduleNameMapper": {
+    "\\.(css|jpg|png|svg|less)$": "../node_modules/jest-css-modules",
+    "nav-(.*)-style": "../node_modules/jest-css-modules"
+  },
   "collectCoverage": true,
   "coverageDirectory": "../coverage",
   "coveragePathIgnorePatterns": [
