@@ -15,7 +15,7 @@ describe('loginExpiryAPI', () => {
     const mockApi = Promise.resolve({
       status: 200,
       json: () => Promise.resolve(input),
-    });
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockApi);
     const loginExpiry = await LoginExpiryAPI();
     expect(loginExpiry.tidspunkt).toEqual(new Date(2020,0,23, 9, 27, 57, 125));
@@ -25,7 +25,7 @@ describe('loginExpiryAPI', () => {
     const mockApi = Promise.resolve({
       status: 402,
       json: () => Promise.resolve(),
-    });
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockApi);
     const loginExpiry = await LoginExpiryAPI();
     expect(loginExpiry.tidspunkt).toBeUndefined();

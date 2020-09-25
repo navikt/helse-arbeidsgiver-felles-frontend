@@ -1,14 +1,34 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import 'whatwg-fetch'
 
-export const mapArbeidsgiver = (data): Organisasjon[] => data.map(organisasjon => ({
-  Name: organisasjon.name,
-  Type: organisasjon.type,
-  OrganizationNumber: organisasjon.organizationNumber,
-  OrganizationForm: organisasjon.organizationForm,
-  Status: organisasjon.status,
-  ParentOrganizationNumber: organisasjon.parentOrganizationNumber
-}));
+// {
+//   'name' : 'STADLANDET OG SINGSÅS',
+//     'type' : 'Enterprise',
+//     'parentOrganizationNumber' : null,
+//     'organizationForm' : 'AS',
+//     'organizationNumber' : '911366940',
+//     'socialSecurityNumber' : null,
+//     'status' : 'Active'
+// }
+
+interface BackendOrganisasjon {
+  name: string,
+  type: string,
+  parentOrganizationNumber?: string,
+  organizationForm: string,
+  organizationNumber: string,
+  socialSecurityNumber?: string,
+  status: string
+}
+
+export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjon[] => backendData.map(o => ({
+  Name: o.name,
+  Type: o.type,
+  OrganizationNumber: o.organizationNumber,
+  OrganizationForm: o.organizationForm,
+  Status: o.status,
+  ParentOrganizationNumber: o.parentOrganizationNumber
+} as Organisasjon));
 
 export interface ArbeidsgivereInterface {
   status: number,

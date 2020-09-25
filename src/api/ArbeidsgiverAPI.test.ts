@@ -36,8 +36,8 @@ describe('ArbeidsgiverAPI', () => {
   it('skal returnere arbeidsgivere', async () => {
     const mockArbeidsgivere = Promise.resolve({
       status: 200,
-      json: () => Promise.resolve(ARBEIDSGIVERE),
-    });
+      json: () => Promise.resolve(ARBEIDSGIVERE)
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockArbeidsgivere);
     const result = await ArbeidsgiverAPI.GetArbeidsgivere();
     expect(result.status).toEqual(200);
@@ -56,7 +56,7 @@ describe('ArbeidsgiverAPI', () => {
       json: () => Promise.resolve({
         ARBEIDSGIVERE
       }),
-    });
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockArbeidsgivere);
     expect(await ArbeidsgiverAPI.GetArbeidsgivere()).toStrictEqual({
       status: 401,
@@ -70,7 +70,7 @@ describe('ArbeidsgiverAPI', () => {
       json: () => Promise.resolve({
 
       }),
-    });
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockError);
     expect(await ArbeidsgiverAPI.GetArbeidsgivere()).toStrictEqual({
       status: 500,
@@ -83,7 +83,7 @@ describe('ArbeidsgiverAPI', () => {
       status: 401,
       json: () => Promise.resolve({
       }),
-    });
+    } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockToken);
     expect(await ArbeidsgiverAPI.GetArbeidsgivere()).toStrictEqual({
       status: 401,
