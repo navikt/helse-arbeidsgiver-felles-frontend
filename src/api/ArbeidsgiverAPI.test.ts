@@ -93,9 +93,13 @@ describe('ArbeidsgiverAPI', () => {
 
   it('skal håndtere timeout', async() => {
     jest.useFakeTimers();
-    const mockTimeout = new Promise((resolve, reject) =>
-      {}
-    )
+
+    const mockTimeout = Promise.resolve({
+      status: -1,
+      json: () => Promise.reject({
+      }),
+    } as Response);
+
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockTimeout);
     const verdi = ArbeidsgiverAPI.GetArbeidsgivere();
     jest.advanceTimersByTime(15000)

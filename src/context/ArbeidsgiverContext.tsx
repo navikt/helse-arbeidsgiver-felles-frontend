@@ -3,6 +3,7 @@ import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import ArbeidsgiverAPI, { Status } from '../api/ArbeidsgiverAPI';
 import Spinner from 'nav-frontend-spinner';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
+import Environment from '../Environment';
 
 export const buildArbeidsgiverContext = (firma: string, arbeidsgiverId: string, arbeidsgivere: Organisasjon[]) => ({
   arbeidsgivere,
@@ -45,6 +46,7 @@ export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) =>
   const [ arbeidsgivere, setArbeidsgivere ] = useState<Organisasjon[]>(props.arbeidsgivere || []);
   const [ firma, setFirma ] = useState<string>('');
   const [ arbeidsgiverId, setArbeidsgiverId ] = useState<string>('');
+  const [ ready, setReady ] = useState<boolean>();
 
   useEffect(() => {
     if (status === Status.NotStarted) {
@@ -53,14 +55,15 @@ export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) =>
         res => {
           setStatus(res.status);
           setArbeidsgivere(res.organisasjoner)
+          setReady(ready)
         }
       )
     }
-  }, [ status ]);
+  }, [ status, ready ]);
 
 
   if (status === Status.Unauthorized) {
-    window.location.href = "oto";
+    window.location.href = new Environment().loginServiceUrl;
     return <div className="arbeidsgiver-provider-redirect" />;
   }
 
@@ -68,12 +71,21 @@ export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) =>
     return <Spinner type={'XXL'} className="sporenstreks-spinner" />;
   }
 
-  if (status === Status.Error || status === Status.Timeout) {
+  if (status === Status.Error) {
     return (
       <AlertStripeFeil>
-        Vi får akkurat nå ikke hentet alle data.
+        Vi får akkurat nå ikke hentet alle data. (Kode 500)
         Vi jobber med å løse saken. Vennligst prøv igjen senere.
       </AlertStripeFeil>
+    );
+  }
+
+  if (status === Status.Timeout) {
+    return (
+        <AlertStripeFeil>
+          Vi får akkurat nå ikke hentet alle data. (Kode -1)
+          Vi jobber med å løse saken. Vennligst prøv igjen senere.
+        </AlertStripeFeil>
     );
   }
 
