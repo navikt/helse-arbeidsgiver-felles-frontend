@@ -3,7 +3,7 @@ import ArbeidsgiverAPI from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
 import TokenExpiredContext from './context/TokenExpiredContext';
-import { fetchFeatureToggles } from './utils/fetchFeatureToggles';
+import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 
 /**
