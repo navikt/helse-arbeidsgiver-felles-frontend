@@ -3,6 +3,8 @@ import ArbeidsgiverAPI from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
 import TokenExpiredContext from './context/TokenExpiredContext';
+import { fetchFeatureToggles } from './utils/fetchFeatureToggles';
+import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -12,5 +14,4 @@ import TokenExpiredContext from './context/TokenExpiredContext';
  *
  */
 
-export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI, useArbeidsgiver, TokenExpiredContext }
-
+export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI, useArbeidsgiver, TokenExpiredContext, fetchFeatureToggles, FeatureToggleProvider }

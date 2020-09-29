@@ -40,6 +40,7 @@
     "nav-frontend-grid": "^1.0.32",
     "nav-frontend-grid-style": "^0.2.20",
     "prop-types": "^15.7.2",
+    "isomorphic-fetch": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -93,5 +94,6 @@
     "sonarqube-scanner": "^2.7.0",
     "ts-jest": "^26.4.0",
     "typescript": "^3.7.2"
+    "yet-another-fetch-mock": "^4.1.0"
   }
 }
