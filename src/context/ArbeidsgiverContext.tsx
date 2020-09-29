@@ -5,14 +5,20 @@ import Spinner from 'nav-frontend-spinner';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
 import Environment from '../Environment';
 
+interface ArbeidsgiverInterface {
+  arbeidsgivere: Organisasjon[],
+  setArbeidsgivere: any,
+  firma: string,
+  setFirma: any
+  arbeidsgiverId: string,
+  setArbeidsgiverId: any
+}
+
 export const buildArbeidsgiverContext = (firma: string, arbeidsgiverId: string, arbeidsgivere: Organisasjon[]) => ({
   arbeidsgivere,
-  setArbeidsgivere: function(arbeidsgivere: Organisasjon[]){},
   firma,
-  setFirma: function(firma: string){},
   arbeidsgiverId,
-  setArbeidsgiverId: function(arbeidsgiverId: string){}
-})
+}) as ArbeidsgiverInterface
 
 export const buildArbeidsgiver = (
   Name: string,

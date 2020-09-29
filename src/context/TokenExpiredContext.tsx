@@ -6,8 +6,7 @@ interface TokenExpired {
 }
 
 export const buildAppStoreContext = () => ({
-  tokenExpired: false,
-  setTokenExpired: function(tokenExpired: boolean) {}
+  tokenExpired: false
 }) as TokenExpired
 
 const TokenExpiredContext = createContext(buildAppStoreContext());
