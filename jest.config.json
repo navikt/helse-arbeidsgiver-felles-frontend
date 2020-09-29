@@ -1,7 +1,17 @@
 {
+  "rootDir": "./src",
+  "globals": {
+    "window": true
+  },
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "\\.(css|jpg|png|svg|less|sass|scss)$": "<rootDir>/../node_modules/jest-css-modules",
+    "nav-(.*)-style": "<rootDir>/../node_modules/jest-css-modules"
+  },
   "collectCoverage": true,
   "coverageDirectory": "../coverage",
-  "rootDir": "./src",
   "coveragePathIgnorePatterns": [
   ],
   "coverageThreshold": {
@@ -11,8 +21,5 @@
       "lines": 50,
       "statements": 50
     }
-  },
-  "moduleNameMapper": {
-    "^.+\\.(css|less|scss|sass)$": "babel-jest"
   }
 }

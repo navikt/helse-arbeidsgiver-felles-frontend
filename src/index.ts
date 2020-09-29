@@ -1,6 +1,9 @@
-import { Side } from './Side';
-import { ArbeidsgiverContext } from './arbeidsgiver/ArbeidsgiverContext';
-import { fetchFeatureToggles } from './utils/fetchFeatureToggles';
+import { ArbeidsgiverProvider, useArbeidsgiver } from './context/ArbeidsgiverContext';
+import ArbeidsgiverAPI, { Status } from './api/ArbeidsgiverAPI';
+import LoginExpiryAPI from './api/LoginExpiryAPI';
+import InnloggetSide from './components/InnloggetSide';
+import TokenExpiredContext from './context/TokenExpiredContext';
+import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 
 /**
@@ -11,4 +14,10 @@ import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
  *
  */
 
-export { Side, ArbeidsgiverContext, fetchFeatureToggles, FeatureToggleProvider }
+export {
+    InnloggetSide,
+    ArbeidsgiverProvider, useArbeidsgiver,
+    ArbeidsgiverAPI, Status,
+    LoginExpiryAPI, TokenExpiredContext,
+    fetchFeatureToggles, FeatureToggleProvider
+}
