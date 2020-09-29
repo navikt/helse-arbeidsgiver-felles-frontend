@@ -36,7 +36,7 @@ const InnloggetSide = (props: SideProps) => {
                 setArbeidsgiverId(org.OrganizationNumber);
                 setFirma(org.Name);
               }}
-              sidetittel={"Sidetittel"}
+              sidetittel={'Sidetittel'}
               organisasjoner={arbeidsgivere}
             />
 
@@ -49,7 +49,6 @@ const InnloggetSide = (props: SideProps) => {
                 </Column>
               </Row>
             </Container>
-
 
             <Container className={'innloggetside__innhold'}>
                 { props.children }

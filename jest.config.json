@@ -7,7 +7,7 @@
     "^.+\\.tsx?$": "ts-jest"
   },
   "moduleNameMapper": {
-    "\\.(css|jpg|png|svg|less)$": "<rootDir>/../node_modules/jest-css-modules",
+    "\\.(css|jpg|png|svg|less|sass|scss)$": "<rootDir>/../node_modules/jest-css-modules",
     "nav-(.*)-style": "<rootDir>/../node_modules/jest-css-modules"
   },
   "collectCoverage": true,

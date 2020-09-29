@@ -1,7 +1,8 @@
-import { ArbeidsgiverProvider } from './context/ArbeidsgiverContext';
+import { ArbeidsgiverProvider, useArbeidsgiver } from './context/ArbeidsgiverContext';
 import ArbeidsgiverAPI from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
+import TokenExpiredContext from './context/TokenExpiredContext';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -11,5 +12,5 @@ import InnloggetSide from './components/InnloggetSide';
  *
  */
 
-export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI }
+export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI, useArbeidsgiver, TokenExpiredContext }
 

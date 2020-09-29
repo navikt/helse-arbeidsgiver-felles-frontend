@@ -37,7 +37,7 @@
         "object-curly-spacing":  ["warn", "always"],
         "no-duplicate-imports": "error",
         "quotes": ["error", "single"],
-        "no-unused-vars": "error"
+        "no-unused-vars": "warn"
     },
     "extends": [
         "plugin:react/recommended"

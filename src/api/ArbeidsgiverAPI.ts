@@ -1,16 +1,6 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import 'whatwg-fetch'
 
-// {
-//   'name' : 'STADLANDET OG SINGSÅS',
-//     'type' : 'Enterprise',
-//     'parentOrganizationNumber' : null,
-//     'organizationForm' : 'AS',
-//     'organizationNumber' : '911366940',
-//     'socialSecurityNumber' : null,
-//     'status' : 'Active'
-// }
-
 interface BackendOrganisasjon {
   name: string,
   type: string,

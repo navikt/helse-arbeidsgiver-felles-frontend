@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 interface TokenExpired {
   tokenExpired: boolean,
-  setTokenExpired
+  setTokenExpired: any
 }
 
 export const buildAppStoreContext = () => ({
