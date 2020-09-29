@@ -16,8 +16,8 @@ const FeatureToggleProvider = (props: FeatureToggleProps) => {
   useEffect(() => {
     const fetchFlags = async  () => {
       if (props.toggleDefaults) {
-        const toggleFlags: any = await fetchFeatureToggles(props.toggleServerUrl, props.toggleDefaults);
-        setToggleFlags(toggleFlags);
+        const fetchedToggleFlags: any = await fetchFeatureToggles(props.toggleServerUrl, props.toggleDefaults);
+        setToggleFlags(fetchedToggleFlags);
       }
     }
 
