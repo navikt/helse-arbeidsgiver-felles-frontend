@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import 'whatwg-fetch'
 
 export interface LoginExpiryResponse {
@@ -6,7 +5,7 @@ export interface LoginExpiryResponse {
   tidspunkt?: Date
 }
 
-export const ParseExpiryDate = (value: string) => dayjs(value.replace(/([+-]\d{2})(\d{2})$/g, '$1:$2'), 'YYYY-MM-DDTHH:mm:ssZ[Z]','no').toDate()
+export const ParseExpiryDate = (value: string) => new Date(value.substring(0, 23));
 
 const LoginExpiryAPI = (): Promise<LoginExpiryResponse> => {
   return fetch('/api/v1/login-expiry', {
