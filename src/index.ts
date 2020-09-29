@@ -1,5 +1,5 @@
 import { ArbeidsgiverProvider, useArbeidsgiver } from './context/ArbeidsgiverContext';
-import ArbeidsgiverAPI from './api/ArbeidsgiverAPI';
+import ArbeidsgiverAPI, { Status } from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
 import TokenExpiredContext from './context/TokenExpiredContext';
@@ -14,4 +14,10 @@ import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
  *
  */
 
-export { InnloggetSide, ArbeidsgiverProvider, ArbeidsgiverAPI, LoginExpiryAPI, useArbeidsgiver, TokenExpiredContext, fetchFeatureToggles, FeatureToggleProvider }
+export {
+    InnloggetSide,
+    ArbeidsgiverProvider, useArbeidsgiver,
+    ArbeidsgiverAPI, Status,
+    LoginExpiryAPI, TokenExpiredContext,
+    fetchFeatureToggles, FeatureToggleProvider
+}

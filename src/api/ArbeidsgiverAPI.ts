@@ -25,15 +25,8 @@ export interface ArbeidsgivereInterface {
   organisasjoner: Organisasjon[]
 }
 
-export enum Status {
-  NotStarted = 0,
-  Started = 1,
-  Successfully = 200,
-  Unknown = -2,
-  Timeout = -1,
-  Error = 500,
-  Unauthorized = 401
-}
+// eslint-disable-next-line no-unused-vars
+export enum Status {NotStarted = 0, Started = 1, Successfully = 200, Unknown = -2, Timeout = -1, Error = 500, Unauthorized = 401}
 
 const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
 
