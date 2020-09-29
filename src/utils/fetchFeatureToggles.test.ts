@@ -1,27 +1,26 @@
-import fetchFeatureToggles from './fetchFeatureToggles';
-import {getFeatureToggleUrl, fetchToJson} from './fetchFeatureToggles';
+import fetchFeatureToggles, { getFeatureToggleUrl, fetchToJson } from './fetchFeatureToggles';
 import { FeatureToggles } from '../featureToggle/featureToggleInterface';
 import FetchMock, { SpyMiddleware } from 'yet-another-fetch-mock';
 import 'isomorphic-fetch';
 
 
 describe('getFeatureToggleUrl', () => {
-    it("returnerer riktig path med to flagg", () => {
+    it('returnerer riktig path med to flagg', () => {
         const toggles: FeatureToggles = {
-            "toggle": true,
-            "another": false
+            'toggle': true,
+            'another': false
         };
         expect(getFeatureToggleUrl(toggles)).toBe('?feature=toggle&feature=another');
     })
 
-    it("returnerer riktig path med et flagg", () => {
+    it('returnerer riktig path med et flagg', () => {
         const toggles: FeatureToggles = {
-            "flagg": true,
+            'flagg': true,
         };
         expect(getFeatureToggleUrl(toggles)).toBe('?feature=flagg');
     })
 
-    it("returnerer riktig path uten", () => {
+    it('returnerer riktig path uten', () => {
         const toggles: FeatureToggles = {};
         expect(getFeatureToggleUrl(toggles)).toBe('');
     })
@@ -43,8 +42,8 @@ describe('fetchToJson', () => {
         mock.restore();
     });
 
-    it("returnerer riktig testdata som json objekt", async () => {
-        const dataSomSendes = { data: { test: true} };
+    it('returnerer riktig testdata som json objekt', async () => {
+        const dataSomSendes = { data: { test: true } };
         const config: RequestInit = { credentials: 'include' };
 
         mock.get('http://url', (req, res, ctx) => res(ctx.json(dataSomSendes)));
@@ -53,8 +52,7 @@ describe('fetchToJson', () => {
     })
 
 
-    it("kaster en feil når serveren feiler", async () => {
-        const dataSomSendes = { data: { test: true} };
+    it('kaster en feil når serveren feiler', async () => {
         const config: RequestInit = { credentials: 'include' };
 
         mock.get('http://url', (req, res, ctx) => res(ctx.status(500), ctx.statusText('Server error')));
@@ -83,9 +81,9 @@ describe('fetchFeatureToggles', () => {
         mock.restore();
     });
 
-    it("returnerer riktig testdata som json objekt", async () => {
-        const toggles: FeatureToggles = { "toggle": false, "flagg" : true};
-        const testValues = { "toggle": false, "flagg" : true};
+    it('returnerer riktig testdata som json objekt', async () => {
+        const toggles: FeatureToggles = { 'toggle': false, 'flagg' : true };
+        const testValues = { 'toggle': false, 'flagg' : true };
 
         mock.get('http://url/feature-toggles', (req, res, ctx) => res(ctx.json(testValues)));
 
@@ -93,8 +91,8 @@ describe('fetchFeatureToggles', () => {
     })
 
 
-    it("kaster en feil når serveren feiler", async () => {
-        const params: FeatureToggles = { "toggle": false, "flagg" : true};
+    it('kaster en feil når serveren feiler', async () => {
+        const params: FeatureToggles = { 'toggle': false, 'flagg' : true };
 
         mock.get('http://url/feature-toggles', (req, res, ctx) => res(ctx.status(500), ctx.statusText('Server error')));
 

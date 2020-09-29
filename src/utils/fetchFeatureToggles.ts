@@ -14,7 +14,7 @@ export const fetchFeatureToggles = (
 export const getFeatureToggleUrl = (featureToggles: FeatureToggles) =>
     Object.keys(featureToggles)
         .map(
-            (feature: string, i: number) => `${!i ? `?` : ``}feature=${feature}`
+            (feature: string, i: number) => `${!i ? '?' : ''}feature=${feature}`
         )
         .join('&');
 

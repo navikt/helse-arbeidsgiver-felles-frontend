@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect, useContext} from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import fetchFeatureToggles from '../utils/fetchFeatureToggles';
 import { FeatureToggles } from './featureToggleInterface';
 
