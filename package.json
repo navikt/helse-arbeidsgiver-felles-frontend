@@ -1,14 +1,18 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "parcel build src/index.ts --out-dir lib",
+    "build": "parcel build src/**/*.ts* --out-dir lib",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest --color --watchAll=false --coverage"
