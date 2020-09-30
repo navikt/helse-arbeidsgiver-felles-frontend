@@ -1,7 +1,7 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
@@ -34,12 +34,9 @@
     ]
   },
   "dependencies": {
-    "babel7-jest": "^1.0.1",
-    "classnames": "^2.2.6",
     "nav-frontend-core": "^5.0.1",
     "nav-frontend-grid": "^1.0.32",
     "nav-frontend-grid-style": "^0.2.20",
-    "isomorphic-fetch": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -62,12 +59,13 @@
     "@types/react-router-dom": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
-    "babel-jest": "^26.3.0",
+    "babel7-jest": "^1.0.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.36",
     "eslint": "^7.8.1",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-react": "^7.20.6",
+    "isomorphic-fetch": "^3.0.0",
     "jest": "^26.4.2",
     "jest-css-modules": "^2.1.0",
     "less": "^3.12.2",
