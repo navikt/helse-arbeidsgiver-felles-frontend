@@ -1,14 +1,23 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "src"
+    "src/api/ArbeidsgiverAPI.ts",
+    "src/api/LoginExpiryAPI.ts",
+    "src/components/InnloggetSide.tsx",
+    "src/components/InnloggetSide.sass",
+    "src/context/ArbeidsgiverContext.tsx",
+    "src/context/TokenExpiredContext.tsx",
+    "src/featureToggle/FeatureToggleContext.tsx",
+    "src/featureToggle/featureToggleInterface.tsx",
+    "src/featureToggle/fetchFeatureToggle.ts",
+    "src/Environment.ts",
+    "src/Variabler.sass"
   ],
   "scripts": {
     "dev": "parcel public/index.html",
