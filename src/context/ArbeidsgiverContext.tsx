@@ -6,7 +6,7 @@ import { AlertStripeFeil } from 'nav-frontend-alertstriper';
 import Environment from '../Environment';
 
 interface ArbeidsgiverInterface {
-  arbeidsgivere: Organisasjon[],
+  arbeidsgivere: Array<Organisasjon>,
   setArbeidsgivere: any,
   firma: string,
   setFirma: any
