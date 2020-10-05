@@ -21,8 +21,8 @@ export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjo
 } as Organisasjon));
 
 export interface ArbeidsgivereInterface {
-  status: number,
-  organisasjoner: Organisasjon[]
+  status: number;
+  organisasjoner: Array<Organisasjon>;
 }
 
 // eslint-disable-next-line no-unused-vars
