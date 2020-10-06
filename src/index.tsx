@@ -2,6 +2,7 @@ import { ArbeidsgiverProvider, useArbeidsgiver } from './context/ArbeidsgiverCon
 import ArbeidsgiverAPI, { Status } from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
+import Hello from './components/Hello';
 import TokenExpiredContext from './context/TokenExpiredContext';
 import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
@@ -15,7 +16,7 @@ import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
  */
 
 export {
-    InnloggetSide,
+    InnloggetSide, Hello,
     ArbeidsgiverProvider, useArbeidsgiver,
     ArbeidsgiverAPI, Status,
     LoginExpiryAPI, TokenExpiredContext,
