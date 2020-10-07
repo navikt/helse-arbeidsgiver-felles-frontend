@@ -3,7 +3,7 @@ import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import ArbeidsgiverAPI, { Status } from '../api/ArbeidsgiverAPI';
 import Spinner from 'nav-frontend-spinner';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
-import Environment from '../Environment';
+import { useEnvironment } from '../index';
 
 interface ArbeidsgiverInterface {
   arbeidsgivere: Array<Organisasjon>,
@@ -14,13 +14,13 @@ interface ArbeidsgiverInterface {
   setArbeidsgiverId: any
 }
 
-export const buildArbeidsgiverContext = (firma: string, arbeidsgiverId: string, arbeidsgivere: Organisasjon[]) => ({
+const buildArbeidsgiverContext = (firma: string, arbeidsgiverId: string, arbeidsgivere: Organisasjon[]) => ({
   arbeidsgivere,
   firma,
   arbeidsgiverId,
 }) as ArbeidsgiverInterface
 
-export const buildArbeidsgiver = (
+const buildArbeidsgiver = (
   Name: string,
   OrganizationForm: string,
   OrganizationNumber: string,
@@ -45,14 +45,15 @@ interface ArbeidsgiverContextProviderProps {
   arbeidsgivere?: Organisasjon[]
 }
 
-export const useArbeidsgiver = () => useContext(ArbeidsgiverContext);
+const useArbeidsgiver = () => useContext(ArbeidsgiverContext);
 
-export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
+const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
   const [ status, setStatus ]  = useState<number>(props.status || Status.NotStarted);
   const [ arbeidsgivere, setArbeidsgivere ] = useState<Organisasjon[]>(props.arbeidsgivere || []);
   const [ firma, setFirma ] = useState<string>('');
   const [ arbeidsgiverId, setArbeidsgiverId ] = useState<string>('');
   const [ ready, setReady ] = useState<boolean>();
+  const { loginServiceUrl } = useEnvironment();
 
   useEffect(() => {
     if (status === Status.NotStarted) {
@@ -69,7 +70,7 @@ export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) =>
 
 
   if (status === Status.Unauthorized) {
-    window.location.href = new Environment().loginServiceUrl;
+    window.location.href = loginServiceUrl;
     return <div className="arbeidsgiver-provider-redirect" />;
   }
 
@@ -110,3 +111,5 @@ export const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) =>
     </ArbeidsgiverContext.Provider>
   )
 }
+
+export { buildArbeidsgiverContext, buildArbeidsgiver, useArbeidsgiver, ArbeidsgiverProvider }
