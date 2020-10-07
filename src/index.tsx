@@ -2,10 +2,10 @@ import { ArbeidsgiverProvider, useArbeidsgiver } from './context/ArbeidsgiverCon
 import ArbeidsgiverAPI, { Status } from './api/ArbeidsgiverAPI';
 import LoginExpiryAPI from './api/LoginExpiryAPI';
 import InnloggetSide from './components/InnloggetSide';
-import Hello from './components/Hello';
 import TokenExpiredContext from './context/TokenExpiredContext';
 import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
+import { EnvironmentProvider, useEnvironment } from './context/EnvironmentContext';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -16,9 +16,10 @@ import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
  */
 
 export {
-    InnloggetSide, Hello,
+    InnloggetSide,
     ArbeidsgiverProvider, useArbeidsgiver,
     ArbeidsgiverAPI, Status,
     LoginExpiryAPI, TokenExpiredContext,
-    fetchFeatureToggles, FeatureToggleProvider
+    fetchFeatureToggles, FeatureToggleProvider,
+    EnvironmentProvider, useEnvironment
 }
