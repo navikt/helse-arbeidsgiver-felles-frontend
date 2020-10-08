@@ -1,9 +1,17 @@
 {
-    "plugins": [ // Alle blir postfikset med eslint-plugin-$PLUGIN_NAVN
-        "react",
-        "@babel",
-        "@typescript-eslint"
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended"
     ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -12,36 +20,20 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
+    "plugins": [
+        "react-hooks",
+        "@typescript-eslint",
+        "react",
+        "typescript"
+    ],
     "rules": {
         "no-console": "error",
-        "max-len": [
-            "error", 160, {
-                "ignoreUrls": true,
-                "ignoreComments": false,
-                "ignoreRegExpLiterals": true,
-                "ignoreStrings": false,
-                "ignoreTemplateLiterals": false
-            }],
-        "comma-dangle": ["error", {
-            "arrays": "only-multiline",
-            "objects": "only-multiline",
-            "imports": "only-multiline",
-            "exports": "only-multiline",
-            "functions": "only-multiline"
-        }],
-        "object-curly-spacing":  ["warn", "always"],
         "no-duplicate-imports": "error",
-        "quotes": ["error", "single"],
-        "no-unused-vars": "error"
+        "typescript/no-unused-vars": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "sort-imports": "warn"
     },
-    "extends": [
-        "plugin:react/recommended"
-    ],
     "settings": {
         "react": {
             "version": "detect"
