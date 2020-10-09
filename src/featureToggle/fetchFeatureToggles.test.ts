@@ -1,7 +1,6 @@
 import fetchFeatureToggles, { getFeatureToggleUrl, fetchToJson } from './fetchFeatureToggles';
 import { FeatureToggles } from '../featureToggle/featureToggleInterface';
-import FetchMock, { SpyMiddleware } from 'yet-another-fetch-mock';
-import 'isomorphic-fetch';
+import 'whatwg-fetch'
 
 
 describe('getFeatureToggleUrl', () => {
@@ -27,26 +26,15 @@ describe('getFeatureToggleUrl', () => {
 })
 
 describe('fetchToJson', () => {
-    let mock: FetchMock;
-    let spy: SpyMiddleware;
-
-    beforeEach(() => {
-        spy = new SpyMiddleware();
-        mock = FetchMock.configure({
-          middleware: spy.middleware
-        });
-        expect(spy.size()).toBe(0);
-    });
-    
-    afterEach(() => {
-        mock.restore();
-    });
 
     it('returnerer riktig testdata som json objekt', async () => {
         const dataSomSendes = { data: { test: true } };
         const config: RequestInit = { credentials: 'include' };
 
-        mock.get('http://url', (req, res, ctx) => res(ctx.json(dataSomSendes)));
+      jest.spyOn(window, 'fetch').mockImplementationOnce(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve(dataSomSendes)
+      } as Response));
 
         expect(await fetchToJson('http://url', config)).toStrictEqual(dataSomSendes);
     })
@@ -55,7 +43,10 @@ describe('fetchToJson', () => {
     it('kaster en feil når serveren feiler', async () => {
         const config: RequestInit = { credentials: 'include' };
 
-        mock.get('http://url', (req, res, ctx) => res(ctx.status(500), ctx.statusText('Server error')));
+      jest.spyOn(window, 'fetch').mockImplementationOnce(() => Promise.resolve({
+        status: 500,
+        statusText: 'Server error'
+      } as Response));
 
         const testFn = async () => {
             await fetchToJson('http://url', config);
@@ -66,26 +57,15 @@ describe('fetchToJson', () => {
 })
 
 describe('fetchFeatureToggles', () => {
-    let mock: FetchMock;
-    let spy: SpyMiddleware;
-
-    beforeEach(() => {
-        spy = new SpyMiddleware();
-        mock = FetchMock.configure({
-          middleware: spy.middleware
-        });
-        expect(spy.size()).toBe(0);
-    });
-    
-    afterEach(() => {
-        mock.restore();
-    });
 
     it('returnerer riktig testdata som json objekt', async () => {
         const toggles: FeatureToggles = { 'toggle': false, 'flagg' : true };
         const testValues = { 'toggle': false, 'flagg' : true };
 
-        mock.get('http://url/feature-toggles', (req, res, ctx) => res(ctx.json(testValues)));
+      jest.spyOn(window, 'fetch').mockImplementationOnce(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve(testValues)
+      } as Response));
 
         expect(await fetchFeatureToggles('http://url', toggles)).toStrictEqual(testValues);
     })
@@ -94,7 +74,10 @@ describe('fetchFeatureToggles', () => {
     it('kaster en feil når serveren feiler', async () => {
         const params: FeatureToggles = { 'toggle': false, 'flagg' : true };
 
-        mock.get('http://url/feature-toggles', (req, res, ctx) => res(ctx.status(500), ctx.statusText('Server error')));
+      jest.spyOn(window, 'fetch').mockImplementationOnce(() => Promise.resolve({
+        status: 500,
+        statusText: 'Server error'
+      } as Response));
 
         const testFn = async () => {
             await fetchFeatureToggles('http://url', params);

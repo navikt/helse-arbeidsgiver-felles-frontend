@@ -1,7 +1,7 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
@@ -40,16 +40,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@navikt/bedriftsmeny": "^2.2.0",
-    "babel-plugin-import-less": "^0.1.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "@babel/core": "^7.11.6",
     "@babel/eslint-parser": "^7.11.5",
     "@babel/eslint-plugin": "^7.11.5",
     "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@navikt/bedriftsmeny": "^2.2.0",
     "@navikt/fnrvalidator": "^1.1.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -102,7 +99,9 @@
     "nav-frontend-typografi-style": "^1.0.25",
     "parcel-bundler": "^1.12.4",
     "prettier": "2.1.2",
+    "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
@@ -114,7 +113,6 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "workbox-webpack-plugin": "^5.1.4",
-    "yet-another-fetch-mock": "^4.1.0"
+    "workbox-webpack-plugin": "^5.1.4"
   }
 }
