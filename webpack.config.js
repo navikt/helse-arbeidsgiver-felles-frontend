@@ -8,6 +8,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css', '.sass']
     },
+    devtool: 'eval',
     output: {
         path: path.resolve(__dirname, 'lib'),
         publicPath: '/lib/',
