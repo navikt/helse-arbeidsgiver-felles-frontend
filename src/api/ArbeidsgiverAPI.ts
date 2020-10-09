@@ -52,7 +52,7 @@ const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
       },
       method: 'GET',
     }).then(response => {
-      if (response.status === Status.Successfully) {
+      if (response.status == Status.Successfully) {
         return response.json().then(data => {
           return {
             status: Status.Successfully,

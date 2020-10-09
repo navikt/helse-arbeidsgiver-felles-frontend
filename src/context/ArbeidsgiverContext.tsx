@@ -56,7 +56,7 @@ const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
   const { loginServiceUrl } = useEnvironment();
 
   useEffect(() => {
-    if (status === Status.NotStarted) {
+    if (status == Status.NotStarted) {
       setStatus(Status.Started);
       ArbeidsgiverAPI.GetArbeidsgivere().then(
         res => {
