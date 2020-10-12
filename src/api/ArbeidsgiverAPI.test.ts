@@ -95,7 +95,7 @@ describe('ArbeidsgiverAPI', () => {
     jest.useFakeTimers();
 
     const mockTimeout = Promise.resolve({
-      status: -1,
+      status: -3,
       json: () => Promise.reject({
       }),
     } as Response);

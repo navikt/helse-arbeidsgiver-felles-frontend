@@ -26,7 +26,7 @@ export interface ArbeidsgivereInterface {
 }
 
 // eslint-disable-next-line no-unused-vars
-export enum Status {NotStarted = 0, Started = 1, Successfully = 200, Unknown = -2, Timeout = -1, Error = 500, Unauthorized = 401}
+export enum Status {NotStarted = -1, Started = 1, Successfully = 200, Unknown = -2, Timeout = -3, Error = 500, Unauthorized = 401}
 
 const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
 
@@ -57,6 +57,14 @@ const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
           return {
             status: Status.Successfully,
             organisasjoner: mapArbeidsgiver(data)
+          };
+        });
+      }
+      if (response.status == Status.Unauthorized || response.status == Status.Error) {
+        return response.json().then(data => {
+          return {
+            status: response.status,
+            organisasjoner: []
           };
         });
       }
