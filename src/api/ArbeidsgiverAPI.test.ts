@@ -81,8 +81,7 @@ describe('ArbeidsgiverAPI', () => {
   it('skal håndtere token invalid', async () => {
     const mockToken = Promise.resolve({
       status: 401,
-      json: () => Promise.resolve({
-      }),
+      json: {},
     } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockToken);
     expect(await ArbeidsgiverAPI.GetArbeidsgivere()).toStrictEqual({

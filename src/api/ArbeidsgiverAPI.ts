@@ -28,51 +28,47 @@ export interface ArbeidsgivereInterface {
 // eslint-disable-next-line no-unused-vars
 export enum Status {NotStarted = -1, Started = 1, Successfully = 200, Unknown = -2, Timeout = -3, Error = 500, Unauthorized = 401}
 
-const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
+const handleStatus = (response: Response) => {
+  switch (response.status) {
+    case 200:
+      return response.json();
+    case 401:
+      return Promise.reject(Status.Unauthorized)
+    case 500:
+      return Promise.reject(Status.Error)
+    default: Promise.reject(Status.Unknown);
+  }
+}
 
+const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
   return Promise.race([
     new Promise((resolve, reject) =>
-      setTimeout(() => reject(new Error('Timeout')), 10000)
+      setTimeout(() => reject("Tidsavbrudd"), 10000)
     ).then(() => {
       return {
         status: Status.Timeout,
         organisasjoner: []
       };
-    }).catch(() => {
-      return {
-        status: Status.Timeout,
-        organisasjoner: []
-      };
-    })
+    }).catch(() => ({
+      status: Status.Timeout,
+      organisasjoner: []
+    }))
     ,
-    fetch('/api/v1/arbeidsgivere', {
+    fetch("/api/v1/arbeidsgivere", {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       method: 'GET',
-    }).then(response => {
-      if (response.status == Status.Successfully) {
-        return response.json().then(data => {
-          return {
-            status: Status.Successfully,
-            organisasjoner: mapArbeidsgiver(data)
-          };
-        });
-      }
-      if (response.status == Status.Unauthorized || response.status == Status.Error) {
-        return response.json().then(data => {
-          return {
-            status: response.status,
-            organisasjoner: []
-          };
-        });
-      }
-      return {
-        status: response.status,
-        organisasjoner: []
-      };
     })
+      .then(handleStatus)
+      .then(json => ({
+        status: Status.Successfully,
+        organisasjoner: mapArbeidsgiver(json)
+      })).catch((status) => ({
+      status: status,
+      organisasjoner: []
+    }))
   ]);
 }
 
