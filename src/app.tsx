@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { ArbeidsgiverProvider } from './context/ArbeidsgiverContext';
 import InnloggetSide from './components/InnloggetSide';
-import { FeatureToggleProvider } from './index';
+import {ArbeidsgiverProvider, FeatureToggleProvider} from './index';
 import FeatureToggleConsumer from './FeatureToggleConsumer';
 
 const App = () => {
