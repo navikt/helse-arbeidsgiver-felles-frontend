@@ -1,0 +1,71 @@
+@import "~nav-frontend-core";
+@import "~nav-frontend-typografi-style";
+@import "~nav-frontend-skjema-style";
+@import "~nav-frontend-knapper-style";
+@import "~nav-frontend-hjelpetekst-style";
+@import "~nav-frontend-alertstriper-style";
+@import "~nav-frontend-grid-style";
+@import "~nav-frontend-chevron-style";
+@import "~nav-frontend-lenker-style";
+@import "~nav-frontend-paneler-style";
+@import "~nav-frontend-spinner-style";
+@import "~nav-frontend-veileder-style";
+@import "~nav-frontend-veilederpanel-style";
+@import "~nav-frontend-modal-style";
+@import "~nav-frontend-popover-style";
+@import '~nav-frontend-tabell-style';
+
+@skjermLiten: 30rem;
+@skjermMini: @skjermLiten;
+@skjermMedium: 35rem;
+
+@fontSizeBreakPoint: 35rem;
+@desktopLimitWidth: 982px;
+
+@font-family: 'Source Sans Pro', Arial, sans-serif;
+@font-size: 1rem;
+
+* {
+  box-sizing: border-box;
+}
+
+#root{
+  background-color: #EAE7E7;
+}
+
+body {
+  margin: 0;
+
+  .hidden#logout {
+    display: inline-block!important;
+    visibility: visible!important;
+    min-height: auto;
+  }
+}
+
+html, body, #app-root {
+  height: 100%;
+}
+
+.limit {
+  position: relative;
+  padding: 1rem 1.4rem 2rem;
+}
+
+a {
+  color: @navBla;
+  text-decoration: underline !important;
+}
+
+.sporenstreks-spinner {
+  display: block;
+  margin: 4rem auto;
+}
+
+@media (min-width: @screen-sm) {
+  .limit {
+    width: @desktopLimitWidth;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
+  }
+}

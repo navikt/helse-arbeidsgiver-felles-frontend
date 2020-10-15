@@ -6,6 +6,7 @@ import TokenExpiredContext from './context/TokenExpiredContext';
 import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 import { EnvironmentProvider, useEnvironment } from './context/EnvironmentContext';
+import './style/index.less';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges

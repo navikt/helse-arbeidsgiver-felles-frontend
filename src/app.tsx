@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import InnloggetSide from './components/InnloggetSide';
 import {ArbeidsgiverProvider, FeatureToggleProvider} from './index';
 import FeatureToggleConsumer from './FeatureToggleConsumer';
+import {BrowserRouter} from "react-router-dom";
 
 const App = () => {
     const featureToggleUrl = 'https://www.nav.no/person/pb-unleash-proxy';
@@ -12,7 +13,7 @@ const App = () => {
         'pus-decorator.csp-reporting': false
         };
     return (
-        <div>
+        <BrowserRouter>
           <FeatureToggleProvider toggleServerUrl={featureToggleUrl} toggleDefaults={featureDefaults}>
               <ArbeidsgiverProvider>
                   <InnloggetSide>
@@ -21,7 +22,7 @@ const App = () => {
               </ArbeidsgiverProvider>
               <FeatureToggleConsumer/>
           </FeatureToggleProvider>
-        </div>
+        </BrowserRouter>
     );
 };
 
