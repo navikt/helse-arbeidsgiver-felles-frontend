@@ -65,6 +65,9 @@ module.exports = {
     ],
 
     externals: {
-        react: 'react'
+        react: 'react',
+        'react-dom': 'reactDom',
+        'react-router-dom': 'react-router-dom',
+        '@navikt/bedriftsmeny': '@navikt/bedriftsmeny'
     }
 };
