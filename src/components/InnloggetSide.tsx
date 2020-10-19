@@ -8,6 +8,7 @@ import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
 import './InnloggetSide.sass';
 import { useArbeidsgiver } from '../context/ArbeidsgiverContext';
+import {useEnvironment} from "..";
 
 interface SideProps {
   children: React.ReactNode,
@@ -15,6 +16,7 @@ interface SideProps {
 }
 
 const InnloggetSide = (props: SideProps) => {
+  const { sideTittel } = useEnvironment();
   const { arbeidsgivere, setArbeidsgiverId, setFirma } = useArbeidsgiver();
   const history: History = useHistory();
   return (
@@ -36,7 +38,7 @@ const InnloggetSide = (props: SideProps) => {
                 setArbeidsgiverId(org.OrganizationNumber);
                 setFirma(org.Name);
               }}
-              sidetittel={'Sidetittel'}
+              sidetittel={sideTittel}
               organisasjoner={arbeidsgivere}
             />
 

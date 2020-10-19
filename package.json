@@ -1,7 +1,7 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
@@ -120,7 +120,6 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "workbox-webpack-plugin": "^5.1.4",
     "yet-another-fetch-mock": "^4.1.0"
   },
   "peerDependencies": {

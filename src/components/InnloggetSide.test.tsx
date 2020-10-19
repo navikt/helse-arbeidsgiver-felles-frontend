@@ -1,7 +1,7 @@
 import React from 'react'
 import InnloggetSide from './InnloggetSide';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { ArbeidsgiverProvider } from '..';
+import {ArbeidsgiverProvider, EnvironmentProvider} from '..';
 import { Status } from '../api/ArbeidsgiverAPI';
 import { MemoryRouter } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
@@ -54,16 +54,18 @@ describe('InnloggetSide', () => {
   it('skal vise innhold dersom man har rettigheter', () => {
     render(
         <MemoryRouter initialEntries={['/']}>
-          <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={Status.Successfully}>
-            <InnloggetSide>Barna</InnloggetSide>
-          </ArbeidsgiverProvider>
+          <EnvironmentProvider loginServiceUrl={"dummyURL"} sideTittel={"InnloggetSideTittel"}>
+            <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={Status.Successfully}>
+              <InnloggetSide>Barna</InnloggetSide>
+            </ArbeidsgiverProvider>
+          </EnvironmentProvider>
         </MemoryRouter>
         , container
     );
     expect(container.textContent).not.toContain('Du har ikke rettigheter til å søke om refusjon for noen bedrifter');
     expect(container.textContent).toContain('Min side arbeidsgiver');
     expect(container.textContent).toContain('Barna');
-    expect(container.textContent).toContain('Sidetittel');
+    expect(container.textContent).toContain('InnloggetSideTittel');
   })
 
 });
