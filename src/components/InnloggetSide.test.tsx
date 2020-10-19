@@ -54,7 +54,7 @@ describe('InnloggetSide', () => {
   it('skal vise innhold dersom man har rettigheter', () => {
     render(
         <MemoryRouter initialEntries={['/']}>
-          <EnvironmentProvider loginServiceUrl={"dummyURL"} sideTittel={"InnloggetSideTittel"}>
+          <EnvironmentProvider loginServiceUrl={"dummyURL"} sideTittel={"InnloggetSideTittel"} basePath={"dummy"}>
             <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={Status.Successfully}>
               <InnloggetSide>Barna</InnloggetSide>
             </ArbeidsgiverProvider>

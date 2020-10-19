@@ -7,8 +7,8 @@ export interface LoginExpiryResponse {
 
 export const ParseExpiryDate = (value: string) => new Date(value.substring(0, 23));
 
-const LoginExpiryAPI = (): Promise<LoginExpiryResponse> => {
-  return fetch('/api/v1/login-expiry', {
+const LoginExpiryAPI = (basePath: string): Promise<LoginExpiryResponse> => {
+  return fetch(basePath + '/api/v1/login-expiry', {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',

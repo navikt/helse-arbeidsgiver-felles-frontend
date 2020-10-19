@@ -53,12 +53,12 @@ const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
   const [ firma, setFirma ] = useState<string>('');
   const [ arbeidsgiverId, setArbeidsgiverId ] = useState<string>('');
   const [ ready, setReady ] = useState<boolean>();
-  const { loginServiceUrl } = useEnvironment();
+  const { loginServiceUrl, basePath } = useEnvironment();
 
   useEffect(() => {
     if (status == Status.NotStarted) {
       setStatus(Status.Started);
-      ArbeidsgiverAPI.GetArbeidsgivere().then(
+      ArbeidsgiverAPI.GetArbeidsgivere(basePath).then(
         res => {
           setStatus(res.status);
           setArbeidsgivere(res.organisasjoner)

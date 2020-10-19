@@ -40,7 +40,7 @@ const handleStatus = (response: Response) => {
   }
 }
 
-const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
+const GetArbeidsgivere = (basePath: string): Promise<ArbeidsgivereInterface> => {
   return Promise.race([
     new Promise((resolve, reject) =>
       setTimeout(() => reject("Tidsavbrudd"), 10000)
@@ -54,7 +54,7 @@ const GetArbeidsgivere = (): Promise<ArbeidsgivereInterface> => {
       organisasjoner: []
     }))
     ,
-    fetch("/api/v1/arbeidsgivere", {
+    fetch(basePath + "/api/v1/arbeidsgivere", {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
