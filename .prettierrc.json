@@ -1,6 +1,6 @@
 {
   "parser": "typescript",
-  "singleQuote": false,
+  "singleQuote": true,
   "bracketSpacing": true,
   "trailingComma": "none",
   "filepath": "src",
