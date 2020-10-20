@@ -19,6 +19,17 @@ describe('ArbeidsgiverContext', () => {
     container = document.createElement('div');
   });
 
+  const mockWindowLocation = jest.fn();
+  Object.defineProperty(window, 'location', {
+    value: {
+      hash: {
+        endsWith: mockWindowLocation,
+        includes: mockWindowLocation
+      },
+      assign: mockWindowLocation
+    },
+    writable: true
+  });
 
   it('should show spinner immediately', async () => {
     render(<ArbeidsgiverProvider arbeidsgivere={[]} status={Status.NotStarted}>Barn</ArbeidsgiverProvider>, container);
