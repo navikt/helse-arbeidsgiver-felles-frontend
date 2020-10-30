@@ -40,9 +40,11 @@ const buildArbeidsgiver = (
 const ArbeidsgiverContext = createContext(buildArbeidsgiverContext('', '', []));
 
 interface ArbeidsgiverContextProviderProps {
-  children: any,
-  status?: number,
+  children: any
+  status?: number
   arbeidsgivere?: Organisasjon[]
+  firma?: string
+  arbeidsgiverId?: string
 }
 
 const useArbeidsgiver = () => useContext(ArbeidsgiverContext);
@@ -50,8 +52,8 @@ const useArbeidsgiver = () => useContext(ArbeidsgiverContext);
 const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
   const [ status, setStatus ]  = useState<number>(props.status || Status.NotStarted);
   const [ arbeidsgivere, setArbeidsgivere ] = useState<Organisasjon[]>(props.arbeidsgivere || []);
-  const [ firma, setFirma ] = useState<string>('');
-  const [ arbeidsgiverId, setArbeidsgiverId ] = useState<string>('');
+  const [ firma, setFirma ] = useState<string>(props.firma || '');
+  const [ arbeidsgiverId, setArbeidsgiverId ] = useState<string>(props.arbeidsgiverId || '');
   const [ ready, setReady ] = useState<boolean>();
   const { loginServiceUrl, basePath } = useEnvironment();
 
