@@ -97,7 +97,7 @@ describe('ArbeidsgiverAPI', () => {
     } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockToken);
     expect(await ArbeidsgiverAPI.GetArbeidsgivere("")).toStrictEqual({
-      status: -1,
+      status: -2,
       organisasjoner: []
     });
   });
