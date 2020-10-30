@@ -36,7 +36,8 @@ const handleStatus = (response: Response) => {
       return Promise.reject(Status.Unauthorized)
     case 500:
       return Promise.reject(Status.Error)
-    default: Promise.reject(Status.Unknown);
+    default:
+      return Promise.reject(Status.Unknown);
   }
 }
 

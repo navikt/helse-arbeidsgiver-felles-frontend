@@ -90,6 +90,18 @@ describe('ArbeidsgiverAPI', () => {
     });
   });
 
+  it('skal håndtere responser vi ikke har tenkt på enda', async () => {
+    const mockToken = Promise.resolve({
+      status: 1234,
+      json: {},
+    } as Response);
+    jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockToken);
+    expect(await ArbeidsgiverAPI.GetArbeidsgivere("")).toStrictEqual({
+      status: -1,
+      organisasjoner: []
+    });
+  });
+
   it('skal håndtere timeout', async() => {
     jest.useFakeTimers();
 
