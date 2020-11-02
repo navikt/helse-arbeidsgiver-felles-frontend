@@ -33,7 +33,7 @@ const Upload = (props: UploadProps) => {
       <label className="knapp filknapp">
         <input className="fileinput"
                type="file"
-               id="fileUploader"
+               id={props.id}
                accept={props.extensions}
                onChange={handleUpload}
                onClick={(e: any) => e.target.value = null}/>
