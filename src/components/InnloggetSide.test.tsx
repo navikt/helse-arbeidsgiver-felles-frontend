@@ -21,20 +21,22 @@ describe('InnloggetSide', () => {
     container = document.createElement('div');
   });
 
-  const ARBEIDSGIVERE = [
+  const ARBEIDSGIVERE: Organisasjon[] = [
     {
-      'Name' : 'STADLANDET OG SINGSÅS',
-      'Type' : 'Enterprise',
-      'OrganizationForm' : 'AS',
-      'OrganizationNumber' : '911366940',
-      'Status' : 'Active'
-    } as Organisasjon, {
-      'Name' : 'HØNEFOSS OG ØLEN',
-      'Type' : 'Enterprise',
-      'OrganizationForm' : 'AS',
-      'OrganizationNumber' : '910020102',
-      'Status' : 'Active'
-    } as Organisasjon];
+      Name : 'STADLANDET OG SINGSÅS',
+      Type : 'Enterprise',
+      OrganizationForm : 'AS',
+      OrganizationNumber : '911366940',
+      Status : 'Active',
+      ParentOrganizationNumber: ''
+    },{
+      Name : 'HØNEFOSS OG ØLEN',
+      Type : 'Enterprise',
+      OrganizationForm : 'AS',
+      OrganizationNumber : '910020102',
+      Status : 'Active',
+      ParentOrganizationNumber: ''
+    }];
 
   it('skal kun vise feilmelding dersom man ikke har rettigheter', () => {
     render(
