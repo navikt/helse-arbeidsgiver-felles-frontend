@@ -4,7 +4,7 @@ import { History } from 'history';
 
 export const buildLoginContext = (loggedIn: boolean) => ({
   loggedIn: loggedIn,
-  setLoggedIn: (loggedIn: boolean) => {}
+  setLoggedIn: (isLoggedIn: boolean) => {}
 })
 
 const LoginContext = createContext(buildLoginContext(false));
