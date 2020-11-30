@@ -1,4 +1,3 @@
-import 'whatwg-fetch'
 
 export interface LoginExpiryResponse {
   status: number,

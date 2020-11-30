@@ -1,5 +1,4 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
-import 'whatwg-fetch'
 
 interface BackendOrganisasjon {
   name: string,

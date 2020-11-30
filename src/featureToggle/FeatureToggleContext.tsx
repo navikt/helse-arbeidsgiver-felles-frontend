@@ -1,7 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import fetchFeatureToggles from './fetchFeatureToggles';
 import { FeatureToggles } from './featureToggleInterface';
-import 'whatwg-fetch';
 
 interface FeatureToggleProps {
   children: React.ReactNode,

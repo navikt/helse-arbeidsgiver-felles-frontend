@@ -1,7 +1,5 @@
 import fetchFeatureToggles, { getFeatureToggleUrl, fetchToJson } from './fetchFeatureToggles';
 import { FeatureToggles } from '../featureToggle/featureToggleInterface';
-import 'whatwg-fetch'
-
 
 describe('getFeatureToggleUrl', () => {
     it('returnerer riktig path med to flagg', () => {
