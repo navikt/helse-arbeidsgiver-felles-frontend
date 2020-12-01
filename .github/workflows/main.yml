@@ -18,6 +18,10 @@ jobs:
       - uses: actions/checkout@master
       - run: npm ci
       - run: npm run-script build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: helse-arbeidsgiver-felles-frontend-artifact
+          path: ${{ github.workspace }}/lib/**/*
 
   Test:
     runs-on: ubuntu-latest

@@ -19,7 +19,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: ${{ github.workspace }}/dist/**/*
+          path: ${{ github.workspace }}/lib/**/*
 
   Test:
     runs-on: ubuntu-latest
@@ -74,7 +74,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: dist
+          path: lib
       - run: |
           git config --global user.email "helsearbeidsgiver@nav.no"
           git config --global user.name "HelseArbeidsgiver"
