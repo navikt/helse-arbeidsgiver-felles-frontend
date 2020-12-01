@@ -78,7 +78,7 @@ jobs:
       - run: |
           git config --global user.email "helsearbeidsgiver@nav.no"
           git config --global user.name "HelseArbeidsgiver"
-          npm version {{ env.RELEASE_VERSION }}
+          npm version ${{ github.event.release.tag_name }}
           git push
       - run: npm publish --access public
         env:
