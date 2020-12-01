@@ -11,6 +11,8 @@ on:
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
 
@@ -54,9 +56,6 @@ jobs:
           node-version: '12.x'
       - run: npm install --no-build sonarqube-scanner
       - run: node run-sonar.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Snyk:
     runs-on: ubuntu-latest
@@ -64,8 +63,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
   Publiser:
     needs: [Test,Eslint,SonarCube,Snyk,Bygg]
@@ -85,5 +82,3 @@ jobs:
           npm version ${{ github.event.release.tag_name }}
           git push
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
