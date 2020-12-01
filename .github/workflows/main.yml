@@ -10,6 +10,10 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
 
   Bygg:
