@@ -8,10 +8,9 @@ scanner(
             'sonar.organization': 'navit',
             'sonar.projectKey': 'navikt_helse-arbeidsgiver-felles-frontend',
             'sonar.sources': 'src',
-            'sonar.exlusions': 'src/index.tsx,src/app.tsx',
+            'sonar.exlusions': 'src/index.tsx,src/app.tsx,src/setupTests.ts',
             'sonar.javascript.lcov.reportPaths': './coverage/lcov.info',
-            'sonar.test.inclusions': 'src/**/*.test.ts,src/**/*.test.tsx',
-            'sonar.coverage.exclusions': 'src/**/*.test.tsx,src/index.tsx,src/app.tsx'
+            'sonar.test.inclusions': 'src/**/*.test.ts,src/**/*.test.tsx'
         }
     },
     () => process.exit()

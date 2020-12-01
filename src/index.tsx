@@ -7,6 +7,7 @@ import TokenExpiredContext from './context/TokenExpiredContext';
 import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 import { EnvironmentProvider, useEnvironment } from './context/EnvironmentContext';
+import { LoginProvider, useLogin } from './context/LoginContext';
 import './style/index.less';
 
 /**
@@ -24,5 +25,6 @@ export {
   ArbeidsgiverAPI, Status,
   LoginExpiryAPI, TokenExpiredContext,
   fetchFeatureToggles, FeatureToggleProvider,
-  EnvironmentProvider, useEnvironment
+  EnvironmentProvider, useEnvironment,
+  LoginProvider, useLogin
 }
