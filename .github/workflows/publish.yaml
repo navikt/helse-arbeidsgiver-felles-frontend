@@ -68,10 +68,11 @@ jobs:
     needs: [Test,Eslint,SonarCube,Snyk,Bygg]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
       - uses: actions/download-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
