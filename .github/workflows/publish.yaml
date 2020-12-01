@@ -82,3 +82,5 @@ jobs:
           npm version ${{ github.event.release.tag_name }}
           git push origin HEAD:main
       - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
