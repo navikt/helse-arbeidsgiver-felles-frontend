@@ -68,7 +68,7 @@ const ArbeidsgiverProvider = (props: ArbeidsgiverContextProviderProps) => {
         }
       )
     }
-  }, [ status, ready ]);
+  }, [ status, ready, basePath ]);
 
 
   if (status === Status.Unauthorized) {

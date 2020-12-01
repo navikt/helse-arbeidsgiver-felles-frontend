@@ -1,9 +1,9 @@
-import React from "react";
-import { Label, SkjemaelementFeilmelding } from "nav-frontend-skjema";
+import React from 'react';
+import { Label, SkjemaelementFeilmelding } from 'nav-frontend-skjema';
 import Flatpickr from 'react-flatpickr';
 import { Norwegian } from 'flatpickr/dist/l10n/no.js';
 import './DatoVelger.css';
-import moment from "moment";
+import moment from 'moment';
 import classNames from 'classnames';
 
 interface DatoVelgerProps {
@@ -27,7 +27,7 @@ const DatoVelger = (props: DatoVelgerProps) => {
       <Flatpickr
         id="datoId"
         placeholder={props.placeholder}
-        className={classNames('skjemaelement__input ', {'periodeinput__invalid': props.feilmelding})}
+        className={classNames('skjemaelement__input ', { 'periodeinput__invalid': props.feilmelding })}
         value={props.dato}
 
         options={{

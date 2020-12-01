@@ -22,7 +22,7 @@ const FeatureToggleProvider = (props: FeatureToggleProps) => {
     }
 
     fetchFlags();
-  }, [props.toggleDefaults])
+  }, [props.toggleDefaults, props.toggleServerUrl])
 
   return (<FeatureToggleContext.Provider value={toggleFlags}>{ props.children }</FeatureToggleContext.Provider>);
 };

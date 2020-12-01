@@ -8,7 +8,7 @@ import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
 import './InnloggetSide.sass';
 import { useArbeidsgiver } from '../context/ArbeidsgiverContext';
-import {useEnvironment} from "..";
+import { useEnvironment } from '..';
 
 interface SideProps {
   children: React.ReactNode,
