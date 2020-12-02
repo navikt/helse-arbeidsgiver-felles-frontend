@@ -1,4 +1,9 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=navikt_helse-arbeidsgiver-felles-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=navikt_helse-arbeidsgiver-felles-frontend)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=navikt_helse-arbeidsgiver-felles-frontend&metric=coverage)](https://sonarcloud.io/dashboard?id=navikt_helse-arbeidsgiver-felles-frontend)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=navikt_helse-arbeidsgiver-felles-frontend&metric=bugs)](https://sonarcloud.io/dashboard?id=navikt_helse-arbeidsgiver-felles-frontend)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=navikt_helse-arbeidsgiver-felles-frontend&metric=code_smells)](https://sonarcloud.io/dashboard?id=navikt_helse-arbeidsgiver-felles-frontend)
+![CI](https://github.com/navikt/helse-arbeidsgiver-felles-frontend/workflows/CI/badge.svg)
+![Publish](https://github.com/navikt/helse-arbeidsgiver-felles-frontend/workflows/Publish/badge.svg)
+
 
 # helse-arbeidsgiver-felles-frontend
 
