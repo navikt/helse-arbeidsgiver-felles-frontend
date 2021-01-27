@@ -12,6 +12,8 @@ interface DatoVelgerProps {
   feilmelding?: string,
   placeholder?: string
   onChange: (dato: Date) => void
+  id?: string
+  className?: string
 }
 
 const formatDato = (dato?: Date) => (dato ? moment(dato).format('DD.MM.YYYY') : '')
@@ -23,11 +25,11 @@ const DatoVelger = (props: DatoVelgerProps) => {
 
   return (
     <div className={'skjemaelement'}>
-      <Label htmlFor="datoId">{props.label}</Label>
+      <Label htmlFor={props.id ?? 'datoId'}>{props.label}</Label>
       <Flatpickr
-        id="datoId"
+        id={props.id ?? 'datoId'}
         placeholder={props.placeholder}
-        className={classNames('skjemaelement__input ', { 'periodeinput__invalid': props.feilmelding })}
+        className={classNames('skjemaelement__input ', props.className)}
         value={props.dato}
 
         options={{
