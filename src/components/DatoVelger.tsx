@@ -25,9 +25,9 @@ const DatoVelger = (props: DatoVelgerProps) => {
 
   return (
     <div className={'skjemaelement'}>
-      <Label htmlFor={props.id ?? 'datoId'}>{props.label}</Label>
+      <Label htmlFor={props.id ?? 'datoVelgerId'}>{props.label}</Label>
       <Flatpickr
-        id={props.id ?? 'datoId'}
+        id={props.id ?? 'datoVelgerId'}
         placeholder={props.placeholder}
         className={classNames('skjemaelement__input ', props.className)}
         value={props.dato}
