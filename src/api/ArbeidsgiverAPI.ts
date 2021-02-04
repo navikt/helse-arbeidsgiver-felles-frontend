@@ -59,6 +59,7 @@ const GetArbeidsgivere = (basePath: string): Promise<ArbeidsgivereInterface> => 
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
+      credentials: 'same-origin',
       method: 'GET',
     })
       .then(handleStatus)
