@@ -12,6 +12,7 @@ const LoginExpiryAPI = (basePath: string): Promise<LoginExpiryResponse> => {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
+    credentials: 'include',
     method: 'GET',
   }).then(response => {
     if (response.status === 200) {
