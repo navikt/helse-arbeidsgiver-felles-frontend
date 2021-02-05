@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { act, render, screen, wait } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import FeatureToggleProvider from './FeatureToggleContext';
 import { FeatureToggles } from './featureToggleInterface';
 import FeatureToggleConsumer from '../FeatureToggleConsumer';
@@ -23,7 +23,7 @@ describe('FeatureToggleProvider', () => {
             </FeatureToggleProvider>);
         });
         expect(screen.getByText('Barn'));
-        await wait(() => {
+        await waitFor(() => {
             expect(screen.getByText(/Satt/));
         });
     })
