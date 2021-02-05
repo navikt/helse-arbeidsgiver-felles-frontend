@@ -3,7 +3,7 @@ import { Label, SkjemaelementFeilmelding } from 'nav-frontend-skjema';
 import Flatpickr from 'react-flatpickr';
 import { Norwegian } from 'flatpickr/dist/l10n/no.js';
 import './DatoVelger.css';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import classNames from 'classnames';
 
 interface DatoVelgerProps {
@@ -16,7 +16,7 @@ interface DatoVelgerProps {
   className?: string
 }
 
-const formatDato = (dato?: Date) => (dato ? moment(dato).format('DD.MM.YYYY') : '')
+const formatDato = (dato?: Date) => (dato ? dayjs(dato).format('DD.MM.YYYY') : '')
 
 const DatoVelger = (props: DatoVelgerProps) => {
   const handleClose = (dato: Date) => {
