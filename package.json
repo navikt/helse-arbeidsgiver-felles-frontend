@@ -1,7 +1,7 @@
 {
   "name": "@navikt/helse-arbeidsgiver-felles-frontend",
   "description": "Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver",
-  "version": "0.1.52",
+  "version": "0.1.53",
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
