@@ -14,6 +14,9 @@ interface DatoVelgerProps {
   onChange: (dato: Date) => void
   id?: string
   className?: string
+  minDate?: string|Date
+  maxDate?: string|Date
+  defaultDate?: string|Date
 }
 
 const formatDato = (dato?: Date) => (dato ? dayjs(dato).format('DD.MM.YYYY') : '')
@@ -22,6 +25,24 @@ const DatoVelger = (props: DatoVelgerProps) => {
   const handleClose = (dato: Date) => {
     props.onChange(dato);
   };
+
+  const options = {
+    enableTime: false,
+    mode: 'single',
+    dateFormat: 'd.m.Y',
+    locale: Norwegian,
+    allowInput: true,
+    clickOpens: true,
+    formatDate: formatDato,
+    onClose: (selectedDate: Date[]) => handleClose(selectedDate[0]),
+    minDate: props.minDate,
+    maxDate: props.maxDate,
+    defaultDate: props.defaultDate
+  }
+
+  if(!props.minDate) delete options.minDate;
+  if(!props.maxDate) delete options.maxDate;
+  if(!props.defaultDate) delete options.defaultDate;
 
   return (
     <div className={'skjemaelement'}>
