@@ -26,23 +26,15 @@ const DatoVelger = (props: DatoVelgerProps) => {
     props.onChange(dato);
   };
 
-  const options = {
-    enableTime: false,
-    mode: 'single',
-    dateFormat: 'd.m.Y',
-    locale: Norwegian,
-    allowInput: true,
-    clickOpens: true,
-    formatDate: formatDato,
-    onClose: (selectedDate: Date[]) => handleClose(selectedDate[0]),
+  const callendarOptions = {
     minDate: props.minDate,
     maxDate: props.maxDate,
     defaultDate: props.defaultDate
   }
 
-  if(!props.minDate) delete options.minDate;
-  if(!props.maxDate) delete options.maxDate;
-  if(!props.defaultDate) delete options.defaultDate;
+  if(!props.minDate) delete callendarOptions.minDate;
+  if(!props.maxDate) delete callendarOptions.maxDate;
+  if(!props.defaultDate) delete callendarOptions.defaultDate;
 
   return (
     <div className={'skjemaelement'}>
@@ -52,7 +44,6 @@ const DatoVelger = (props: DatoVelgerProps) => {
         placeholder={props.placeholder}
         className={classNames('skjemaelement__input ', props.className)}
         value={props.dato}
-
         options={{
           enableTime: false,
           mode: 'single',
@@ -61,7 +52,8 @@ const DatoVelger = (props: DatoVelgerProps) => {
           allowInput: true,
           clickOpens: true,
           formatDate: formatDato,
-          onClose: (selectedDate: Date[]) => handleClose(selectedDate[0])
+          onClose: (selectedDate: Date[]) => handleClose(selectedDate[0]),
+          ...callendarOptions
         }}
       />
       {
