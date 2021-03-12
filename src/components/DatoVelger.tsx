@@ -36,13 +36,16 @@ const DatoVelger = (props: DatoVelgerProps) => {
   if(!props.maxDate) delete callendarOptions.maxDate;
   if(!props.defaultDate) delete callendarOptions.defaultDate;
 
+
+  const feilmeldingClassName = props.feilmelding ? 'skjemaelement__input--harFeil': '';
+
   return (
     <div className={'skjemaelement'}>
       <Label htmlFor={props.id ?? 'datoVelgerId'}>{props.label}</Label>
       <Flatpickr
         id={props.id ?? 'datoVelgerId'}
         placeholder={props.placeholder}
-        className={classNames('skjemaelement__input ', props.className)}
+        className={classNames('skjemaelement__input', feilmeldingClassName , props.className)}
         value={props.dato}
         options={{
           enableTime: false,
