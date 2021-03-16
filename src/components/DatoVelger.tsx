@@ -17,6 +17,7 @@ interface DatoVelgerProps {
   minDate?: string|Date
   maxDate?: string|Date
   defaultDate?: string|Date
+  disabled?: boolean
 }
 
 const formatDato = (dato?: Date) => (dato ? dayjs(dato).format('DD.MM.YYYY') : '')
@@ -47,6 +48,7 @@ const DatoVelger = (props: DatoVelgerProps) => {
         placeholder={props.placeholder}
         className={classNames('skjemaelement__input', feilmeldingClassName , props.className)}
         value={props.dato}
+        disabled={props.disabled}
         options={{
           enableTime: false,
           mode: 'single',
