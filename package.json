@@ -5,15 +5,15 @@
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
-  "main": "lib/helse-arbeidsgiver-felles-frontend.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/esm/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "webpack && tsc --project tsconfig.types.json",
+    "build": "tsc --module es2020",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
