@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import classNames from 'classnames';
 
 interface DatoVelgerProps {
-  label: string
+  label?: React.ReactNode;
   dato?: Date
   feilmelding?: string,
   placeholder?: string
