@@ -6,6 +6,7 @@ interface HjelpeLabelProps {
   children: any;
 }
 
+
 const HjelpeLabel = (props: HjelpeLabelProps) => (
   <div style={{ display: 'flex' }}>
     {props.label}
