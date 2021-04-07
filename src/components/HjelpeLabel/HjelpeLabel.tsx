@@ -1,5 +1,5 @@
-import Hjelpetekst from 'nav-frontend-hjelpetekst';
 import React from 'react';
+import Hjelpetekst from 'nav-frontend-hjelpetekst';
 
 interface HjelpeLabelProps {
   label: string;
