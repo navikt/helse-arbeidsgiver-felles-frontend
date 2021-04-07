@@ -8,7 +8,6 @@ import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
 import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
 import { EnvironmentProvider, useEnvironment } from './context/EnvironmentContext';
 import { LoginProvider, useLogin } from './context/LoginContext';
-import './style/index.less';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
