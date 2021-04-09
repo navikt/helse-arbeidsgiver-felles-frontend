@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "tsc --module es2020",
+    "build": "sass src:lib/esm; tsc --module es2020",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
