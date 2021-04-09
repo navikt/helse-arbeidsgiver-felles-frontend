@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
     "outDir": "lib/esm",
-//    "module": "esnext",
-//    "target": "es5",
-//    "lib": ["es2020"],
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
@@ -19,5 +16,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "lib", "src/app.tsx", "src/setupTests.ts"]
 }

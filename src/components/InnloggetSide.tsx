@@ -6,7 +6,7 @@ import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import { History } from 'history';
 import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
-import './InnloggetSide.sass';
+import './InnloggetSide.css';
 import { useArbeidsgiver } from '../context/ArbeidsgiverContext';
 import { useEnvironment } from '..';
 
