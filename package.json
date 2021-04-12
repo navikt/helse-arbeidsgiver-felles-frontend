@@ -5,15 +5,16 @@
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
-  "main": "./lib/esm/index.js",
-  "module": "./lib/esm/index.js",
-  "types": "./lib/esm/index.d.ts",
+  "main": "./lib/js/index.js",
+  "module": "./lib/js/index.js",
+  "types": "./lib/js/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "sass src:lib/esm; tsc --module es2020",
+    "prebuild": "sass src:lib/js",
+    "build": "tsc --module commonjs",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
@@ -110,7 +111,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-typescript": "^0.14.0",
     "isomorphic-fetch": "^3.0.0",
-    "jest": "^26.6.3",
+    "jest": "^26.6.0",
     "jest-axe": "^4.1.0",
     "jest-css-modules": "^2.1.0",
     "less-loader": "^8.0.0",
