@@ -1,6 +1,6 @@
 import buildResources from './BuildResources';
 
-const languageInit = (i18n, lang: string, defaultLanguage: string, languages: Array<string>, languages2: Record<string, Record<string, string>>) => {
+const languageInit = (i18n: any, lang: string, defaultLanguage: string, languages: Array<string>, languages2: Record<string, Record<string, string>>) => {
     i18n.init({
         resources: buildResources(lang, languages, languages2),
         fallbackLng: defaultLanguage,

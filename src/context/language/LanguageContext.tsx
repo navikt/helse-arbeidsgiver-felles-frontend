@@ -17,8 +17,8 @@ interface LanguageContextProviderProps {
   children: any;
   defaultLanguage: 'nb' | 'nn' | 'en' | 'se' | 'pl';
   languages: Array<string>;
-  useParams;
-  i18n;
+  useParams: any;
+  i18n: any;
   bundle: Record<string, Record<string, string>>;
 }
 
