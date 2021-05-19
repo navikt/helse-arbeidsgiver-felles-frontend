@@ -131,7 +131,8 @@
     "nav-frontend-typografi-style": "1.x",
     "nav-frontend-veileder-style": "2.x",
     "nav-frontend-veilederpanel-style": "1.x",
-    "snyk": "1.x"
+    "snyk": "1.x",
+    "ts-jest": "^26.5.6"
   },
   "resolutions": {
     "postcss": "^8.2.10",
