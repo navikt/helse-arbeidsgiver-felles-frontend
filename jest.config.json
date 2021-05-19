@@ -7,7 +7,7 @@
     "./setupTests.ts"
   ],
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "<rootDir>/node_modules/babel-jest"
   },
   "moduleNameMapper": {
     "\\.(css|jpg|png|svg|less|sass|scss)$": "<rootDir>/../node_modules/jest-css-modules",
