@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "lib/js",
-    "jsx": "react-jsx",
+    "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": false,
@@ -14,21 +14,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src"
@@ -38,6 +24,7 @@
     "lib",
     "src/app.tsx",
     "src/setupTests.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "react-app-env.d.ts"
   ]
 }
