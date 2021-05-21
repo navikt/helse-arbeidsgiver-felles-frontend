@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "outDir": "lib/js",
     "jsx": "react-jsx",
     "declaration": true,
