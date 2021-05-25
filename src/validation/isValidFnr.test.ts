@@ -1,5 +1,5 @@
 import isValidFnr from './isValidFnr';
-import testFnr from '../mockData/testFnr';
+import testFnr from '../mock/testFnr';
 
 describe('isValidFnr', () => {
   it('should return true for valid fødselsnummer', () => {
