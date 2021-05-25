@@ -107,9 +107,11 @@
     "isomorphic-fetch": "3.x",
     "jest-axe": "4.x",
     "jest-css-modules": "2.x",
+    "mockdate": "^3.0.5",
     "prettier": "2.x",
     "react-scripts": "4.x",
     "sass": "^1.x",
+    "timezone-mock": "1.x",
     "ts-jest": "26.x",
     "typescript": "4.x",
     "yet-another-fetch-mock": "4.x"
@@ -136,6 +138,7 @@
   },
   "resolutions": {
     "postcss": "^8.2.10",
+    "jest": "26.6.0",
     "webpack": "4.44.2"
   },
   "snyk": true
