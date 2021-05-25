@@ -1,4 +1,4 @@
-import ArbeidsgiverAPI, { Status } from './ArbeidsgiverAPI';
+import ArbeidsgiverAPI, { Status } from '../ArbeidsgiverAPI';
 
 describe('ArbeidsgiverAPI', () => {
 
