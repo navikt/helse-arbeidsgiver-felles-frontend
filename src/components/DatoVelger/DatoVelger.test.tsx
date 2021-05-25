@@ -1,7 +1,6 @@
-import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { ArbeidsgiverProvider } from '..';
-import { Status } from '../api/ArbeidsgiverAPI';
+import { ArbeidsgiverProvider } from '../../index';
+import { Status } from '../../api/ArbeidsgiverAPI';
 import { MemoryRouter } from 'react-router-dom';
 import DatoVelger from './DatoVelger';
 

@@ -1,8 +1,7 @@
-import React from 'react'
 import InnloggetSide from './InnloggetSide';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { ArbeidsgiverProvider, EnvironmentProvider } from '..';
-import { Status } from '../api/ArbeidsgiverAPI';
+import { ArbeidsgiverProvider, EnvironmentProvider } from '../../index';
+import { Status } from '../../api/ArbeidsgiverAPI';
 import { MemoryRouter } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 

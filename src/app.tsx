@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import InnloggetSide from './components/InnloggetSide';
+import InnloggetSide from './components/Side/InnloggetSide';
 import { ArbeidsgiverProvider, FeatureToggleProvider } from './index';
 import FeatureToggleConsumer from './FeatureToggleConsumer';
 import { BrowserRouter } from 'react-router-dom';
