@@ -1,9 +1,9 @@
-import { validateTil } from './validateTil';
-import { parseDato } from '../utils/dato/parseDato';
+import validateTil from './validateTil';
+import parseDato  from '../utils/dato/parseDato';
 
 describe('validateTil', () => {
 
-  const minDate = new Date(2021,1,29)
+  const minDate = new Date(2021,0,29)
 
   it('should not show errors when valid', () => {
     expect(validateTil(parseDato('01.02.2021'), parseDato('03.04.2021'),minDate, false)).toBeUndefined();

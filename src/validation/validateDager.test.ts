@@ -1,5 +1,5 @@
 import Dato from '../utils/dato/Dato';
-import { parseDato } from '../utils/dato/parseDato';
+import parseDato  from '../utils/dato/parseDato';
 import validateDager from './validateDager';
 
 describe('validateDager', () => {

@@ -1,4 +1,4 @@
-import { parseDato } from './parseDato';
+import parseDato  from './parseDato';
 
 describe('parseDato', () => {
   it('should parse dato', () => {

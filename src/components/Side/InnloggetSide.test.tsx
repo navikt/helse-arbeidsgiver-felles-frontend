@@ -1,9 +1,10 @@
 import InnloggetSide from './InnloggetSide';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { ArbeidsgiverProvider, EnvironmentProvider } from '../../index';
-import { Status } from '../../api/ArbeidsgiverAPI';
 import { MemoryRouter } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
+import { ArbeidsgiverProvider } from '../../context/arbeidsgiver/ArbeidsgiverContext';
+import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
+import { EnvironmentProvider } from '../../context/EnvironmentContext';
 
 describe('InnloggetSide', () => {
 
@@ -40,7 +41,7 @@ describe('InnloggetSide', () => {
   it('skal kun vise feilmelding dersom man ikke har rettigheter', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
-        <ArbeidsgiverProvider arbeidsgivere={[]} status={Status.Successfully}>
+        <ArbeidsgiverProvider arbeidsgivere={[]} status={ArbeidsgiverStatus.Successfully} baseUrl={''}>
           <InnloggetSide>Barna</InnloggetSide>
         </ArbeidsgiverProvider>
       </MemoryRouter>
@@ -56,7 +57,7 @@ describe('InnloggetSide', () => {
     render(
         <MemoryRouter initialEntries={['/']}>
           <EnvironmentProvider loginServiceUrl={'dummyURL'} sideTittel={'InnloggetSideTittel'} basePath={'dummy'}>
-            <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={Status.Successfully}>
+            <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={ArbeidsgiverStatus.Successfully} baseUrl={''}>
               <InnloggetSide>Barna</InnloggetSide>
             </ArbeidsgiverProvider>
           </EnvironmentProvider>
@@ -64,7 +65,7 @@ describe('InnloggetSide', () => {
         , container
     );
     expect(container.textContent).not.toContain('Du har ikke rettigheter til å søke om refusjon for noen bedrifter');
-    expect(container.textContent).toContain('Min side arbeidsgiver');
+    expect(container.textContent).toContain('INNLOGGET_SIDE_MIN_SIDE');
     expect(container.textContent).toContain('Barna');
     expect(container.textContent).toContain('InnloggetSideTittel');
   })

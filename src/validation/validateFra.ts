@@ -1,5 +1,5 @@
 import { Dato } from '../utils/dato/Dato';
-import isBeforeMinDate from '../utils/isBeforeMinDate';
+import isBeforeDate from '../utils/dato/isBeforeDate';
 import ValidationResult from './ValidationResult';
 
 export interface ValidateFraResult extends ValidationResult {
@@ -11,7 +11,7 @@ export const validateFra = (fra: Dato | undefined, minDate: Date, required: bool
     return { key: 'VALIDATE_FRA_MISSING' };
   }
 
-  if (required && fra?.value && isBeforeMinDate(fra, minDate)) {
+  if (required && fra?.value && isBeforeDate(fra, minDate)) {
     return {
       key: 'VALIDATE_FRA_FOM_INVALID',
       value: minDate.toLocaleDateString('nb')

@@ -2,8 +2,8 @@ import React, { createContext, useEffect, useState } from 'react';
 import GetLoginExpiry from '../../api/loginexpiry/LoginExpiryAPI';
 import { TilgangsfeilSide } from '../../components/login/TilgangsfeilSide';
 import { LoginStatus } from './LoginStatus';
-import { LoginRedirect } from './LoginRedirect';
-import { LoginChecking } from './LoginChecking';
+import LoginRedirect from './LoginRedirect';
+import LoginChecking from './LoginChecking';
 
 const LoginContext = createContext({});
 
@@ -14,7 +14,7 @@ interface LoginContextProviderProps {
   status?: LoginStatus;
 }
 
-export const LoginProvider = ({ baseUrl, children, status = LoginStatus.Checking }: LoginContextProviderProps) => {
+export const LoginProvider = ({ baseUrl, children, loginServiceUrl, status = LoginStatus.Checking }: LoginContextProviderProps) => {
   const [expiry, setExpiry] = useState<number>(status);
   useEffect(() => {
     if (expiry === LoginStatus.Checking) {
@@ -35,7 +35,7 @@ export const LoginProvider = ({ baseUrl, children, status = LoginStatus.Checking
     case LoginStatus.Checking:
       return <LoginChecking />;
     case LoginStatus.MustLogin:
-      return <LoginRedirect />;
+      return <LoginRedirect loginServiceUrl={ loginServiceUrl }/>;
     case LoginStatus.Failed:
       return <TilgangsfeilSide />;
     default:

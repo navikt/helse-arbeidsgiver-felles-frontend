@@ -3,7 +3,7 @@ import parseDatoVerify from './parseDatoVerify';
 
 const NORWAY_REGEX = new RegExp('^(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4})$');
 
-export const parseDato = (date: string): Dato => {
+const parseDato = (date: string): Dato => {
   if (!NORWAY_REGEX.test(date)) {
     return {
       value: date,
@@ -16,3 +16,5 @@ export const parseDato = (date: string): Dato => {
   const year = parseInt(arr[2]);
   return parseDatoVerify(year, month, day, date);
 };
+
+export default parseDato

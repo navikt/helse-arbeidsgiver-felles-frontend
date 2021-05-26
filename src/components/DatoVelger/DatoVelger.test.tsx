@@ -1,8 +1,8 @@
 import { render, unmountComponentAtNode } from 'react-dom';
-import { ArbeidsgiverProvider } from '../../index';
-import { Status } from '../../api/ArbeidsgiverAPI';
 import { MemoryRouter } from 'react-router-dom';
 import DatoVelger from './DatoVelger';
+import { ArbeidsgiverProvider } from "../../context/arbeidsgiver/ArbeidsgiverContext";
+import ArbeidsgiverStatus from "../../context/arbeidsgiver/ArbeidsgiverStatus";
 
 describe('DatoVelger', () => {
 
@@ -23,7 +23,7 @@ describe('DatoVelger', () => {
 
     render(
       <MemoryRouter initialEntries={['/']}>
-        <ArbeidsgiverProvider arbeidsgivere={[]} status={Status.Successfully}>
+        <ArbeidsgiverProvider arbeidsgivere={[]} status={ArbeidsgiverStatus.Successfully} baseUrl=''>
           <DatoVelger label='dato-velger-label' onChange={() => {}} feilmelding={''}/>
         </ArbeidsgiverProvider>
       </MemoryRouter>
@@ -37,7 +37,7 @@ describe('DatoVelger', () => {
 
     render(
       <MemoryRouter initialEntries={['/']}>
-        <ArbeidsgiverProvider arbeidsgivere={[]} status={Status.Successfully}>
+        <ArbeidsgiverProvider arbeidsgivere={[]} status={ArbeidsgiverStatus.Successfully} baseUrl=''>
           <DatoVelger label='dato-velger-label' onChange={() => {}} feilmelding={'feilmelding'}/>
         </ArbeidsgiverProvider>
       </MemoryRouter>

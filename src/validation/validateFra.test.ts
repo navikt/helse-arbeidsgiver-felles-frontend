@@ -1,9 +1,9 @@
 import validateFra from './validateFra';
-import { parseDato } from '../utils/dato/parseDato';
+import parseDato  from '../utils/dato/parseDato';
 
 describe('validateFra', () => {
 
-  const minDate = new Date(2021,1,29)
+  const minDate = new Date(2021,0,29)
 
   it('should not show error when valid value and not required', () => {
     expect(validateFra(parseDato('01.02.2021'),minDate, true)).toBeUndefined();

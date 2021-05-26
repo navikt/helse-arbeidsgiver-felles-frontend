@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import { Dato } from './dato/Dato';
+import { Dato } from './Dato';
 
-const isBeforeMinDate = (dagen: Dato, minDate: Date): boolean => {
+const isBeforeDate = (dagen: Dato, minDate: Date): boolean => {
   const currentDate: string =
     dagen.year +
     '-' +
@@ -13,4 +13,4 @@ const isBeforeMinDate = (dagen: Dato, minDate: Date): boolean => {
   return dayjs(currentDate).isBefore(minDate);
 };
 
-export default isBeforeMinDate;
+export default isBeforeDate;

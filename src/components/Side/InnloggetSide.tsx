@@ -7,11 +7,11 @@ import { History } from 'history';
 import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
 import './InnloggetSide.css';
-import { useEnvironment } from '../../index';
 import { useArbeidsgiver } from '../../context/arbeidsgiver/ArbeidsgiverContext';
-import { useTranslation } from "react-i18next";
-import Oversettelse from "../Oversettelse/Oversettelse";
-import { Locale } from "../../locale/Locale";
+import { useTranslation } from 'react-i18next';
+import Oversettelse from '../Oversettelse/Oversettelse';
+import { Locale } from '../../locale/Locale';
+import { useEnvironment } from '../../context/EnvironmentContext';
 
 interface SideProps {
   children: React.ReactNode,
@@ -46,7 +46,6 @@ const InnloggetSide = (props: SideProps) => {
         {arbeidsgivere.length === 0 &&
           <AlertStripeAdvarsel>
             <Oversettelse langKey={InnloggetSideKeys.UTEN_RETTIGHETER}/>
-
             <p>Du har ikke rettigheter til å søke om refusjon for noen bedrifter</p>
             <p>Tildeling av roller foregår i Altinn</p>
             <Link to="/min-side-arbeidsgiver/informasjon-om-tilgangsstyring">

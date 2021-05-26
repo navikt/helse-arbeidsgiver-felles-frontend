@@ -1,12 +1,12 @@
 import { Dato } from '../utils/dato/Dato';
-import isBeforeMinDate from '../utils/isBeforeMinDate';
+import isBeforeDate from '../utils/dato/isBeforeDate';
 import ValidationResult from './ValidationResult';
 
 export interface ValidateTilResult extends ValidationResult {
   key: 'VALIDATE_TIL_MISSING' | 'VALIDATE_TIL_INVALID' | 'VALIDATE_TIL_FOM_ERROR' | 'VALIDATE_TIL_ERROR'| 'VALIDATE_TIL_TOO_EARLY'
 }
 
-export const validateTil = (
+const validateTil = (
   fra: Dato | undefined,
   til: Dato | undefined,
   minDate: Date,
@@ -16,7 +16,7 @@ export const validateTil = (
     return required ? { key: 'VALIDATE_TIL_MISSING' } : undefined;
   }
 
-  if (required && til?.value && isBeforeMinDate(til, minDate)) {
+  if (required && til?.value && isBeforeDate(til, minDate)) {
     return {
       key: 'VALIDATE_TIL_INVALID',
       value: minDate.toLocaleDateString('nb')
