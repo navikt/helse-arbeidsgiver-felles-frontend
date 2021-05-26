@@ -1,5 +1,4 @@
 import validateBekreft from './validateBekreft';
-import LangKey from '../locale/LangKey';
 
 describe('validateBekreft', () => {
   it('should not produce error when checked', () => {
