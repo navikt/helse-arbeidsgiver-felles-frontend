@@ -4,7 +4,6 @@ import { MemoryRouter } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import { ArbeidsgiverProvider } from '../../context/arbeidsgiver/ArbeidsgiverContext';
 import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
-import { EnvironmentProvider } from '../../context/EnvironmentContext';
 
 describe('InnloggetSide', () => {
 
@@ -56,11 +55,9 @@ describe('InnloggetSide', () => {
   it('skal vise innhold dersom man har rettigheter', () => {
     render(
         <MemoryRouter initialEntries={['/']}>
-          <EnvironmentProvider loginServiceUrl={'dummyURL'} sideTittel={'InnloggetSideTittel'} basePath={'dummy'}>
             <ArbeidsgiverProvider arbeidsgivere={ARBEIDSGIVERE} status={ArbeidsgiverStatus.Successfully} baseUrl={''}>
               <InnloggetSide>Barna</InnloggetSide>
             </ArbeidsgiverProvider>
-          </EnvironmentProvider>
         </MemoryRouter>
         , container
     );

@@ -11,6 +11,7 @@ import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import { useTranslation } from 'react-i18next';
 import { IngenTilgangAdvarsel } from '../login/IngenTilgangAdvarsel';
 import { useArbeidsgiver } from '../../context/arbeidsgiver/ArbeidsgiverContext';
+import { Locale } from '../../locale/Locale';
 
 interface SideProps {
   children: React.ReactNode;
@@ -21,9 +22,17 @@ interface SideProps {
   bedriftsmeny?: boolean;
 }
 
-export const SIDE_MIN_SIDE_ARBEIDSGIVER = 'MIN_SIDE';
 
+enum SideKeys {
+  MIN_SIDE = 'MIN_SIDE'
+}
 
+export const SideLanguage: Record<SideKeys, Locale> = {
+  MIN_SIDE: {
+    nb: 'Min side arbeidsgiver',
+    en: 'My page employer'
+  },
+};
 
 const Side = (props: SideProps) => {
   const history: History = useHistory();
@@ -46,7 +55,7 @@ const Side = (props: SideProps) => {
           <Row>
             <Column>
               <div className={'side__minside_arbeidsgiver'}>
-                <Lenke href='/min-side-arbeidsgiver/'>&lt;&lt; {t(SIDE_MIN_SIDE_ARBEIDSGIVER)}</Lenke>
+                <Lenke href='/min-side-arbeidsgiver/'>&lt;&lt; {t(SideKeys.MIN_SIDE)}</Lenke>
               </div>
             </Column>
           </Row>

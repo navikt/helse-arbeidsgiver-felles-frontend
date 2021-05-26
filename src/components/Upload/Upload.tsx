@@ -1,6 +1,19 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Feilmelding } from 'nav-frontend-typografi';
 import './Upload.sass';
+import { Locale } from '../../locale/Locale';
+import { useTranslation } from 'react-i18next';
+
+enum UploadKeys {
+  TOO_BIG = 'TOO_BIG',
+}
+
+export const UploadLanguage: Record<UploadKeys, Locale> = {
+  TOO_BIG: {
+    nb: 'Filen er for stor',
+    en: 'File size too big'
+  }
+};
 
 interface UploadProps {
   id: string
@@ -11,6 +24,7 @@ interface UploadProps {
 }
 
 const Upload = (props: UploadProps) => {
+  const { t } = useTranslation();
   const [filnavn, setFilnavn] = useState<string>(props.label);
   const [feilmelding, setFeilmelding] = useState<string>('');
   const handleUpload = (event: ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +32,7 @@ const Upload = (props: UploadProps) => {
       const file = event.target.files[0];
       if (file.size > props.fileSize) {
         setFilnavn(props.label);
-        setFeilmelding('Filen er for stor');
+        setFeilmelding(t(UploadKeys.TOO_BIG));
       } else {
         setFilnavn(file.name);
         setFeilmelding('');

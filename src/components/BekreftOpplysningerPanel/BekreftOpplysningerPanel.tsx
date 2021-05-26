@@ -12,7 +12,7 @@ enum BekreftOpplysningerKeys {
   OPPLYSNINGER = 'BEKREFTOPPLYSNINGER_BEKREFT_OPPLYSNINGER'
 }
 
-export const InnloggetSideLanguage: Record<BekreftOpplysningerKeys, Locale> = {
+export const BekreftOpplysningerLanguage: Record<BekreftOpplysningerKeys, Locale> = {
   BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
     nb:
       'Jeg bekrefter at jeg har satt meg inn i reglene, og at opplysningene jeg har gitt, er riktige og fullstendige. ' +

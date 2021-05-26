@@ -9,14 +9,11 @@ interface SoknadTittelProps {
   subtitle?: string;
 }
 
-
-const SOKNAD_TITTEL = 'SOEKNADSSKJEMA'
-
 const SoknadTittel = (props: SoknadTittelProps) => {
   const { t } = useTranslation();
   return (
     <Panel className='panel--heading'>
-      <Undertittel>{props.subtitle ? props.subtitle.toUpperCase() : t(SOKNAD_TITTEL)}</Undertittel>
+      <Undertittel>{props.subtitle ? props.subtitle.toUpperCase() : '&nbsp;'}</Undertittel>
       <Innholdstittel>{props.children}</Innholdstittel>
     </Panel>
   );
