@@ -3,9 +3,8 @@ import { BekreftCheckboksPanel, SkjemaGruppe } from 'nav-frontend-skjema';
 import React from 'react';
 import './BekreftOpplysningerPanel.scss';
 import { useTranslation } from 'react-i18next';
-import Tekstomrade from 'nav-frontend-tekstomrade';
-import { LenkeRule } from '../Oversettelse/Lenke';
 import { Locale } from '../../locale/Locale';
+import Oversettelse from '../Oversettelse/Oversettelse';
 
 enum BekreftOpplysningerKeys {
   LABEL = 'BEKREFTOPPLYSNINGER_BEKREFT_LABEL',
@@ -53,11 +52,7 @@ const BekreftOpplysningerPanel = (props: BekreftOpplysningerPanelProps) => {
           feil={props.feil}
           onChange={props.onChange}
         >
-          <p>
-            <Tekstomrade rules={[LenkeRule]}>
-              {t(BekreftOpplysningerKeys.OPPLYSNINGER)}
-            </Tekstomrade>
-          </p>
+          <Oversettelse langKey={BekreftOpplysningerKeys.OPPLYSNINGER}/>
         </BekreftCheckboksPanel>
       </SkjemaGruppe>
     </Panel>

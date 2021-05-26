@@ -1,5 +1,5 @@
 import mapArbeidsgiver from './mapArbeidsgiver';
-import testBackendOrganisasjoner from "../../mock/testBackendOrganisasjoner";
+import testBackendOrganisasjoner from '../../mock/testBackendOrganisasjoner';
 
 describe('mapArbeidsgiver', () => {
   it('should map backend data to something useable', () => {
