@@ -5,7 +5,6 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import LoggetUtAdvarsel from './LoggetUtAdvarsel';
 import { Router } from 'react-router-dom';
 import mockHistory from '../../mock/mockHistory';
-import LangKey from '../../locale/LangKey';
 
 describe('LoggetUtAdvarsel', () => {
   it('should display the modal if the token is invalid', () => {
@@ -14,8 +13,7 @@ describe('LoggetUtAdvarsel', () => {
         <LoggetUtAdvarsel onClose={jest.fn()} loginServiceUrl={''} tokenFornyet={''} />
       </Router>
     );
-
-    expect(screen.getByText(LangKey.LOGGET_UT)).toBeInTheDocument();
+    expect(screen.getByText('LOGGET_UT_ADVARSEL_LOGGET_UT')).toBeInTheDocument();
   });
 
   it('should display the modal if the token is invalid and close it when close is clicked', () => {
@@ -25,12 +23,9 @@ describe('LoggetUtAdvarsel', () => {
         <LoggetUtAdvarsel onClose={mockCallback} loginServiceUrl={''} tokenFornyet={''} />
       </Router>
     );
-
-    const closeLink = screen.getByText(LangKey.LOGGET_INN);
-    expect(screen.getByText(LangKey.LOGGET_UT)).toBeInTheDocument();
-
+    const closeLink = screen.getByText('LOGGET_UT_ADVARSEL_LOGIN');
+    expect(screen.getByText('LOGGET_UT_ADVARSEL_LOGGET_UT')).toBeInTheDocument();
     fireEvent.click(closeLink);
-
     expect(mockCallback).toHaveBeenCalled();
   });
 });

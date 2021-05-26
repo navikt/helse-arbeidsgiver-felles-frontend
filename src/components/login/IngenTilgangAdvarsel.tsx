@@ -4,11 +4,11 @@ import Oversettelse from '../Oversettelse/Oversettelse';
 import { Locale } from '../../locale/Locale';
 
 enum KvitteringKeys {
-  INGENTILGANGADVARSEL = 'INGENTILGANGADVARSEL'
+  INGEN_TILGANG_ADVARSEL = 'INGEN_TILGANG_ADVARSEL'
 }
 
 export const KvitteringLanguage: Record<KvitteringKeys, Locale> = {
-  INGENTILGANGADVARSEL: {
+  INGEN_TILGANG_ADVARSEL: {
     nb:
       'Du har ikke rettigheter til å søke om refusjon for noen bedrifter\n' +
       'Tildeling av roller foregår i Altinn\n' +
@@ -23,7 +23,7 @@ export const KvitteringLanguage: Record<KvitteringKeys, Locale> = {
 export const IngenTilgangAdvarsel = () => {
   return (
     <AlertStripeAdvarsel>
-      <Oversettelse langKey={KvitteringKeys.INGENTILGANGADVARSEL} />
+      <Oversettelse langKey={KvitteringKeys.INGEN_TILGANG_ADVARSEL} />
     </AlertStripeAdvarsel>
   );
 };
