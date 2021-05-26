@@ -19,7 +19,7 @@ describe('ArbeidsgiverAPI', () => {
     expect(result.organisasjoner[0].Name).toEqual('ANSTENDIG BJØRN KOMMUNE');
     expect(result.organisasjoner[0].OrganizationForm).toEqual('KOMM');
     expect(result.organisasjoner[0].OrganizationNumber).toEqual('810007672');
-    expect(result.organisasjoner[0].ParentOrganizationNumber).toEqual(undefined);
+    expect(result.organisasjoner[0].ParentOrganizationNumber).toEqual('');
     expect(result.organisasjoner[0].Status).toEqual('Active');
     expect(result.organisasjoner[0].Type).toEqual('Enterprise');
   });

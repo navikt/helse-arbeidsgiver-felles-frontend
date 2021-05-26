@@ -10,7 +10,7 @@ export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjo
         OrganizationNumber: backendOrganisasjon.organizationNumber,
         OrganizationForm: backendOrganisasjon.organizationForm,
         Status: backendOrganisasjon.status,
-        ParentOrganizationNumber: backendOrganisasjon.parentOrganizationNumber
+        ParentOrganizationNumber: backendOrganisasjon.parentOrganizationNumber || ''
       } as Organisasjon)
   );
 
