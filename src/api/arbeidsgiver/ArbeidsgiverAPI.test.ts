@@ -1,54 +1,25 @@
 import ArbeidsgiverAPI from './ArbeidsgiverAPI';
-import ArbeidsgiverStatus from "../../context/arbeidsgiver/ArbeidsgiverStatus";
+import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
+import testBackendOrganisasjoner from '../../mock/testBackendOrganisasjoner';
 
 describe('ArbeidsgiverAPI', () => {
   afterAll(() => {
     jest.useRealTimers();
   });
 
-  const ARBEIDSGIVERE = [
-    {
-      name: 'STADLANDET OG SINGSÅS',
-      type: 'Enterprise',
-      parentOrganizationNumber: null,
-      organizationForm: 'AS',
-      organizationNumber: '911366940',
-      socialSecurityNumber: null,
-      status: 'Active'
-    },
-    {
-      name: 'HØNEFOSS OG ØLEN',
-      type: 'Enterprise',
-      parentOrganizationNumber: null,
-      organizationForm: 'AS',
-      organizationNumber: '910020102',
-      socialSecurityNumber: null,
-      status: 'Active'
-    },
-    {
-      name: 'JØA OG SEL',
-      type: 'Business',
-      parentOrganizationNumber: '911366940',
-      organizationForm: 'BEDR',
-      organizationNumber: '910098896',
-      socialSecurityNumber: null,
-      status: 'Active'
-    }
-  ];
-
   it('skal returnere arbeidsgivere', async () => {
     const mockArbeidsgivere = Promise.resolve({
       status: 200,
-      json: () => Promise.resolve(ARBEIDSGIVERE)
+      json: () => Promise.resolve(testBackendOrganisasjoner)
     } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockArbeidsgivere);
     const result = await ArbeidsgiverAPI.GetArbeidsgivere('dummy');
     expect(result.status).toEqual(200);
-    expect(result.organisasjoner.length).toEqual(3);
-    expect(result.organisasjoner[0].Name).toEqual('STADLANDET OG SINGSÅS');
-    expect(result.organisasjoner[0].OrganizationForm).toEqual('AS');
-    expect(result.organisasjoner[0].OrganizationNumber).toEqual('911366940');
-    expect(result.organisasjoner[0].ParentOrganizationNumber).toEqual(null);
+    expect(result.organisasjoner.length).toEqual(7);
+    expect(result.organisasjoner[0].Name).toEqual('ANSTENDIG BJØRN KOMMUNE');
+    expect(result.organisasjoner[0].OrganizationForm).toEqual('KOMM');
+    expect(result.organisasjoner[0].OrganizationNumber).toEqual('810007672');
+    expect(result.organisasjoner[0].ParentOrganizationNumber).toEqual(undefined);
     expect(result.organisasjoner[0].Status).toEqual('Active');
     expect(result.organisasjoner[0].Type).toEqual('Enterprise');
   });
@@ -58,7 +29,7 @@ describe('ArbeidsgiverAPI', () => {
       status: 401,
       json: () =>
         Promise.resolve({
-          ARBEIDSGIVERE
+          testBackendOrganisasjoner
         })
     } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockArbeidsgivere);
