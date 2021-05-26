@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/navikt/helse-arbeidsgiver-felles-frontend/issues"
   },
-  "homepage": "https://github.com/navikt/helse-arbeidsgiver-felles-frontend",
+  "homepage": "/",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -112,7 +112,6 @@
     "react-scripts": "4.x",
     "sass": "^1.x",
     "timezone-mock": "1.x",
-    "ts-jest": "26.x",
     "typescript": "4.x",
     "yet-another-fetch-mock": "4.x"
   },

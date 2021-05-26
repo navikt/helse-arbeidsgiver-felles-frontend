@@ -31,7 +31,7 @@ const App = () => {
     return (
         <BrowserRouter>
           <FeatureToggleProvider toggleServerUrl={featureToggleUrl} toggleDefaults={featureDefaults}>
-              <ArbeidsgiverProvider>
+              <ArbeidsgiverProvider >
                   <InnloggetSide>
                       <h1>helse-arbeidsgiver-frontend-felles</h1>
                   </InnloggetSide>

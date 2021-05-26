@@ -14,6 +14,8 @@ export interface PathParams {
   language: Language;
 }
 
+const mapLocales = (props: any) => {return {}}
+
 export const languageInit = (lang: Language) => {
   i18n.init({
     resources: {
