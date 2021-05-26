@@ -94,6 +94,7 @@
     "@types/react-dom": "17.x",
     "@types/react-flatpickr": "3.x",
     "@types/react-router-dom": "5.x",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "4.x",
     "@typescript-eslint/parser": "4.x",
     "core-js": "3.x",
