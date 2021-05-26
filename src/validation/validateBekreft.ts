@@ -9,7 +9,7 @@ const validateBekreft = (bekreft?: boolean, required: boolean = false): Validati
       key: 'VALIDATE_BEKREFT_NOT_CHECKED'
     };
   }
-  return
+  return undefined
 };
 
 export default validateBekreft;

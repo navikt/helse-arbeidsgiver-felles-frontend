@@ -37,7 +37,7 @@ const validateDager = (
   ) {
     return { key: 'VALIDATE_DAGER_INVALID' };
   }
-  return
+  return undefined
 };
 
 export default validateDager;

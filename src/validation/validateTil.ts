@@ -24,7 +24,7 @@ const validateTil = (
   }
 
   if (!fra || !til) {
-    return;
+    return undefined;
   }
 
   if (!required) {
@@ -39,7 +39,7 @@ const validateTil = (
   if (fra.millis > til.millis) {
     return { key: 'VALIDATE_TIL_TOO_EARLY' };
   }
-  return
+  return undefined
 };
 
 export default validateTil;

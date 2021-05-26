@@ -12,5 +12,5 @@ export const validateFnr = (orgnr?: string, required: boolean = false): FnrValid
   if (!isValidFnr(orgnr)) {
     return required ? { key: 'VALIDATE_FNR_INVALID' } : undefined;
   }
-  return
+  return undefined
 };

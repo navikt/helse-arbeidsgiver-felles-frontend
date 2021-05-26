@@ -21,7 +21,7 @@ export const validateFra = (fra: Dato | undefined, minDate: Date, required: bool
   if (fra && fra.error) {
     return required ? { key: 'VALIDATE_FRA_FOM_ERROR' } : undefined;
   }
-  return
+  return undefined
 };
 
 export default validateFra;

@@ -12,5 +12,5 @@ export const validateOrgnr = (orgnr?: string, required: boolean = false): Valida
   if (!isValidOrgnr(orgnr)) {
     return required ? { key: 'VALIDATE_ORGNR_INVALID' } : undefined;
   }
-  return
+  return undefined
 };
