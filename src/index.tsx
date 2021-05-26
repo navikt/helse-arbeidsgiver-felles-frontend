@@ -1,11 +1,5 @@
 import InnloggetSide from './components/Side/InnloggetSide';
 import DatoVelger from './components/DatoVelger/DatoVelger';
-import TokenExpiredContext from './context/TokenExpiredContext';
-import { fetchFeatureToggles } from './featureToggle/fetchFeatureToggles';
-import FeatureToggleProvider from './featureToggle/FeatureToggleContext';
-import { EnvironmentProvider, useEnvironment } from './context/EnvironmentContext';
-import { LoginProvider, useLogin } from './context/LoginContext';
-import LoginExpiryAPI from './api/loginexpiry/LoginExpiryAPI';
 import {
   ArbeidsgiverProvider,
   useArbeidsgiver
@@ -25,9 +19,5 @@ export {
   InnloggetSide,
   DatoVelger,
   ArbeidsgiverProvider, useArbeidsgiver,
-  ArbeidsgiverAPI, ArbeidsgiverStatus,
-  LoginExpiryAPI, TokenExpiredContext,
-  fetchFeatureToggles, FeatureToggleProvider,
-  EnvironmentProvider, useEnvironment,
-  LoginProvider, useLogin
+  ArbeidsgiverAPI, ArbeidsgiverStatus
 }

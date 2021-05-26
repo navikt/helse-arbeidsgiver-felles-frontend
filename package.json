@@ -107,7 +107,7 @@
     "eslint-plugin-react-hooks": "4.x",
     "eslint-plugin-typescript": "0.x",
     "isomorphic-fetch": "3.x",
-    "jest": "^26.0.0",
+    "jest": "26.6.0",
     "jest-axe": "4.x",
     "jest-css-modules": "2.x",
     "mockdate": "^3.0.5",
