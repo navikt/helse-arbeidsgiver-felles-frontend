@@ -5,22 +5,21 @@ import Side from '../Side/Side';
 import { Locale } from '../../locale/Locale';
 
 enum TilgangsfeilSideKeys {
-  TILGANGSFEILSIDE = 'TILGANGSFEILSIDE',
-  ERROR_GENERIC = 'ERROR_GENERIC',
-  ERROR_LOGIN = 'ERROR_LOGIN'
+  TILGANGSFEILSIDE_DENIED = 'TILGANGSFEILSIDE_DENIED',
+  TILGANGSFEILSIDE_ERROR = 'TILGANGSFEILSIDE_ERROR',
+  TILGANGSFEILSIDE_LOGIN = 'TILGANGSFEILSIDE_LOGIN'
 }
 
 export const TilgangsfeilSideLanguage: Record<TilgangsfeilSideKeys, Locale> = {
-  TILGANGSFEILSIDE: {
+  TILGANGSFEILSIDE_DENIED: {
     nb: 'Du har ikke tilgang',
     en: 'No access'
   },
-  ERROR_GENERIC: {
+  TILGANGSFEILSIDE_ERROR: {
     nb: 'Det oppstod en feil',
     en: 'An error occurred'
   },
-
-  ERROR_LOGIN: {
+  TILGANGSFEILSIDE_LOGIN: {
     nb: 'Vi klarte ikke logge deg inn. Vennligst prøv igjen senere.',
     en: 'We were unable to log you in. Please try again later.'
   }
@@ -31,12 +30,12 @@ export const TilgangsfeilSide = () => {
   return (
     <Side
       className='tilgangsfeil-side'
-      sidetittel={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE)}
-      subtitle={t(TilgangsfeilSideKeys.ERROR_GENERIC)}
+      sidetittel={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_DENIED)}
+      subtitle={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_ERROR)}
       bedriftsmeny={false}
     >
       <Alertstripe type='feil'>
-        {t(TilgangsfeilSideKeys.ERROR_LOGIN)}
+        {t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_LOGIN)}
       </Alertstripe>
     </Side>
   );

@@ -24,11 +24,11 @@ interface SideProps {
 
 
 enum SideKeys {
-  MIN_SIDE = 'MIN_SIDE'
+  SIDE_MIN_SIDE_ARBEIDSGIVER = 'SIDE_MIN_SIDE_ARBEIDSGIVER'
 }
 
 export const SideLanguage: Record<SideKeys, Locale> = {
-  MIN_SIDE: {
+  SIDE_MIN_SIDE_ARBEIDSGIVER: {
     nb: 'Min side arbeidsgiver',
     en: 'My page employer'
   },
@@ -55,7 +55,7 @@ const Side = (props: SideProps) => {
           <Row>
             <Column>
               <div className={'side__minside_arbeidsgiver'}>
-                <Lenke href='/min-side-arbeidsgiver/'>&lt;&lt; {t(SideKeys.MIN_SIDE)}</Lenke>
+                <Lenke href='/min-side-arbeidsgiver/'>&lt;&lt; {t(SideKeys.SIDE_MIN_SIDE_ARBEIDSGIVER)}</Lenke>
               </div>
             </Column>
           </Row>

@@ -7,19 +7,18 @@ import Side from '../Side/Side';
 import { Locale } from '../../locale/Locale';
 
 enum TilgangsfeilSideKeys {
-  LOGIN_RENEWED = 'LOGIN_RENEWED',
-  LOGIN_RENEWED_INFO = 'LOGIN_RENEWED_INFO',
-  TOKEN_FORNYET = 'TOKEN_FORNYET',
-  LOGIN = 'LOGIN'
+  TILGANGSFEILSIDE_RENEWED = 'TILGANGSFEILSIDE_RENEWED',
+  TILGANGSFEILSIDE_INFO = 'TILGANGSFEILSIDE_INFO',
+  TILGANGSFEILSIDE_FORNYET = 'TILGANGSFEILSIDE_FORNYET',
+  TILGANGSFEILSIDE_LOGIN = 'TILGANGSFEILSIDE_LOGIN'
 }
 
 export const TilgangsfeilSideLanguage: Record<TilgangsfeilSideKeys, Locale> = {
-  LOGIN_RENEWED: {
+  TILGANGSFEILSIDE_RENEWED: {
     nb: 'Innloggingen er fornyet',
     en: 'Login renewed'
   },
-
-  LOGIN_RENEWED_INFO: {
+  TILGANGSFEILSIDE_INFO: {
     nb:
       'Du har nå fornyet innloggingen med en time.\n' +
       'Dette vinduet kan nå lukkes.',
@@ -27,11 +26,11 @@ export const TilgangsfeilSideLanguage: Record<TilgangsfeilSideKeys, Locale> = {
       'You have now renewed your login by one hour.\n' +
       'This window can now be closed.'
   },
-  TOKEN_FORNYET: {
+  TILGANGSFEILSIDE_FORNYET: {
     nb: 'Token er fornyet',
     en: 'Token is renewed'
   },
-  LOGIN: {
+  TILGANGSFEILSIDE_LOGIN: {
     nb: 'Innlogging',
     en: 'Login'
   }
@@ -42,20 +41,20 @@ export const TokenFornyet = () => {
   return (
     <Side
       bedriftsmeny={false}
-      sidetittel={t(TilgangsfeilSideKeys.TOKEN_FORNYET)}
-      title={t(TilgangsfeilSideKeys.LOGIN_RENEWED)}
-      subtitle={t(TilgangsfeilSideKeys.LOGIN)}
+      sidetittel={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_FORNYET)}
+      title={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_RENEWED)}
+      subtitle={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_LOGIN)}
     >
       <Container className={'side__innhold'}>
         <Row>
           <Panel>
             <Innholdstittel>
-              {t(TilgangsfeilSideKeys.LOGIN_RENEWED)}
+              {t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_RENEWED)}
             </Innholdstittel>
           </Panel>
           <Panel>
             <Normaltekst>
-              {t(TilgangsfeilSideKeys.LOGIN_RENEWED_INFO)}
+              {t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_INFO)}
             </Normaltekst>
           </Panel>
         </Row>

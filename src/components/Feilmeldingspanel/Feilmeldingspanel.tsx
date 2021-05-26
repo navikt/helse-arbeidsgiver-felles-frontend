@@ -9,12 +9,12 @@ interface FeilmeldingspanelProps {
 }
 
 enum FeilmeldingspanelKeys {
-  FEILMELDINGSPANEL_INFO = 'FEILMELDINGSPANEL_INFO'
+  FEILMELDINGSPANEL = 'FEILMELDINGSPANEL'
 }
 
 export const FeilmeldingspanelLanguage: Record<FeilmeldingspanelKeys, Locale> =
   {
-    FEILMELDINGSPANEL_INFO: {
+    FEILMELDINGSPANEL: {
       nb: 'For å gå videre må du rette opp følgende:',
       en: 'To proceed, you must correct the following:'
     }
@@ -26,7 +26,7 @@ const Feilmeldingspanel = (props: FeilmeldingspanelProps) => {
     return (
       <Panel>
         <Feiloppsummering
-          tittel={t(FeilmeldingspanelKeys.FEILMELDINGSPANEL_INFO)}
+          tittel={t(FeilmeldingspanelKeys.FEILMELDINGSPANEL)}
           feil={props.feilmeldinger}
         />
       </Panel>

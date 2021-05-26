@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import Tekstomrade, { BoldRule, HighlightRule, LinebreakRule } from 'nav-frontend-tekstomrade';
-import { ListeRule } from './Liste';
-import { UListeRule } from './UListe';
-import { LenkeRule } from './Lenke';
+import { ListeRule } from './ListeRule';
+import { UListeRule } from './UListeRule';
+import { LenkeRule } from './LenkeRule';
 import React from 'react';
 
 interface OversettelseProps {

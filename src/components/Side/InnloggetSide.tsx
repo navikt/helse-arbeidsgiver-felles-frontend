@@ -18,7 +18,7 @@ interface SideProps {
 }
 
 enum InnloggetSideKeys {
-  MIN_SIDE = 'INNLOGGET_SIDE_MIN_SIDE'
+  INNLOGGET_SIDE_MIN_SIDE = 'INNLOGGET_SIDE_MIN_SIDE'
 }
 
 export const InnloggetSideLanguage: Record<InnloggetSideKeys, Locale> = {
@@ -52,7 +52,7 @@ const InnloggetSide = (props: SideProps) => {
               <Column>
                 <div className={'innloggetside__minside_arbeidsgiver'}>
                   <Lenke href='/min-side-arbeidsgiver/'>
-                    &lt;&lt; {t(InnloggetSideKeys.MIN_SIDE)}
+                    &lt;&lt; {t(InnloggetSideKeys.INNLOGGET_SIDE_MIN_SIDE)}
                   </Lenke>
                 </div>
               </Column>
