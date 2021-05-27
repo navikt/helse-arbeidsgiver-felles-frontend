@@ -22,10 +22,10 @@ import LanguageBundle from './config/LanguageBundle';
 import i18n from 'i18next';
 import BekreftOpplysningerPanel from './components/BekreftOpplysningerPanel/BekreftOpplysningerPanel';
 import Side from './components/Side/Side';
-import { Column, Row } from "nav-frontend-grid";
-import Feilmeldingspanel from "./components/Feilmeldingspanel/Feilmeldingspanel";
-import { lagFeil } from "./components/Feilmeldingspanel/lagFeil";
-import ServerFeilAdvarsel from "./components/ServerFeilAdvarsel/ServerFeilAdvarsel";
+import { Column, Row } from 'nav-frontend-grid';
+import Feilmeldingspanel from './components/Feilmeldingspanel/Feilmeldingspanel';
+import { lagFeil } from './components/Feilmeldingspanel/lagFeil';
+import ServerFeilAdvarsel from './components/ServerFeilAdvarsel/ServerFeilAdvarsel';
 
 const App = () => (
   <BrowserRouter>
