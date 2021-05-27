@@ -15,10 +15,10 @@ const LanguageBundle: Record<string, any> = {
   }
 }
 
-const original: Record<string, Locale> = {
+export const original: Record<string, Locale> = {
   BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
-    en: 'Label',
-    nb: 'Felt'
+    en: 'I confirm that...',
+    nb: 'Jeg bekrefter...'
   },
   BEKREFTOPPLYSNINGER_BEKREFT_OPPLYSNINGER: {
     en: 'Information',
