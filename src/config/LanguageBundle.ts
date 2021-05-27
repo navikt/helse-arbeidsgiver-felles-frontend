@@ -1,21 +1,13 @@
 import { Locale } from "../locale/Locale";
+import { buildBundle } from "../locale/buildBundle";
 
-const LanguageBundle: Record<string, any> = {
-  en: {
-    translation: {
-      BEKREFTOPPLYSNINGER_BEKREFT_LABEL: 'I confirm that...',
-      BEKREFTOPPLYSNINGER_BEKREFT_OPPLYSNINGER: 'Information'
-    }
+
+
+export const bundle: Record<string, Locale> = {
+  SIDE_MIN_SIDE_ARBEIDSGIVER: {
+    en: 'My page',
+    nb: 'Min side arbeidsgiver',
   },
-  nb: {
-    translation: {
-      BEKREFTOPPLYSNINGER_BEKREFT_LABEL: 'Jeg bekrefter...',
-      BEKREFTOPPLYSNINGER_BEKREFT_OPPLYSNINGER: 'Opplysninger'
-    }
-  }
-}
-
-export const original: Record<string, Locale> = {
   BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
     en: 'I confirm that...',
     nb: 'Jeg bekrefter...'
@@ -26,4 +18,4 @@ export const original: Record<string, Locale> = {
   }
 };
 
-export default LanguageBundle
+export default buildBundle(bundle)
