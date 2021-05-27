@@ -9,23 +9,9 @@ import {
 } from '@navikt/nav-dekoratoren-moduler';
 import { buildLocalePath } from './buildLocalePath';
 
-export interface Resource {
-  [language: string]: ResourceLanguage;
-}
-
-export interface ResourceLanguage {
-  [namespace: string]: ResourceKey;
-}
-
-export type ResourceKey =
-  | string
-  | {
-  [key: string]: any;
-};
-
 interface LocaleProviderProps {
   lang?: Language;
-  resources: Resource,
+  resources: any,
   children: any;
   base: string
   path: string
@@ -35,7 +21,7 @@ export interface PathParams {
   language: Language;
 }
 
-export const languageInit = (lang: Language, resources: Resource) => {
+export const languageInit = (lang: Language, resources: any) => {
   i18n.init({
     resources: resources,
     fallbackLng: Language.nb,

@@ -36,7 +36,7 @@ const LanguageProvider = (props: LanguageContextProviderProps) => {
   setParams({
     language: defaultLanguageNav(lang)
   });
-  languageInit(i18n, lang, props.defaultLanguage, props.languages, props.bundle);
+  languageInit(i18n, lang, props.defaultLanguage, props.bundle);
   return (
     <LanguageContext.Provider value={{ language, i18n }}>
       <I18nextProvider i18n={i18n}>{props.children}</I18nextProvider>
