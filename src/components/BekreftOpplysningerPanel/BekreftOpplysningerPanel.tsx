@@ -38,21 +38,29 @@ interface BekreftOpplysningerPanelProps {
   checked: boolean;
   onChange: () => void;
   feil?: string;
+  labelKey?: string;
+  textKey?: string;
 }
 
-const BekreftOpplysningerPanel = (props: BekreftOpplysningerPanelProps) => {
+const BekreftOpplysningerPanel = ({
+  checked,
+  onChange,
+  feil,
+  labelKey = BekreftOpplysningerKeys.LABEL,
+  textKey = BekreftOpplysningerKeys.OPPLYSNINGER
+}: BekreftOpplysningerPanelProps) => {
   const { t } = useTranslation();
 
   return (
     <Panel className='bekreft-opplysninger-panel'>
       <SkjemaGruppe feilmeldingId='bekreftFeilmeldingId'>
         <BekreftCheckboksPanel
-          label={t(BekreftOpplysningerKeys.LABEL)}
-          checked={props.checked}
-          feil={props.feil}
-          onChange={props.onChange}
+          label={t(labelKey)}
+          checked={checked}
+          feil={feil}
+          onChange={onChange}
         >
-          <Oversettelse langKey={BekreftOpplysningerKeys.OPPLYSNINGER}/>
+          <Oversettelse langKey={textKey} />
         </BekreftCheckboksPanel>
       </SkjemaGruppe>
     </Panel>

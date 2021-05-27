@@ -44,12 +44,16 @@ const ServerFeilAdvarsel = (props: ServerFeilAdvarselProps) => {
       shouldCloseOnOverlayClick={false}
     >
       <AlertStripeFeil className='server-feil-advarsel--innhold'>
-        <Oversettelse
-          langKey={ServerFeilAdvarselKeys.SERVER_FEIL_ADVARSEL_TEXT}
-        />
-        <InternLenke onClick={() => props.onClose()}>
-          {t(ServerFeilAdvarselKeys.SERVER_FEIL_ADVARSEL_HIDE)}
-        </InternLenke>
+        <div>
+          <Oversettelse
+            langKey={ServerFeilAdvarselKeys.SERVER_FEIL_ADVARSEL_TEXT}
+          />
+        </div>
+        <div>
+          <InternLenke onClick={() => props.onClose()}>
+            {t(ServerFeilAdvarselKeys.SERVER_FEIL_ADVARSEL_HIDE)}
+          </InternLenke>
+        </div>
       </AlertStripeFeil>
     </ModalWrapper>
   );

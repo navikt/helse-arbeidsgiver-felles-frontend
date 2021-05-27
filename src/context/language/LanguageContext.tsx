@@ -1,8 +1,16 @@
 import React, { createContext, useContext, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import { setAvailableLanguages, setParams } from '@navikt/nav-dekoratoren-moduler';
+import {
+  setAvailableLanguages,
+  setParams
+} from '@navikt/nav-dekoratoren-moduler';
 import languageInit from './LanguageInit';
 import defaultLanguageNav from './DefaultLanguageNav';
+import Language from '../../locale/Language';
+
+export interface LanguageParams {
+  language: Language;
+}
 
 interface LanguageContextInterface {
   language: string;
@@ -32,7 +40,13 @@ const LanguageProvider = (props: LanguageContextProviderProps) => {
   }
   const i18n = props.i18n;
   const [language, setLanguage] = useState<string>(lang);
-  setAvailableLanguages(props.languages.map((l) => ({ locale: l, url: '/' + l, handleInApp: false })));
+  setAvailableLanguages(
+    props.languages.map((l) => ({
+      locale: l,
+      url: '/' + l,
+      handleInApp: false
+    }))
+  );
   setParams({
     language: defaultLanguageNav(lang)
   });
