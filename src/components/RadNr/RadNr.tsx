@@ -1,4 +1,3 @@
-import React from 'react';
 import './RadNr.sass';
 
 interface RadNrProps {
