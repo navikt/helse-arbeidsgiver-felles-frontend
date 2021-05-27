@@ -13,6 +13,11 @@ const buildLanguage = (lang: string, bundle: Record<string, any>) => {
   return values;
 }
 
+/**
+ * Converts into i18next format
+ *
+ * @param bundle
+ */
 export const buildBundle = (bundle: Record<string, Locale>) : Record<string, any> => {
   return {
     en: {
