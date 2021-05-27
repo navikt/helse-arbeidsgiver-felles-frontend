@@ -22,7 +22,10 @@ import LanguageBundle from './config/LanguageBundle';
 import i18n from 'i18next';
 import BekreftOpplysningerPanel from './components/BekreftOpplysningerPanel/BekreftOpplysningerPanel';
 import Side from './components/Side/Side';
-import { buildBundle } from "./locale/buildBundle";
+import { Column, Row } from "nav-frontend-grid";
+import Feilmeldingspanel from "./components/Feilmeldingspanel/Feilmeldingspanel";
+import { lagFeil } from "./components/Feilmeldingspanel/lagFeil";
+import ServerFeilAdvarsel from "./components/ServerFeilAdvarsel/ServerFeilAdvarsel";
 
 const App = () => (
   <BrowserRouter>
@@ -40,7 +43,21 @@ const App = () => (
           bedriftsmeny={false}
           subtitle={'helse-arbeidsgiver-frontend-felles'}
         >
-          <BekreftOpplysningerPanel checked={false} onChange={() => {}} />
+          <Row>
+            <Column>
+              <Feilmeldingspanel feilmeldinger={[lagFeil('dato', 'Feil i et komponent')]} />
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <BekreftOpplysningerPanel checked={false} onChange={() => {}} />
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <ServerFeilAdvarsel isOpen={false} onClose={() => {}} />
+            </Column>
+          </Row>
         </Side>
     </LanguageProvider>
   </BrowserRouter>
