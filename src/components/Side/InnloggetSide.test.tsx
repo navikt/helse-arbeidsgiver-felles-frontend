@@ -1,3 +1,4 @@
+import React from 'react';
 import InnloggetSide from './InnloggetSide';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
