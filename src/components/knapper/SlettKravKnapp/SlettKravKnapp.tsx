@@ -1,6 +1,5 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import './SlettKravKnapp.scss';
 
 const DeleteIcon = () => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>

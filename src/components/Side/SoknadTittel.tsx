@@ -1,7 +1,6 @@
 import Panel from 'nav-frontend-paneler';
 import { Undertittel, Innholdstittel } from 'nav-frontend-typografi';
 import React from 'react';
-import './SoknadTittel.sass';
 
 interface SoknadTittelProps {
   children: any;

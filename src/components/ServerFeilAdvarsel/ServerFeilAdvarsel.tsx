@@ -1,7 +1,6 @@
 import React from 'react';
 import ModalWrapper from 'nav-frontend-modal';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
-import './ServerFeilAdvarsel.sass';
 import Oversettelse from '../Oversettelse/Oversettelse';
 import { useTranslation } from 'react-i18next';
 import { Locale } from '../../locale/Locale';

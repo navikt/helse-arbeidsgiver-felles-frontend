@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Feilmelding } from 'nav-frontend-typografi';
-import './Upload.sass';
 import { Locale } from '../../locale/Locale';
 import { useTranslation } from 'react-i18next';
 

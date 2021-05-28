@@ -1,6 +1,5 @@
 import React from 'react';
 import { Fareknapp } from 'nav-frontend-knapper';
-import './Slettknapp.sass';
 
 const DeleteIcon = () => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
