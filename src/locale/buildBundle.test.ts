@@ -1,8 +1,7 @@
-import buildBundle from "./buildBundle";
-import { Locale } from "./Locale";
+import buildBundle from './buildBundle';
+import { Locale } from './Locale';
 
 describe('buildBundle', () => {
-
   const source: Record<string, Locale> = {
     BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
       en: 'I confirm that...',
@@ -27,10 +26,9 @@ describe('buildBundle', () => {
         BEKREFTOPPLYSNINGER_BEKREFT_OPPLYSNINGER: 'Opplysninger'
       }
     }
-  }
+  };
 
   it('should build bundle', () => {
     expect(buildBundle(source)).toEqual(converted);
   });
-
-})
+});
