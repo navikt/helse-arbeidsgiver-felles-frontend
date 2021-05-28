@@ -26,7 +26,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: ${{ github.workspace }}/lib/**/*
+          path: ${{ github.workspace }}/dist/**/*
 
   Kodekvalitet:
     runs-on: ubuntu-latest

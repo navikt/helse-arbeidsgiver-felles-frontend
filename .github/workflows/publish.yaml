@@ -25,7 +25,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: ${{ github.workspace }}/lib/**/*
+          path: ${{ github.workspace }}/dist/**/*
 
   Kodekvalitet:
     runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: lib
+          path: dist
       - run: |
           git config --global user.email "helsearbeidsgiver@nav.no"
           git config --global user.name "HelseArbeidsgiver"

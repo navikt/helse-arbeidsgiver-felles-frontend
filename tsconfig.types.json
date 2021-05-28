@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./lib",
+        "outDir": "./dist",
         "emitDeclarationOnly": true,
         "declaration": true,
         "strict": true,
