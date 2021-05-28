@@ -5,9 +5,9 @@
   "author": "NAVIKT",
   "license": "MIT",
   "private": false,
-  "main": "./lib/js/index.js",
-  "module": "./lib/js/index.js",
-  "types": "./lib/js/index.d.ts",
+  "main": "./lib/js/library.js",
+  "module": "./lib/js/library.js",
+  "types": "./lib/js/library.d.ts",
   "files": [
     "lib"
   ],
