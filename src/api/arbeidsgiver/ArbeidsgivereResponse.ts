@@ -1,6 +1,8 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 
-export interface ArbeidsgivereResponse {
+type ArbeidsgivereResponse = {
   status: number;
   organisasjoner: Array<Organisasjon>;
 }
+
+export default ArbeidsgivereResponse

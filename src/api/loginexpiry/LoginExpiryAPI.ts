@@ -1,4 +1,4 @@
-import { LoginExpiryResponse } from './LoginExpiryResponse';
+import LoginExpiryResponse from './LoginExpiryResponse';
 import { ParseExpiryDate } from './ParseExpiryDate';
 import HttpStatus from '../HttpStatus';
 

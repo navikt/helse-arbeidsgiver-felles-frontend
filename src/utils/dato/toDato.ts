@@ -1,4 +1,4 @@
-import { Dato } from './Dato';
+import Dato from './Dato';
 import zeroPadding from './zeroPadding';
 
 export const toDato = (date: Date): Dato => {

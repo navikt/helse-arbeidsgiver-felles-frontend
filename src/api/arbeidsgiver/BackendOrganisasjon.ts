@@ -1,4 +1,4 @@
-export interface BackendOrganisasjon {
+type BackendOrganisasjon = {
   name: string;
   type: string;
   parentOrganizationNumber: string;
@@ -7,3 +7,5 @@ export interface BackendOrganisasjon {
   socialSecurityNumber?: string;
   status: string;
 }
+
+export default BackendOrganisasjon

@@ -1,4 +1,4 @@
-import { Dato } from './Dato';
+import Dato from './Dato';
 import parseDatoVerify from './parseDatoVerify';
 
 const ISO_REGEX = new RegExp('^(\\d{1,4})\\-(\\d{1,2})\\-(\\d{2})$');

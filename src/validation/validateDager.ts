@@ -1,5 +1,5 @@
 import isNumericString from '../utils/isNumericString';
-import { Dato } from '../utils/dato/Dato';
+import Dato from '../utils/dato/Dato';
 import dayjs from 'dayjs';
 import { datoToString } from '../utils/dato/datoToString';
 import ValidationResult from './ValidationResult';

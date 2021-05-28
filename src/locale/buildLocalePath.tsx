@@ -6,3 +6,5 @@ export const buildLocalePath = (
 ) => {
   return base + 'nb' + path + search;
 };
+
+export default buildLocalePath

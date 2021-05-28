@@ -1,4 +1,4 @@
-import { Dato } from './Dato';
+import Dato from './Dato';
 import formatDato from './formatDato';
 
 export const datoToString = (dato: Dato | undefined): string => {

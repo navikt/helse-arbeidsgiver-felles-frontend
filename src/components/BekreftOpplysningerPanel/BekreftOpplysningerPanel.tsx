@@ -1,9 +1,8 @@
 import Panel from 'nav-frontend-paneler';
 import { BekreftCheckboksPanel, SkjemaGruppe } from 'nav-frontend-skjema';
 import React from 'react';
-import './BekreftOpplysningerPanel.scss';
 import { useTranslation } from 'react-i18next';
-import { Locale } from '../../locale/Locale';
+import { Locale } from "../../locale/Locale";
 import Oversettelse from '../Oversettelse/Oversettelse';
 
 enum BekreftOpplysningerKeys {

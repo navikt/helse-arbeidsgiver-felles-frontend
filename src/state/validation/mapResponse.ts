@@ -5,7 +5,7 @@ import map400 from './map400';
 import map401 from './map401';
 import map422 from './map422';
 import map500 from './map500';
-import { ValidationState } from './ValidationState';
+import ValidationState from './ValidationState';
 import { FeiloppsummeringFeil } from 'nav-frontend-skjema';
 import map200 from './map200';
 

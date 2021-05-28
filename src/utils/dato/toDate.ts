@@ -9,3 +9,5 @@ export const toDate = (dato: Dato | undefined): Date | undefined => {
   }
   return new Date(dato.year, dato.month - 1, dato.day);
 };
+
+export default toDate

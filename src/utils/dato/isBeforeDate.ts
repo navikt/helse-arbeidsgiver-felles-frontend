@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { Dato } from './Dato';
+import Dato from './Dato';
 
 const isBeforeDate = (dagen: Dato, minDate: Date): boolean => {
   const currentDate: string =

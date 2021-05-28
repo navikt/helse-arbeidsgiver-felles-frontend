@@ -1,5 +1,5 @@
-import isValidFnr from '../utils/isValidFnr';
 import ValidationResult from './ValidationResult';
+import isValidFnr from './isValidFnr';
 
 export interface FnrValidationResult extends ValidationResult {
   key: 'VALIDATE_FNR_MISSING' | 'VALIDATE_FNR_INVALID'
@@ -14,3 +14,5 @@ export const validateFnr = (orgnr?: string, required: boolean = false): FnrValid
   }
   return undefined
 };
+
+export default validateFnr

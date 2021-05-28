@@ -1,4 +1,4 @@
-import { BackendOrganisasjon } from './BackendOrganisasjon';
+import BackendOrganisasjon from './BackendOrganisasjon';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 
 export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjon[] =>

@@ -1,6 +1,6 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 
-interface ArbeidsgiverInterface {
+type ArbeidsgiverInterface = {
   arbeidsgivere: Array<Organisasjon>;
   setArbeidsgivere: any;
   firma: string;

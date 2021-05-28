@@ -1,4 +1,4 @@
-import { Dato } from '../utils/dato/Dato';
+import Dato from '../utils/dato/Dato';
 import isBeforeDate from '../utils/dato/isBeforeDate';
 import ValidationResult from './ValidationResult';
 

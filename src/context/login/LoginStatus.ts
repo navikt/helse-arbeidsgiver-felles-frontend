@@ -4,3 +4,5 @@ export enum LoginStatus {
   MustLogin,
   Failed
 }
+
+export default LoginStatus

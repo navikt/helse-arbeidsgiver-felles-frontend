@@ -27,3 +27,5 @@ export const IngenTilgangAdvarsel = () => {
     </AlertStripeAdvarsel>
   );
 };
+
+export default IngenTilgangAdvarsel

@@ -1,5 +1,5 @@
 import { mapArbeidsgiver } from './mapArbeidsgiver';
-import { ArbeidsgivereResponse } from './ArbeidsgivereResponse';
+import ArbeidsgivereResponse from './ArbeidsgivereResponse';
 import HttpStatus from '../HttpStatus';
 
 const handleStatus = (response: Response) => {

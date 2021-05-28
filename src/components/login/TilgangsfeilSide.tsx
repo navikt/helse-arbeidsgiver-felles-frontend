@@ -40,3 +40,5 @@ export const TilgangsfeilSide = () => {
     </Side>
   );
 };
+
+export default TilgangsfeilSide

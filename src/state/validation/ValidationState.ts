@@ -1,6 +1,6 @@
 import { FeiloppsummeringFeil } from 'nav-frontend-skjema';
 
-export interface ValidationState {
+type ValidationState ={
   validated?: boolean; // Validert gyldig
   error?: boolean; // Valideringsfeil
   submitting?: boolean; // Submit knapp ble trykket
@@ -10,3 +10,5 @@ export interface ValidationState {
   kvittering?: boolean; // Mottatt godkjent svar fra backend
   feilmeldinger: Array<FeiloppsummeringFeil>;
 }
+
+export default ValidationState

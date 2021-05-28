@@ -1,4 +1,4 @@
-import { BackendOrganisasjon } from '../api/arbeidsgiver/BackendOrganisasjon';
+import BackendOrganisasjon from '../api/arbeidsgiver/BackendOrganisasjon';
 
 const testBackendOrganisasjoner: BackendOrganisasjon[] = [
   {

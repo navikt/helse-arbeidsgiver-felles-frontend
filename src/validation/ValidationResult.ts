@@ -1,4 +1,4 @@
-interface ValidationResult {
+type ValidationResult = {
   key: string;
   value?: any;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Label, SkjemaelementFeilmelding } from 'nav-frontend-skjema';
 import Flatpickr from 'react-flatpickr';
 import { Norwegian } from 'flatpickr/dist/l10n/no.js';
-import './DatoVelger.css';
 import dayjs from 'dayjs';
 import classNames from 'classnames';
 

@@ -1,4 +1,4 @@
-export interface Dato {
+type Dato = {
   value?: string;
   error?: string;
   year?: number;

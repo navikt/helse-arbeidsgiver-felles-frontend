@@ -1,6 +1,6 @@
 import { Locale } from './Locale';
 
-export interface Translation {
+export type Translation = {
   translation: Record<string, any>
 }
 
