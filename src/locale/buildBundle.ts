@@ -18,7 +18,7 @@ const buildLanguage = (lang: string, bundle: Record<string, any>) => {
  *
  * @param bundle
  */
-export const buildBundle = (bundle: Record<string, Locale>) : Record<string, any> => {
+const buildBundle = (bundle: Record<string, Locale>) : Record<string, any> => {
   return {
     en: {
       translation: buildLanguage('en', bundle)
@@ -28,3 +28,5 @@ export const buildBundle = (bundle: Record<string, Locale>) : Record<string, any
     }
   };
 };
+
+export default buildBundle

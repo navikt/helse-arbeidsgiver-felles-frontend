@@ -1,5 +1,5 @@
 import { Locale } from '../locale/Locale';
-import { buildBundle } from '../locale/buildBundle';
+import buildBundle from '../locale/buildBundle';
 
 export const bundle: Record<string, Locale> = {
   SIDE_MIN_SIDE_ARBEIDSGIVER: {

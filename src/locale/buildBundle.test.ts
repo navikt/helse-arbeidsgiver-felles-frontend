@@ -1,4 +1,4 @@
-import { buildBundle } from "./buildBundle";
+import buildBundle from "./buildBundle";
 import { Locale } from "./Locale";
 
 describe('buildBundle', () => {

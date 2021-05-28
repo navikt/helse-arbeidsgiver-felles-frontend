@@ -1,3 +1,6 @@
+import buildBundle from './locale/buildBundle';
+import { Locale } from './locale/Locale';
+import Language from './locale/Language';
 import InnloggetSide from './components/Side/InnloggetSide';
 import Side from './components/Side/Side';
 import DatoVelger from './components/DatoVelger/DatoVelger';
@@ -19,6 +22,7 @@ import ArbeidsgiverStatus from './context/arbeidsgiver/ArbeidsgiverStatus';
 
 
 export {
+  buildBundle, Locale, Language,
   InnloggetSide,
   Side,
   DatoVelger,
