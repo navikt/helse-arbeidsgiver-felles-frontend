@@ -33,11 +33,7 @@ interface LanguageContextProviderProps {
 const useLanguage = () => useContext(LanguageContext);
 
 const LanguageProvider = (props: LanguageContextProviderProps) => {
-  let lang = '';
-  {
-    const { language } = props.useParams();
-    lang = language;
-  }
+  let lang = 'nb';
   const i18n = props.i18n;
   const [language, setLanguage] = useState<string>(lang);
   setAvailableLanguages(
@@ -50,7 +46,6 @@ const LanguageProvider = (props: LanguageContextProviderProps) => {
   setParams({
     language: defaultLanguageNav(lang)
   });
-  languageInit(i18n, lang, props.defaultLanguage, props.bundle);
   return (
     <LanguageContext.Provider value={{ language, i18n }}>
       <I18nextProvider i18n={i18n}>{props.children}</I18nextProvider>
