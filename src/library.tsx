@@ -110,9 +110,7 @@ import validateFra from './validation/validateFra';
 import validateOrgnr from './validation/validateOrgnr';
 import validateTil from './validation/validateTil';
 import ValidationResult from './validation/ValidationResult';
-
-
-
+import LanguageInit from './context/language/LanguageInit';
 
 /**
  * Alle klasser som skal eksponeres utad via pakkesystemet til NPM skal legges
@@ -133,7 +131,7 @@ export {
   SoknadTittel, Skillelinje, Upload,
   // Context
   ArbeidsgiverProvider, useArbeidsgiver, buildArbeidsgiver, ArbeidsgiverStatus,
-  LanguageProvider, useLanguage,
+  LanguageProvider, useLanguage, LanguageInit,
   isLoggedInFromUrl, LoginChecking,
   LoginProvider,
   LoginRedirect,
