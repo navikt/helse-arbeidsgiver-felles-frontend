@@ -32,9 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
+      - uses: actions/setup-node
       - run: yarn install --frozen-lockfile --no-build
       - run: yarn test
 
@@ -42,9 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
+      - uses: actions/setup-node
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
@@ -55,9 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
+      - uses: actions/setup-node@v2
       - run: yarn install --frozen-lockfile
       - run: yarn run lint
 
