@@ -19,7 +19,7 @@ import 'nav-frontend-tabell-style/dist/main.css';
 import { LanguageProvider } from './context/language/LanguageContext';
 import Language from './locale/Language';
 import LanguageBundle from './config/LanguageBundle';
-import i18n from './config/i18n';
+// import i18n from './config/i18n';
 import BekreftOpplysningerPanel from './components/BekreftOpplysningerPanel/BekreftOpplysningerPanel';
 import Side from './components/Side/Side';
 import { Column, Row } from 'nav-frontend-grid';
@@ -30,16 +30,14 @@ import DatoVelger from './components/DatoVelger/DatoVelger';
 import Fnr from './components/Fnr/Fnr';
 import HjelpeLabel from './components/HjelpeLabel/HjelpeLabel';
 import Kvittering from './components/kvittering/Kvittering';
+import i18next from 'i18next';
 
 const App = () => (
   <BrowserRouter>
     <LanguageProvider
       defaultLanguage={Language.nb}
       languages={[Language.nb, Language.en]}
-      useParams={() => {
-        return {};
-      }}
-      i18n={i18n}
+      i18n={i18next}
       bundle={LanguageBundle}
     >
         <Side

@@ -27,7 +27,6 @@ import TilgangsfeilSide from './components/login/TilgangsfeilSide';
 import TokenFornyet from './components/login/TokenFornyet';
 import Oversettelse from './components/Oversettelse/Oversettelse';
 import PageNotFound from './components/PageNotFound/PageNotFound';
-import RadNr from './components/RadNr/RadNr';
 import ServerFeilAdvarsel from './components/ServerFeilAdvarsel/ServerFeilAdvarsel';
 import InnloggetSide from './components/Side/InnloggetSide';
 import Side from './components/Side/Side';
@@ -51,8 +50,7 @@ import redirectUrl from './context/login/redirectUrl';
 import redirectWithoutParams from './context/login/redirectWithoutParams';
 
 // Locale
-import buildBundle from './locale/buildBundle';
-import buildLocalePath from './locale/buildLocalePath';
+import buildResources from './locale/buildResources';
 import Language from './locale/Language';
 import Locale from './locale/Locale';
 
@@ -126,7 +124,7 @@ export {
   BekreftOpplysningerPanel, DatoVelger, Feilmeldingspanel, lagFeil,
   pushFeilmelding, Fnr, HjelpeLabel, InternLenke, SlettKravKnapp,
   LeggTilKnapp, Slettknapp, Kvittering, IngenTilgangAdvarsel, LoggetUtAdvarsel,
-  TilgangsfeilSide, TokenFornyet, Oversettelse, PageNotFound, RadNr,
+  TilgangsfeilSide, TokenFornyet, Oversettelse, PageNotFound,
   ServerFeilAdvarsel, InnloggetSide, Side, SideIndentering, SideRamme,
   SoknadTittel, Skillelinje, Upload,
   // Context
@@ -139,8 +137,7 @@ export {
   redirectUrl,
   redirectWithoutParams,
   // Locale,
-  buildBundle,
-  buildLocalePath,
+  buildResources,
   Language,
   // Mock
   mockFetch, mockHistory,
@@ -157,9 +154,7 @@ export {
   formatValidation,
   isValidFnr, isValidOrgnr,
   validateBekreft, validateBeloep, validateDager, validateFnr,
-  validateFra, validateOrgnr, validateTil,
-
-
+  validateFra, validateOrgnr, validateTil
 };
 
 export type {

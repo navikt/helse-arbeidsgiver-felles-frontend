@@ -10,6 +10,10 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=16",
+    "yarn": ">=1.22"
+  },
   "scripts": {
     "start": "BROWSER=firefox react-scripts start --development",
     "prebuild": "sass src:dist",

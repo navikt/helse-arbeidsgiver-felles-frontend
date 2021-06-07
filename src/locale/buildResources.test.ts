@@ -1,7 +1,7 @@
-import buildBundle from './buildBundle';
+import buildResources from './buildResources';
 import { Locale } from './Locale';
 
-describe('buildBundle', () => {
+describe('buildResources', () => {
   const source: Record<string, Locale> = {
     BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
       en: 'I confirm that...',
@@ -29,6 +29,6 @@ describe('buildBundle', () => {
   };
 
   it('should build bundle', () => {
-    expect(buildBundle(source)).toEqual(converted);
+    expect(buildResources(source)).toEqual(converted);
   });
 });

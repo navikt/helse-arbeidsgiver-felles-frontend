@@ -1,7 +1,15 @@
 import { Locale } from '../locale/Locale';
-import buildBundle from '../locale/buildBundle';
+import buildResources from '../locale/buildResources';
 
 export const bundle: Record<string, Locale> = {
+  KVITTERING_TITTEL: {
+    nb: 'Norsk',
+    en: 'Engelsk'
+  },
+  KVITTERING_INFO: {
+    nb: 'Litt infor',
+    en: 'Some info',
+  },
   SIDE_MIN_SIDE_ARBEIDSGIVER: {
     en: 'My page',
     nb: 'Min side arbeidsgiver',
@@ -32,4 +40,4 @@ export const bundle: Record<string, Locale> = {
   }
 };
 
-export default buildBundle(bundle)
+export default bundle
