@@ -19,7 +19,6 @@ import 'nav-frontend-tabell-style/dist/main.css';
 import { LanguageProvider } from './context/language/LanguageContext';
 import Language from './locale/Language';
 import LanguageBundle from './config/LanguageBundle';
-// import i18n from './config/i18n';
 import BekreftOpplysningerPanel from './components/BekreftOpplysningerPanel/BekreftOpplysningerPanel';
 import Side from './components/Side/Side';
 import { Column, Row } from 'nav-frontend-grid';
