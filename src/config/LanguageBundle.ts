@@ -1,5 +1,4 @@
 import { Locale } from '../locale/Locale';
-import buildResources from '../locale/buildResources';
 
 export const bundle: Record<string, Locale> = {
   KVITTERING_TITTEL: {

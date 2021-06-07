@@ -65,9 +65,9 @@ const LanguageProvider = (props: LanguageContextProviderProps) => {
   );
 };
 
-export const translateUrl = (href: string, locale: string) => {
-  const lang = href.indexOf('/en/') > -1 ? 'en' : 'nb';
-  return href.replace('/' + lang + '/', '/' + locale + '/')
+export const translateUrl = (pathToTranslate: string, locale: string) => {
+  const translateToLang = pathToTranslate.indexOf('/en/') > -1 ? 'en' : 'nb';
+  return pathToTranslate.replace('/' + translateToLang + '/', '/' + locale + '/')
 }
 
 export { useLanguage, LanguageProvider };

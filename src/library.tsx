@@ -57,7 +57,6 @@ import Locale from './locale/Locale';
 // Mock
 import mockFetch from './mock/mockFetch';
 import mockHistory from './mock/mockHistory';
-// import mockWindowLocation from './mock/mockWindowLocation';
 import testBackendOrganisasjoner from './mock/testBackendOrganisasjoner';
 import testFnr from './mock/testFnr';
 import testOrganisasjoner from './mock/testOrganisasjoner';
