@@ -1,6 +1,6 @@
 import Dato from './Dato';
 
-export const toDate = (dato: Dato | undefined): Date | undefined => {
+export const datoToDate = (dato: Dato | undefined): Date | undefined => {
   if (!dato) {
     return;
   }
@@ -10,4 +10,4 @@ export const toDate = (dato: Dato | undefined): Date | undefined => {
   return new Date(dato.year, dato.month - 1, dato.day);
 };
 
-export default toDate
+export default datoToDate

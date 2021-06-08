@@ -1,8 +1,8 @@
-import toDato from './toDato';
+import dateToDato from './dateToDato';
 
-describe('toDato', () => {
+describe('dateToDato', () => {
   it('should ', () => {
-    const dato = toDato(new Date(2020, 4, 17));
+    const dato = dateToDato(new Date(2020, 4, 17));
     expect(dato.year).toBe(2020);
     expect(dato.month).toBe(5);
     expect(dato.day).toBe(17);

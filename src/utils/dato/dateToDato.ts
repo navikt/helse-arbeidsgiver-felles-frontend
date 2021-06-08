@@ -1,7 +1,7 @@
 import Dato from './Dato';
 import zeroPadding from './zeroPadding';
 
-export const toDato = (date: Date): Dato => {
+export const dateToDato = (date: Date): Dato => {
   return {
     value: `${zeroPadding(date.getDate())}.${zeroPadding(date.getMonth() + 1)}.${zeroPadding(date.getFullYear())}`, //dd.mm.yyyy
     day: date.getDate(),
@@ -11,4 +11,4 @@ export const toDato = (date: Date): Dato => {
   };
 };
 
-export default toDato;
+export default dateToDato;

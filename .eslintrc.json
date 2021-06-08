@@ -27,7 +27,7 @@
         "typescript"
     ],
     "rules": {
-        "no-console": "warn",
+        "no-console": "error",
         "max-len": [
             "error", 160, {
                 "ignoreUrls": true,

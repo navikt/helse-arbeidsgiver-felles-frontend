@@ -80,13 +80,13 @@ import diffDato from './utils/dato/diffDato';
 import formatDate from './utils/dato/formatDate';
 import formatDato from './utils/dato/formatDato';
 import formatISO from './utils/dato/formatISO';
-import formatNorsk from './utils/dato/formatNorsk';
+import formatNorskDato from './utils/dato/formatNorskDato';
 import isBeforeDate from './utils/dato/isBeforeDate';
 import parseDato from './utils/dato/parseDato';
 import parseDatoVerify from './utils/dato/parseDatoVerify';
 import parseISODato from './utils/dato/parseISODato';
-import toDate from './utils/dato/toDate';
-import toDato from './utils/dato/toDato';
+import datoToDate from './utils/dato/datoToDate';
+import dateToDato from './utils/dato/dateToDato';
 import zeroPadding from './utils/dato/zeroPadding';
 import formatIsoDateAsNoDate from './utils/formatIsoDateAsNoDate';
 import formatIsoTimestampAsNoTimestamp from './utils/formatIsoTimestampAsNoTimestamp';
@@ -143,9 +143,9 @@ export {
   // State
   map200, map201, map400, map401, map422, map500, mapResponse,
   // Utils
-  datoToString, diffDato, formatDate, formatDato, formatISO, formatNorsk,
+  datoToString, diffDato, formatDate, formatDato, formatISO, formatNorskDato,
   isBeforeDate, parseDato, parseDatoVerify, parseISODato,
-  toDate, toDato, zeroPadding,
+  datoToDate, dateToDato, zeroPadding,
   formatIsoDateAsNoDate, formatIsoTimestampAsNoTimestamp, formatNumberAsCurrency,
   isNumericString, statens_grunnbeloep, stringishToNumber,
   // Validation
