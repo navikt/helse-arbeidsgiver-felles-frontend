@@ -17,7 +17,7 @@
   "scripts": {
     "start": "BROWSER=firefox react-scripts start --development",
     "prebuild": "sass src:dist",
-    "build": "tsc --module ESNext",
+    "build": "tsc --module CommonJS",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
     "test": "jest"
