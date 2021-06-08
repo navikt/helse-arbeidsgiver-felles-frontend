@@ -34,7 +34,6 @@ import i18next from 'i18next';
 const App = () => (
   <BrowserRouter>
     <LanguageProvider
-      defaultLanguage={Language.nb}
       languages={[Language.nb, Language.en]}
       i18n={i18next}
       bundle={LanguageBundle}
