@@ -1,25 +1,14 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Feilmelding } from 'nav-frontend-typografi';
-import { Locale } from '../../locale/Locale';
 import { useTranslation } from 'react-i18next';
-
-enum UploadKeys {
-  TOO_BIG = 'TOO_BIG',
-}
-
-export const UploadLanguage: Record<UploadKeys, Locale> = {
-  TOO_BIG: {
-    nb: 'Filen er for stor',
-    en: 'File size too big'
-  }
-};
+import { UploadKeys } from './UploadKeys';
 
 interface UploadProps {
-  id: string
-  label: string
-  extensions: string
-  fileSize: number
-  onChange: (file?: File) => void
+  id: string;
+  label: string;
+  extensions: string;
+  fileSize: number;
+  onChange: (file?: File) => void;
 }
 
 const Upload = (props: UploadProps) => {

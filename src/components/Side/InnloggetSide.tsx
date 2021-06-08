@@ -8,25 +8,14 @@ import Lenke from 'nav-frontend-lenker';
 import './InnloggetSide.css';
 import { useArbeidsgiver } from '../../context/arbeidsgiver/ArbeidsgiverContext';
 import { useTranslation } from 'react-i18next';
-import { Locale } from '../../locale/Locale';
 import { IngenTilgangAdvarsel } from '../login/IngenTilgangAdvarsel';
+import { InnloggetSideKeys } from './InnloggetSideKeys';
 
 interface SideProps {
   children: React.ReactNode;
   className?: string;
   sideTittel: string;
 }
-
-enum InnloggetSideKeys {
-  INNLOGGET_SIDE_MIN_SIDE = 'INNLOGGET_SIDE_MIN_SIDE'
-}
-
-export const InnloggetSideLanguage: Record<InnloggetSideKeys, Locale> = {
-  INNLOGGET_SIDE_MIN_SIDE: {
-    nb: 'Min side arbeidsgiver',
-    en: 'My page employer'
-  }
-};
 
 const InnloggetSide = (props: SideProps) => {
   const { t } = useTranslation();
