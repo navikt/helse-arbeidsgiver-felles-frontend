@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "outDir": "lib/js",
-    "jsx": "react",
+    "module": "ESNext",
+    "outDir": "dist",
+    "jsx": "react-jsx",
     "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": false,
@@ -14,17 +14,28 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "node_modules",
-    "lib",
     "src/app.tsx",
     "src/setupTests.ts",
-    "**/*.test.tsx",
-    "react-app-env.d.ts"
+    "**/*.test.tsx"
   ]
 }

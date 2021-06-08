@@ -1,10 +1,10 @@
-import { BackendOrganisasjon } from '../api/arbeidsgiver/BackendOrganisasjon';
+import BackendOrganisasjon from '../api/arbeidsgiver/BackendOrganisasjon';
 
 const testBackendOrganisasjoner: BackendOrganisasjon[] = [
   {
     name: 'ANSTENDIG BJØRN KOMMUNE',
     type: 'Enterprise',
-    parentOrganizationNumber: undefined,
+    parentOrganizationNumber: '',
     organizationForm: 'KOMM',
     organizationNumber: '810007672',
     socialSecurityNumber: undefined,
@@ -31,7 +31,7 @@ const testBackendOrganisasjoner: BackendOrganisasjon[] = [
   {
     name: 'ANSTENDIG PIGGSVIN BYDEL',
     type: 'Enterprise',
-    parentOrganizationNumber: undefined,
+    parentOrganizationNumber: '',
     organizationForm: 'ORGL',
     organizationNumber: '810007702',
     socialSecurityNumber: undefined,
@@ -49,7 +49,7 @@ const testBackendOrganisasjoner: BackendOrganisasjon[] = [
   {
     name: 'SKOPPUM OG SANDØY',
     type: 'Business',
-    parentOrganizationNumber: undefined,
+    parentOrganizationNumber: '',
     organizationForm: 'BEDR',
     organizationNumber: '911206722',
     socialSecurityNumber: undefined,
@@ -58,7 +58,7 @@ const testBackendOrganisasjoner: BackendOrganisasjon[] = [
   {
     name: 'SKJERSTAD OG KJØRSVIKBUGEN',
     type: 'Enterprise',
-    parentOrganizationNumber: undefined,
+    parentOrganizationNumber: '',
     organizationForm: 'AS',
     organizationNumber: '911212218',
     socialSecurityNumber: undefined,

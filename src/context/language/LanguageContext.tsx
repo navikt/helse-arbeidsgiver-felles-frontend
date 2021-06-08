@@ -1,8 +1,18 @@
 import React, { createContext, useContext, useState } from 'react';
-import { I18nextProvider } from 'react-i18next';
-import { setAvailableLanguages, setParams } from '@navikt/nav-dekoratoren-moduler';
-import languageInit from './LanguageInit';
-import defaultLanguageNav from './DefaultLanguageNav';
+import { I18nextProvider, initReactI18next } from 'react-i18next';
+import {
+  onLanguageSelect,
+  setAvailableLanguages
+} from '@navikt/nav-dekoratoren-moduler';
+import Language from '../../locale/Language';
+import buildResources from '../../locale/buildResources';
+import Locale from '../../locale/Locale';
+import { autodetectLanguage } from '../../locale/autodetectLanguage';
+import { translateUrl } from '../../locale/translateUrl';
+
+export interface LanguageParams {
+  language: Language;
+}
 
 interface LanguageContextInterface {
   language: string;
@@ -10,33 +20,46 @@ interface LanguageContextInterface {
 }
 
 const LanguageContext = createContext({
-  language: ''
+  language: 'nb'
 } as LanguageContextInterface);
 
 interface LanguageContextProviderProps {
   children: any;
-  defaultLanguage: 'nb' | 'nn' | 'en' | 'se' | 'pl';
   languages: Array<string>;
-  useParams: any;
   i18n: any;
-  bundle: Record<string, Record<string, string>>;
+  bundle: Record<string, Locale>;
 }
 
 const useLanguage = () => useContext(LanguageContext);
 
 const LanguageProvider = (props: LanguageContextProviderProps) => {
-  let lang = '';
-  {
-    const { language } = props.useParams();
-    lang = language;
-  }
+  const href = window.location.pathname;
   const i18n = props.i18n;
-  const [language, setLanguage] = useState<string>(lang);
-  setAvailableLanguages(props.languages.map((l) => ({ locale: l, url: '/' + l, handleInApp: false })));
-  setParams({
-    language: defaultLanguageNav(lang)
+  const [language, setLanguage] = useState<string>(autodetectLanguage(href));
+  i18n.use(initReactI18next).init({
+    resources: buildResources(props.bundle),
+    lng: 'nb',
+    react: {
+      wait: true
+    }
   });
-  languageInit(i18n, lang, props.defaultLanguage, props.languages, props.bundle);
+  setAvailableLanguages(
+    props.languages.map((l) => ({
+      locale: l,
+      url: '/' + l + '/',
+      handleInApp: true
+    }))
+  );
+  onLanguageSelect((language) => {
+    i18n.changeLanguage(language.locale);
+    const href = window.location.pathname;
+    window.history.pushState(
+      {},
+      'Title',
+      translateUrl(href, language.locale) + window.location.search
+    );
+  });
+  i18n.changeLanguage(language);
   return (
     <LanguageContext.Provider value={{ language, i18n }}>
       <I18nextProvider i18n={i18n}>{props.children}</I18nextProvider>

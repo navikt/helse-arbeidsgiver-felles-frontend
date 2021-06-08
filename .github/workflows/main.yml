@@ -21,30 +21,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: npm ci
-      - run: npm run-script build
+      - run: yarn install --frozen-lockfile
+      - run: yarn run build
       - uses: actions/upload-artifact@v2
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
-          path: ${{ github.workspace }}/lib/**/*
+          path: ${{ github.workspace }}/dist/**/*
 
   Kodekvalitet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
-      - run: npm ci --no-build
-      - run: npm test
+          node-version: '14'
+      - run: yarn install --frozen-lockfile --no-build
+      - run: yarn test
 
   Sonar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '14'
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
@@ -55,11 +55,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
-      - run: npm ci
-      - run: npm run-script lint
+          node-version: '14'
+      - run: yarn install --frozen-lockfile
+      - run: yarn run lint
 
   Snyk:
     runs-on: ubuntu-latest
