@@ -14,13 +14,13 @@ Felles kode som kan deles mellom frontend applikasjonene for helse arbeidsgiver.
 Last ned dependencies 
 
 <pre>
-npm install
+yarn install
 </pre>
 
 Kjør koden
 
 <pre>
-npm start
+yarn start
 </pre>
 
 
