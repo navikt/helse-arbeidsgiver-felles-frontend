@@ -38,7 +38,7 @@ const Upload = (props: UploadProps) => {
     props.onDelete();
   };
   return (
-    <div className={props.className}>
+    <div className={'upload ' + props.className}>
       <label className='knapp upload-filknapp'>
         <input
           className='upload-fileinput'
