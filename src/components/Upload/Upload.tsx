@@ -2,13 +2,16 @@ import React, { ChangeEvent, useState } from 'react';
 import { Feilmelding } from 'nav-frontend-typografi';
 import { useTranslation } from 'react-i18next';
 import { UploadKeys } from './UploadKeys';
+import { Flatknapp } from 'nav-frontend-knapper';
 
 interface UploadProps {
   id: string;
   label: string;
   extensions: string;
   fileSize: number;
+  className?: string;
   onChange: (file?: File) => void;
+  onDelete: () => void;
 }
 
 const Upload = (props: UploadProps) => {
@@ -20,7 +23,7 @@ const Upload = (props: UploadProps) => {
       const file = event.target.files[0];
       if (file.size > props.fileSize) {
         setFilnavn(props.label);
-        setFeilmelding(t(UploadKeys.TOO_BIG));
+        setFeilmelding(t(UploadKeys.UPLOAD_TOO_BIG));
       } else {
         setFilnavn(file.name);
         setFeilmelding('');
@@ -30,22 +33,35 @@ const Upload = (props: UploadProps) => {
       props.onChange();
     }
   }
+  const handleDelete = () => {
+    setFilnavn(props.label);
+    props.onDelete();
+  };
   return (
-    <div className="upload">
-      <label className="knapp filknapp">
-        <input className="fileinput"
-               type="file"
-               id={props.id}
-               accept={props.extensions}
-               onChange={handleUpload}
-               onClick={(e: any) => e.target.value = null}/>
-        {filnavn}
+    <div className={props.className}>
+      <label className='knapp upload-filknapp'>
+        <input
+          className='upload-fileinput'
+          type='file'
+          id='fileUploader'
+          accept={props.extensions}
+          onChange={handleUpload}
+          onClick={(e: any) => (e.target.value = null)}
+        />
+        {props.label}
       </label>
-      {feilmelding &&
-      <Feilmelding>{feilmelding}</Feilmelding>
-      }
+      {filnavn !== props.label && (
+        <div className='upload-deletewrapper'>
+          <strong className='upload-delete'>{t(UploadKeys.UPLOAD_FILENAME)}</strong>
+          <div className='upload-filnavn'>{filnavn}</div>
+          <Flatknapp onKeyDown={handleDelete} onClick={handleDelete}>
+            {t(UploadKeys.UPLOAD_DELETE)}
+          </Flatknapp>
+        </div>
+      )}
+      {feilmelding && <Feilmelding>{feilmelding}</Feilmelding>}
     </div>
   );
-}
+};
 
 export default Upload;
