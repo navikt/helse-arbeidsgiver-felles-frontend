@@ -94,6 +94,7 @@ import formatNumberAsCurrency from './utils/formatNumberAsCurrency';
 import isNumericString from './utils/isNumericString';
 import statens_grunnbeloep from './utils/statens_grunnbeloep';
 import stringishToNumber from './utils/stringishToNumber';
+import formatFilesize from './utils/formatFilesize';
 
 // Validation
 import formatValidation from './validation/formatValidation';
@@ -147,7 +148,7 @@ export {
   isBeforeDate, parseDato, parseDatoVerify, parseISODato,
   datoToDate, dateToDato, zeroPadding,
   formatIsoDateAsNoDate, formatIsoTimestampAsNoTimestamp, formatNumberAsCurrency,
-  isNumericString, statens_grunnbeloep, stringishToNumber,
+  isNumericString, statens_grunnbeloep, stringishToNumber, formatFilesize,
   // Validation
   formatValidation,
   isValidFnr, isValidOrgnr,

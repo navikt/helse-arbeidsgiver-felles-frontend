@@ -11,20 +11,20 @@ export const TokenFornyet = () => {
   return (
     <Side
       bedriftsmeny={false}
-      sidetittel={t(TokenFornyetKeys.TILGANGSFEILSIDE_FORNYET)}
-      title={t(TokenFornyetKeys.TILGANGSFEILSIDE_RENEWED)}
-      subtitle={t(TokenFornyetKeys.TILGANGSFEILSIDE_LOGIN)}
+      sidetittel={t(TokenFornyetKeys.TOKEN_FORNYET_SIDETITTEL)}
+      title={t(TokenFornyetKeys.TOKEN_FORNYET_TITLE)}
+      subtitle={t(TokenFornyetKeys.TOKEN_FORNYET_LOGIN)}
     >
       <Container className={'side__innhold'}>
         <Row>
           <Panel>
             <Innholdstittel>
-              {t(TokenFornyetKeys.TILGANGSFEILSIDE_RENEWED)}
+              {t(TokenFornyetKeys.TOKEN_FORNYET_TITLE)}
             </Innholdstittel>
           </Panel>
           <Panel>
             <Normaltekst>
-              {t(TokenFornyetKeys.TILGANGSFEILSIDE_INFO)}
+              {t(TokenFornyetKeys.TOKEN_FORNYET_INFO)}
             </Normaltekst>
           </Panel>
         </Row>
