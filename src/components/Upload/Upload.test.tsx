@@ -16,10 +16,12 @@ describe('Upload', () => {
 
 
     const handleChange = jest.fn();
+    const handleDelete = jest.fn();
 
     const view = render(
       <Upload
         onChange={handleChange}
+        onDelete={handleDelete}
         fileSize={2000}
         extensions='.pdf'
         id='fil_id'
@@ -44,10 +46,12 @@ describe('Upload', () => {
 
 
     const handleChange = jest.fn();
+    const handleDelete = jest.fn();
 
     const view = render(
       <Upload
         onChange={handleChange}
+        onDelete={handleDelete}
         fileSize={2000}
         extensions='.pdf'
         id='fil_id'
