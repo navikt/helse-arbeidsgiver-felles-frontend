@@ -2,11 +2,11 @@ import { TokenFornyetKeys } from './TokenFornyetKeys';
 import { Locale } from '../../locale/Locale';
 
 export const TokenFornyetLanguage: Record<TokenFornyetKeys, Locale> = {
-  TILGANGSFEILSIDE_RENEWED: {
+  TOKEN_FORNYET_TITLE: {
     nb: 'Innloggingen er fornyet',
     en: 'Login renewed'
   },
-  TILGANGSFEILSIDE_INFO: {
+  TOKEN_FORNYET_INFO: {
     nb:
       'Du har nå fornyet innloggingen med en time.\n' +
       'Dette vinduet kan nå lukkes.',
@@ -14,11 +14,11 @@ export const TokenFornyetLanguage: Record<TokenFornyetKeys, Locale> = {
       'You have now renewed your login by one hour.\n' +
       'This window can now be closed.'
   },
-  TILGANGSFEILSIDE_FORNYET: {
+  TOKEN_FORNYET_SIDETITTEL: {
     nb: 'Token er fornyet',
     en: 'Token is renewed'
   },
-  TILGANGSFEILSIDE_LOGIN: {
+  TOKEN_FORNYET_LOGIN: {
     nb: 'Innlogging',
     en: 'Login'
   }
