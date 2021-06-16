@@ -18,7 +18,7 @@ export const LenkeRule: Rule = {
     if (href.startsWith('http')) {
       return {
         type: 'a',
-        props: { href, target: '_blank', rel: 'noopener', class: 'lenke' },
+        props: { href, target: '_blank', rel: 'noopener', className: 'lenke' },
         children: description
       };
     }
