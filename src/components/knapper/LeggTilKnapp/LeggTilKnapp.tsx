@@ -1,7 +1,6 @@
 import React from 'react';
 import { Flatknapp } from 'nav-frontend-knapper';
 
-
 interface LeggTilProps {
   children: any;
   onClick: any;

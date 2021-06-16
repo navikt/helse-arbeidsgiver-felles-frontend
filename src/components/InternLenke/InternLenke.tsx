@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Lenke from 'nav-frontend-lenker';
+import { Flatknapp } from 'nav-frontend-knapper';
 
 interface InternLenkeProps {
-  to?: any;
+  to?: string;
   children?: any;
   className?: string;
   onClick?: any;
@@ -19,7 +19,6 @@ export const InternLenke: React.FC<InternLenkeProps> = ({
 }: InternLenkeProps) => {
   const classes: string = ('lenke ' + className).trim();
   const linkTo = to || '';
-
   if (to) {
     return (
       <Link className={classes} to={linkTo}>
@@ -28,9 +27,9 @@ export const InternLenke: React.FC<InternLenkeProps> = ({
     );
   } else {
     return (
-      <Lenke className={className} href='#' onClick={onClick} onKeyDown={onKeyDown}>
+      <Flatknapp className={'intern-lenke ' + className} onClick={onClick} onKeyDown={onKeyDown}>
         {children}
-      </Lenke>
+      </Flatknapp>
     );
   }
 };
