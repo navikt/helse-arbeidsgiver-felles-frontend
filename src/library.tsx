@@ -10,8 +10,10 @@ import HttpStatus from './api/HttpStatus';
 
 // Components
 import BekreftOpplysningerPanel from './components/BekreftOpplysningerPanel/BekreftOpplysningerPanel';
+import { BekreftOpplysningerKeys } from './components/BekreftOpplysningerPanel/BekreftOpplysningerKeys';
 import DatoVelger from './components/DatoVelger/DatoVelger';
 import Feilmeldingspanel from './components/Feilmeldingspanel/Feilmeldingspanel';
+import { FeilmeldingspanelKeys } from './components/Feilmeldingspanel/FeilmeldingspanelKeys';
 import lagFeil from './components/Feilmeldingspanel/lagFeil';
 import pushFeilmelding from './components/Feilmeldingspanel/pushFeilmelding';
 import Fnr from './components/Fnr/Fnr';
@@ -21,13 +23,20 @@ import SlettKravKnapp from './components/knapper/SlettKravKnapp/SlettKravKnapp';
 import LeggTilKnapp from './components/knapper/LeggTilKnapp/LeggTilKnapp';
 import Slettknapp from './components/knapper/slett/Slettknapp';
 import Kvittering from './components/kvittering/Kvittering';
+import { KvitteringKeys } from './components/kvittering/KvitteringKeys';
 import IngenTilgangAdvarsel from './components/login/IngenTilgangAdvarsel';
+import { IngenTilgangAdvarselKeys } from './components/login/IngenTilgangAdvarselKeys';
 import LoggetUtAdvarsel from './components/login/LoggetUtAdvarsel';
+import { LoggetUtAdvarselKeys } from './components/login/LoggetUtAdvarselKeys';
 import TilgangsfeilSide from './components/login/TilgangsfeilSide';
+import { TilgangsfeilSideKeys } from './components/login/TilgangsfeilSideKeys';
 import TokenFornyet from './components/login/TokenFornyet';
+import { TokenFornyetKeys } from './components/login/TokenFornyetKeys';
 import Oversettelse from './components/Oversettelse/Oversettelse';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import { PageNotFoundKeys } from './components/PageNotFound/PageNotFoundKeys';
 import ServerFeilAdvarsel from './components/ServerFeilAdvarsel/ServerFeilAdvarsel';
+import { ServerFeilAdvarselKeys } from './components/ServerFeilAdvarsel/ServerFeilAdvarselKeys';
 import InnloggetSide from './components/Side/InnloggetSide';
 import Side from './components/Side/Side';
 import SideIndentering from './components/Side/SideIndentering';
@@ -35,6 +44,7 @@ import SideRamme from './components/Side/SideRamme';
 import SoknadTittel from './components/Side/SoknadTittel';
 import Skillelinje from './components/Skillelinje/Skillelinje';
 import Upload from './components/Upload/Upload';
+import { UploadKeys } from './components/Upload/UploadKeys';
 
 // Context
 import { ArbeidsgiverProvider, useArbeidsgiver, buildArbeidsgiver } from './context/arbeidsgiver/ArbeidsgiverContext';
@@ -174,5 +184,17 @@ export type {
   Dato,
 
   // Validation
-  ValidationResult
+  ValidationResult,
+
+  // Components
+  BekreftOpplysningerKeys,
+  FeilmeldingspanelKeys,
+  KvitteringKeys,
+  IngenTilgangAdvarselKeys,
+  LoggetUtAdvarselKeys,
+  TilgangsfeilSideKeys,
+  TokenFornyetKeys,
+  PageNotFoundKeys,
+  ServerFeilAdvarselKeys,
+  UploadKeys
 };
