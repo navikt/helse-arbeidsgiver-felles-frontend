@@ -10,7 +10,9 @@ interface SoknadTittelProps {
 const SoknadTittel = (props: SoknadTittelProps) => {
   return (
     <Panel className='panel--heading'>
-      <Undertittel>{props.subtitle ? props.subtitle.toUpperCase() : '&nbsp;'}</Undertittel>
+      <Undertittel>
+        {props.subtitle ? props.subtitle.toUpperCase() : '&nbsp;'}
+      </Undertittel>
       <Innholdstittel>{props.children}</Innholdstittel>
     </Panel>
   );

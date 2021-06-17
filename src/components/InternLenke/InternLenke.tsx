@@ -27,7 +27,11 @@ export const InternLenke: React.FC<InternLenkeProps> = ({
     );
   } else {
     return (
-      <Flatknapp className={'intern-lenke ' + className} onClick={onClick} onKeyDown={onKeyDown}>
+      <Flatknapp
+        className={'intern-lenke ' + className}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+      >
         {children}
       </Flatknapp>
     );

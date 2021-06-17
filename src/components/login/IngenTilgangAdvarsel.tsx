@@ -11,4 +11,4 @@ export const IngenTilgangAdvarsel = () => {
   );
 };
 
-export default IngenTilgangAdvarsel
+export default IngenTilgangAdvarsel;

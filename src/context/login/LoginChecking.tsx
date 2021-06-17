@@ -1,6 +1,7 @@
 import React from 'react';
 
-const LoginChecking = () => <div className='login-provider-checking'>Loading...</div>;
+const LoginChecking = () => (
+  <div className='login-provider-checking'>Loading...</div>
+);
 
-export default LoginChecking
-
+export default LoginChecking;

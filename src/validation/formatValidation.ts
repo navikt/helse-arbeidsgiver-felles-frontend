@@ -1,7 +1,10 @@
 import ValidationResult from './ValidationResult';
 import { i18n } from 'i18next';
 
-const formatValidation = (validationResult: ValidationResult | undefined, translate: i18n): string | undefined => {
+const formatValidation = (
+  validationResult: ValidationResult | undefined,
+  translate: i18n
+): string | undefined => {
   if (!validationResult) {
     return;
   }

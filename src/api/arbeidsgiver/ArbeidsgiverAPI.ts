@@ -17,7 +17,9 @@ const handleStatus = (response: Response) => {
 
 const GetArbeidsgivere = (basePath: string): Promise<ArbeidsgivereResponse> => {
   return Promise.race([
-    new Promise((resolve, reject) => setTimeout(() => reject('Tidsavbrudd'), 10000))
+    new Promise((resolve, reject) =>
+      setTimeout(() => reject('Tidsavbrudd'), 10000)
+    )
       .then(() => {
         return {
           status: HttpStatus.Timeout,

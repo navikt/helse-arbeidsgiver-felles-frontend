@@ -28,9 +28,7 @@ describe('InnloggetSide', () => {
           status={ArbeidsgiverStatus.Successfully}
           baseUrl={''}
         >
-          <InnloggetSide sideTittel={'Sidetittel'}>
-            Barna
-          </InnloggetSide>
+          <InnloggetSide sideTittel={'Sidetittel'}>Barna</InnloggetSide>
         </ArbeidsgiverProvider>
       </MemoryRouter>,
       container

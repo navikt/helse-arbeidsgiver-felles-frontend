@@ -32,7 +32,7 @@ const Upload = (props: UploadProps) => {
     } else {
       props.onChange();
     }
-  }
+  };
   const handleDelete = () => {
     setFilnavn(props.label);
     props.onDelete();
@@ -52,7 +52,9 @@ const Upload = (props: UploadProps) => {
       </label>
       {filnavn !== props.label && (
         <div className='upload-deletewrapper'>
-          <strong className='upload-delete'>{t(UploadKeys.UPLOAD_FILENAME)}</strong>
+          <strong className='upload-delete'>
+            {t(UploadKeys.UPLOAD_FILENAME)}
+          </strong>
           <div className='upload-filnavn'>{filnavn}</div>
           <Flatknapp onKeyDown={handleDelete} onClick={handleDelete}>
             {t(UploadKeys.UPLOAD_DELETE)}

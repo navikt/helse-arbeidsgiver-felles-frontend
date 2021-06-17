@@ -15,9 +15,13 @@ const handleStatus = (response: Response) => {
   }
 };
 
-export const GetLoginExpiry = (basePath: string): Promise<LoginExpiryResponse> => {
+export const GetLoginExpiry = (
+  basePath: string
+): Promise<LoginExpiryResponse> => {
   return Promise.race([
-    new Promise((resolve, reject) => setTimeout(() => reject('Tidsavbrudd'), 10000))
+    new Promise((resolve, reject) =>
+      setTimeout(() => reject('Tidsavbrudd'), 10000)
+    )
       .then(() => {
         return {
           status: HttpStatus.Timeout

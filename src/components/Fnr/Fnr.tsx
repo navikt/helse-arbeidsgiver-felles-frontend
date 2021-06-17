@@ -22,7 +22,9 @@ const Fnr = (props: FnrProps) => {
       id={props.id}
       disabled={props.disabled}
       label={props.label}
-      onValidate={(valid) => (props.onValidate ? props.onValidate(valid) : null)}
+      onValidate={(valid) =>
+        props.onValidate ? props.onValidate(valid) : null
+      }
       onChange={(evt) => props.onChange(evt.target.value)}
       feil={props.feilmelding}
     />

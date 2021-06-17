@@ -12,7 +12,10 @@ import map200 from './map200';
 const mapResponse = (
   response: ValidationResponse,
   state: ValidationState,
-  mapFeilmeldinger: (response: ValidationResponse, state: ValidationState) => FeiloppsummeringFeil[]
+  mapFeilmeldinger: (
+    response: ValidationResponse,
+    state: ValidationState
+  ) => FeiloppsummeringFeil[]
 ): ValidationState => {
   const nextState = Object.assign({}, state);
   switch (response.status) {

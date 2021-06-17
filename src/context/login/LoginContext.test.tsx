@@ -44,7 +44,11 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/')}>
-          <LoginProvider loginServiceUrl='' baseUrl='' status={LoginStatus.MustLogin}>
+          <LoginProvider
+            loginServiceUrl=''
+            baseUrl=''
+            status={LoginStatus.MustLogin}
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -63,7 +67,11 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/')}>
-          <LoginProvider loginServiceUrl='' baseUrl='' status={LoginStatus.Verified}>
+          <LoginProvider
+            loginServiceUrl=''
+            baseUrl=''
+            status={LoginStatus.Verified}
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -82,7 +90,11 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/')}>
-          <LoginProvider loginServiceUrl='' baseUrl='' status={LoginStatus.Checking}>
+          <LoginProvider
+            loginServiceUrl=''
+            baseUrl=''
+            status={LoginStatus.Checking}
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -101,7 +113,11 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/')}>
-          <LoginProvider loginServiceUrl='' baseUrl='' status={LoginStatus.Failed}>
+          <LoginProvider
+            loginServiceUrl=''
+            baseUrl=''
+            status={LoginStatus.Failed}
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -120,7 +136,10 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/')}>
-          <LoginProvider loginServiceUrl='https://mock.it' baseUrl='https://mock.it'>
+          <LoginProvider
+            loginServiceUrl='https://mock.it'
+            baseUrl='https://mock.it'
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -140,7 +159,10 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/page?loggedIn=true')}>
-          <LoginProvider loginServiceUrl='https://mock.it' baseUrl='https://mock.it'>
+          <LoginProvider
+            loginServiceUrl='https://mock.it'
+            baseUrl='https://mock.it'
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -162,7 +184,10 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/page?loggedIn=true')}>
-          <LoginProvider loginServiceUrl='https://mock.it' baseUrl='https://mock.it'>
+          <LoginProvider
+            loginServiceUrl='https://mock.it'
+            baseUrl='https://mock.it'
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -184,7 +209,10 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/page?loggedIn=true')}>
-          <LoginProvider loginServiceUrl='https://mock.it' baseUrl='https://mock.it'>
+          <LoginProvider
+            loginServiceUrl='https://mock.it'
+            baseUrl='https://mock.it'
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,
@@ -204,7 +232,10 @@ describe('LoginContext', () => {
     act(() => {
       render(
         <Router history={mockHistory('/page')}>
-          <LoginProvider loginServiceUrl='https://mock.it' baseUrl='https://mock.it'>
+          <LoginProvider
+            loginServiceUrl='https://mock.it'
+            baseUrl='https://mock.it'
+          >
             ChildrenHere
           </LoginProvider>
         </Router>,

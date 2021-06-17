@@ -1,4 +1,10 @@
-import { ASTNode, ReactElementDescription, RegexMatch, Rule, RuleScope } from '@navikt/textparser';
+import {
+  ASTNode,
+  ReactElementDescription,
+  RegexMatch,
+  Rule,
+  RuleScope
+} from '@navikt/textparser';
 import { v4 as uuid } from 'uuid';
 
 export const ListeRule: Rule = {

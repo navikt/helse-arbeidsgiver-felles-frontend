@@ -13,5 +13,5 @@ export const UploadLanguage: Record<UploadKeys, Locale> = {
   UPLOAD_FILENAME: {
     nb: 'Lastet opp:',
     en: 'Filename:'
-  },
+  }
 };

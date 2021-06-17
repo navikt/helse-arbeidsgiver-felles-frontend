@@ -6,6 +6,6 @@ type BackendOrganisasjon = {
   organizationNumber: string;
   socialSecurityNumber?: string;
   status: string;
-}
+};
 
-export default BackendOrganisasjon
+export default BackendOrganisasjon;

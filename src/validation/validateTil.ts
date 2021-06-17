@@ -7,13 +7,16 @@ export enum validateTilKeys {
   VALIDATE_TIL_INVALID = 'VALIDATE_TIL_INVALID',
   VALIDATE_TIL_FOM_ERROR = 'VALIDATE_TIL_FOM_ERROR',
   VALIDATE_TIL_ERROR = 'VALIDATE_TIL_ERROR',
-  VALIDATE_TIL_TOO_EARLY = 'VALIDATE_TIL_TOO_EARLY',
+  VALIDATE_TIL_TOO_EARLY = 'VALIDATE_TIL_TOO_EARLY'
 }
 
-
 export interface ValidateTilResult extends ValidationResult {
-  key: validateTilKeys.VALIDATE_TIL_MISSING | validateTilKeys.VALIDATE_TIL_INVALID |
-    validateTilKeys.VALIDATE_TIL_FOM_ERROR | validateTilKeys.VALIDATE_TIL_ERROR| validateTilKeys.VALIDATE_TIL_TOO_EARLY
+  key:
+    | validateTilKeys.VALIDATE_TIL_MISSING
+    | validateTilKeys.VALIDATE_TIL_INVALID
+    | validateTilKeys.VALIDATE_TIL_FOM_ERROR
+    | validateTilKeys.VALIDATE_TIL_ERROR
+    | validateTilKeys.VALIDATE_TIL_TOO_EARLY;
 }
 
 const validateTil = (
@@ -49,7 +52,7 @@ const validateTil = (
   if (fra.millis > til.millis) {
     return { key: validateTilKeys.VALIDATE_TIL_TOO_EARLY };
   }
-  return undefined
+  return undefined;
 };
 
 export default validateTil;

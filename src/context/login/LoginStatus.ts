@@ -5,4 +5,4 @@ export enum LoginStatus {
   Failed
 }
 
-export default LoginStatus
+export default LoginStatus;

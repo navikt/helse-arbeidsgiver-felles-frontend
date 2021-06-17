@@ -8,7 +8,10 @@ interface LeggTilProps {
 }
 
 const LeggTilKnapp = (props: LeggTilProps) => (
-  <Flatknapp className={'leggtil-knapp ' + props.className} onClick={(evt) => props.onClick(evt)}>
+  <Flatknapp
+    className={'leggtil-knapp ' + props.className}
+    onClick={(evt) => props.onClick(evt)}
+  >
     {props.children}
   </Flatknapp>
 );

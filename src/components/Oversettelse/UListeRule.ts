@@ -1,4 +1,10 @@
-import { ASTNode, ReactElementDescription, RegexMatch, Rule, RuleScope } from '@navikt/textparser';
+import {
+  ASTNode,
+  ReactElementDescription,
+  RegexMatch,
+  Rule,
+  RuleScope
+} from '@navikt/textparser';
 
 export const UListeRule: Rule = {
   name: 'UListe',

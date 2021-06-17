@@ -9,6 +9,8 @@ describe('map200', () => {
       progress: false,
       serverError: false
     };
-    expect(map200({ feilmeldinger: [] }, { violations: [], status: 1 })).toEqual(expected);
+    expect(
+      map200({ feilmeldinger: [] }, { violations: [], status: 1 })
+    ).toEqual(expected);
   });
 });

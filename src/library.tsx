@@ -47,10 +47,17 @@ import Upload from './components/Upload/Upload';
 import { UploadKeys } from './components/Upload/UploadKeys';
 
 // Context
-import { ArbeidsgiverProvider, useArbeidsgiver, buildArbeidsgiver } from './context/arbeidsgiver/ArbeidsgiverContext';
+import {
+  ArbeidsgiverProvider,
+  useArbeidsgiver,
+  buildArbeidsgiver
+} from './context/arbeidsgiver/ArbeidsgiverContext';
 import ArbeidsgiverInterface from './context/arbeidsgiver/ArbeidsgiverInterface';
 import ArbeidsgiverStatus from './context/arbeidsgiver/ArbeidsgiverStatus';
-import { LanguageProvider, useLanguage } from './context/language/LanguageContext';
+import {
+  LanguageProvider,
+  useLanguage
+} from './context/language/LanguageContext';
 import isLoggedInFromUrl from './context/login/isLoggedInFromUrl';
 import LoginChecking from './context/login/LoginChecking';
 import { LoginProvider } from './context/login/LoginContext';
@@ -110,8 +117,12 @@ import formatFilesize from './utils/formatFilesize';
 import formatValidation from './validation/formatValidation';
 import isValidFnr from './validation/isValidFnr';
 import isValidOrgnr from './validation/isValidOrgnr';
-import validateBekreft, { validateBekreftKeys } from './validation/validateBekreft';
-import validateBeloep, { validateBeloepKeys } from './validation/validateBeloep';
+import validateBekreft, {
+  validateBekreftKeys
+} from './validation/validateBekreft';
+import validateBeloep, {
+  validateBeloepKeys
+} from './validation/validateBeloep';
 import validateDager from './validation/validateDager';
 import validateFnr, { validateFnrKeys } from './validation/validateFnr';
 import validateFra, { validateFraKeys } from './validation/validateFra';
@@ -128,18 +139,47 @@ import ValidationResult from './validation/ValidationResult';
  */
 export {
   // API
-  ArbeidsgiverAPI, mapArbeidsgiver, LoginExpiryAPI, ParseExpiryDate, HttpStatus,
+  ArbeidsgiverAPI,
+  mapArbeidsgiver,
+  LoginExpiryAPI,
+  ParseExpiryDate,
+  HttpStatus,
   // Components
-  BekreftOpplysningerPanel, DatoVelger, Feilmeldingspanel, lagFeil,
-  pushFeilmelding, Fnr, HjelpeLabel, InternLenke, SlettKravKnapp,
-  LeggTilKnapp, Slettknapp, Kvittering, IngenTilgangAdvarsel, LoggetUtAdvarsel,
-  TilgangsfeilSide, TokenFornyet, Oversettelse, PageNotFound,
-  ServerFeilAdvarsel, InnloggetSide, Side, SideIndentering, SideRamme,
-  SoknadTittel, Skillelinje, Upload,
+  BekreftOpplysningerPanel,
+  DatoVelger,
+  Feilmeldingspanel,
+  lagFeil,
+  pushFeilmelding,
+  Fnr,
+  HjelpeLabel,
+  InternLenke,
+  SlettKravKnapp,
+  LeggTilKnapp,
+  Slettknapp,
+  Kvittering,
+  IngenTilgangAdvarsel,
+  LoggetUtAdvarsel,
+  TilgangsfeilSide,
+  TokenFornyet,
+  Oversettelse,
+  PageNotFound,
+  ServerFeilAdvarsel,
+  InnloggetSide,
+  Side,
+  SideIndentering,
+  SideRamme,
+  SoknadTittel,
+  Skillelinje,
+  Upload,
   // Context
-  ArbeidsgiverProvider, useArbeidsgiver, buildArbeidsgiver, ArbeidsgiverStatus,
-  LanguageProvider, useLanguage,
-  isLoggedInFromUrl, LoginChecking,
+  ArbeidsgiverProvider,
+  useArbeidsgiver,
+  buildArbeidsgiver,
+  ArbeidsgiverStatus,
+  LanguageProvider,
+  useLanguage,
+  isLoggedInFromUrl,
+  LoginChecking,
   LoginProvider,
   LoginRedirect,
   LoginStatus,
@@ -149,43 +189,70 @@ export {
   buildResources,
   Language,
   // Mock
-  mockFetch, mockHistory,
-  testBackendOrganisasjoner, testFnr, testOrganisasjoner, testOrgnr,
+  mockFetch,
+  mockHistory,
+  testBackendOrganisasjoner,
+  testFnr,
+  testOrganisasjoner,
+  testOrgnr,
   // State
-  map200, map201, map400, map401, map422, map500, mapResponse,
+  map200,
+  map201,
+  map400,
+  map401,
+  map422,
+  map500,
+  mapResponse,
   // Utils
-  datoToString, diffDato, formatDate, formatDato, formatISO, formatNorskDato,
-  isBeforeDate, parseDato, parseDatoVerify, parseISODato,
-  datoToDate, dateToDato, zeroPadding,
-  formatIsoDateAsNoDate, formatIsoTimestampAsNoTimestamp, formatNumberAsCurrency,
-  isNumericString, statens_grunnbeloep, stringishToNumber, formatFilesize,
+  datoToString,
+  diffDato,
+  formatDate,
+  formatDato,
+  formatISO,
+  formatNorskDato,
+  isBeforeDate,
+  parseDato,
+  parseDatoVerify,
+  parseISODato,
+  datoToDate,
+  dateToDato,
+  zeroPadding,
+  formatIsoDateAsNoDate,
+  formatIsoTimestampAsNoTimestamp,
+  formatNumberAsCurrency,
+  isNumericString,
+  statens_grunnbeloep,
+  stringishToNumber,
+  formatFilesize,
   // Validation
   formatValidation,
-  isValidFnr, isValidOrgnr,
-  validateBekreft, validateBeloep, validateDager, validateFnr,
-  validateFra, validateOrgnr, validateTil
+  isValidFnr,
+  isValidOrgnr,
+  validateBekreft,
+  validateBeloep,
+  validateDager,
+  validateFnr,
+  validateFra,
+  validateOrgnr,
+  validateTil
 };
 
 export type {
   // API
-  ArbeidsgivereResponse, BackendOrganisasjon, LoginExpiryResponse,
-
-
+  ArbeidsgivereResponse,
+  BackendOrganisasjon,
+  LoginExpiryResponse,
   // Context
   ArbeidsgiverInterface,
-
   // Locale
   Locale,
-
   // State
-  ValidationResponse, ValidationState,
-
+  ValidationResponse,
+  ValidationState,
   // Utils
   Dato,
-
   // Validation
   ValidationResult,
-
   // Components
   BekreftOpplysningerKeys,
   FeilmeldingspanelKeys,
@@ -202,5 +269,5 @@ export type {
   validateFnrKeys,
   validateFraKeys,
   validateTilKeys,
-  validateOrgnrKeys,
+  validateOrgnrKeys
 };

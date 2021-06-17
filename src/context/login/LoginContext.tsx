@@ -14,7 +14,12 @@ interface LoginContextProviderProps {
   status?: LoginStatus;
 }
 
-export const LoginProvider = ({ baseUrl, children, loginServiceUrl, status = LoginStatus.Checking }: LoginContextProviderProps) => {
+export const LoginProvider = ({
+  baseUrl,
+  children,
+  loginServiceUrl,
+  status = LoginStatus.Checking
+}: LoginContextProviderProps) => {
   const [expiry, setExpiry] = useState<number>(status);
   useEffect(() => {
     if (expiry === LoginStatus.Checking) {
@@ -22,7 +27,10 @@ export const LoginProvider = ({ baseUrl, children, loginServiceUrl, status = Log
         if (!loginExpiryResponse.tidspunkt) {
           setExpiry(LoginStatus.MustLogin);
         }
-        if (loginExpiryResponse.tidspunkt && loginExpiryResponse.tidspunkt.getTime() < new Date().getTime()) {
+        if (
+          loginExpiryResponse.tidspunkt &&
+          loginExpiryResponse.tidspunkt.getTime() < new Date().getTime()
+        ) {
           setExpiry(LoginStatus.MustLogin);
         } else {
           setExpiry(LoginStatus.Verified);
@@ -35,10 +43,12 @@ export const LoginProvider = ({ baseUrl, children, loginServiceUrl, status = Log
     case LoginStatus.Checking:
       return <LoginChecking />;
     case LoginStatus.MustLogin:
-      return <LoginRedirect loginServiceUrl={ loginServiceUrl }/>;
+      return <LoginRedirect loginServiceUrl={loginServiceUrl} />;
     case LoginStatus.Failed:
       return <TilgangsfeilSide />;
     default:
-      return <LoginContext.Provider value={{}}>{children}</LoginContext.Provider>;
+      return (
+        <LoginContext.Provider value={{}}>{children}</LoginContext.Provider>
+      );
   }
 };

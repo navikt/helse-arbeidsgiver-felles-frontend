@@ -1,6 +1,6 @@
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 
-const testOrganisasjoner:Organisasjon[] = [
+const testOrganisasjoner: Organisasjon[] = [
   {
     Name: 'ANSTENDIG BJØRN KOMMUNE',
     OrganizationForm: 'KOMM',
@@ -58,6 +58,5 @@ const testOrganisasjoner:Organisasjon[] = [
     Type: 'Enterprise'
   }
 ];
-
 
 export default testOrganisasjoner;

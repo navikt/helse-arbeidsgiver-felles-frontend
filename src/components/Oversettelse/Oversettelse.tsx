@@ -1,5 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import Tekstomrade, { BoldRule, HighlightRule, LinebreakRule } from 'nav-frontend-tekstomrade';
+import Tekstomrade, {
+  BoldRule,
+  HighlightRule,
+  LinebreakRule
+} from 'nav-frontend-tekstomrade';
 import { ListeRule } from './ListeRule';
 import { UListeRule } from './UListeRule';
 import { LenkeRule } from './LenkeRule';
@@ -21,7 +25,18 @@ link: [link name](link url)
 const Oversettelse = ({ className, langKey, variables }: OversettelseProps) => {
   const { t } = useTranslation();
   return (
-    <Tekstomrade className={className} as='span' rules={[ListeRule, UListeRule, HighlightRule, BoldRule, LenkeRule, LinebreakRule]}>
+    <Tekstomrade
+      className={className}
+      as='span'
+      rules={[
+        ListeRule,
+        UListeRule,
+        HighlightRule,
+        BoldRule,
+        LenkeRule,
+        LinebreakRule
+      ]}
+    >
       {t(langKey, variables)}
     </Tekstomrade>
   );

@@ -11,5 +11,4 @@ describe('LanguageContext', () => {
   it('skal vise oversette til norsk', () => {
     expect(translateUrl(engelsk, 'nb')).toContain(norsk);
   });
-
 });

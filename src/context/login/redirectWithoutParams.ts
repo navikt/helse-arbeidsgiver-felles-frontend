@@ -1,3 +1,4 @@
-export const redirectWithoutParams = (pathname: string) => pathname.replace('/grensekomp', '');
+export const redirectWithoutParams = (pathname: string) =>
+  pathname.replace('/grensekomp', '');
 
-export default redirectWithoutParams
+export default redirectWithoutParams;

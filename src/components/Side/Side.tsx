@@ -21,7 +21,6 @@ interface SideProps {
   bedriftsmeny?: boolean;
 }
 
-
 const Side = (props: SideProps) => {
   const history: History = useHistory();
   const { t } = useTranslation();
@@ -43,7 +42,9 @@ const Side = (props: SideProps) => {
           <Row>
             <Column>
               <div className={'side__minside_arbeidsgiver'}>
-                <Lenke href='/min-side-arbeidsgiver/'>&lt;&lt; {t(SideKeys.SIDE_MIN_SIDE_ARBEIDSGIVER)}</Lenke>
+                <Lenke href='/min-side-arbeidsgiver/'>
+                  &lt;&lt; {t(SideKeys.SIDE_MIN_SIDE_ARBEIDSGIVER)}
+                </Lenke>
               </div>
             </Column>
           </Row>
@@ -52,11 +53,18 @@ const Side = (props: SideProps) => {
         <Container className={'side__innhold'}>
           <Row>
             <Column>
-              {props.title && <SoknadTittel subtitle={props.subtitle}>{props.title}</SoknadTittel>}
+              {props.title && (
+                <SoknadTittel subtitle={props.subtitle}>
+                  {props.title}
+                </SoknadTittel>
+              )}
 
               <SideIndentering>
-                {showChildren(props.bedriftsmeny, arbeidsgivere) && props.children}
-                {!showChildren(props.bedriftsmeny, arbeidsgivere) && <IngenTilgangAdvarsel />}
+                {showChildren(props.bedriftsmeny, arbeidsgivere) &&
+                  props.children}
+                {!showChildren(props.bedriftsmeny, arbeidsgivere) && (
+                  <IngenTilgangAdvarsel />
+                )}
               </SideIndentering>
             </Column>
           </Row>
@@ -66,7 +74,10 @@ const Side = (props: SideProps) => {
   );
 };
 
-export const showChildren = (bedriftsmeny: boolean | undefined, arbeidsgivere: Array<Organisasjon>) => {
+export const showChildren = (
+  bedriftsmeny: boolean | undefined,
+  arbeidsgivere: Array<Organisasjon>
+) => {
   return bedriftsmeny === false || arbeidsgivere.length > 0;
 };
 

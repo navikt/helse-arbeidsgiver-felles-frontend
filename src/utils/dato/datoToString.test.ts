@@ -3,7 +3,9 @@ import datoToString from './datoToString';
 
 describe('datoToString', () => {
   it('should throw an error when input is undefined', () => {
-    expect(() => datoToString(undefined)).toThrowError(new Error('År ikke oppgitt'));
+    expect(() => datoToString(undefined)).toThrowError(
+      new Error('År ikke oppgitt')
+    );
   });
 
   it('should throw an error when year is missing', () => {
@@ -11,7 +13,9 @@ describe('datoToString', () => {
       year: 0
     };
 
-    expect(() => datoToString(testdato)).toThrowError(new Error('År ikke oppgitt'));
+    expect(() => datoToString(testdato)).toThrowError(
+      new Error('År ikke oppgitt')
+    );
   });
 
   it('should throw an error when month is missing', () => {
@@ -19,7 +23,9 @@ describe('datoToString', () => {
       year: 2002
     };
 
-    expect(() => datoToString(testdato)).toThrowError(new Error('Måned ikke oppgitt'));
+    expect(() => datoToString(testdato)).toThrowError(
+      new Error('Måned ikke oppgitt')
+    );
   });
 
   it('should throw an error when day is missing', () => {
@@ -28,7 +34,9 @@ describe('datoToString', () => {
       month: 12
     };
 
-    expect(() => datoToString(testdato)).toThrowError(new Error('Dag ikke oppgitt'));
+    expect(() => datoToString(testdato)).toThrowError(
+      new Error('Dag ikke oppgitt')
+    );
   });
 
   it('should return a formatted datestring when a valid dato object is given', () => {

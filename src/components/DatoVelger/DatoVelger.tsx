@@ -7,19 +7,20 @@ import classNames from 'classnames';
 
 interface DatoVelgerProps {
   label?: React.ReactNode;
-  dato?: Date
-  feilmelding?: string,
-  placeholder?: string
-  onChange: (dato: Date) => void
-  id?: string
-  className?: string
-  minDate?: string|Date
-  maxDate?: string|Date
-  defaultDate?: string|Date
-  disabled?: boolean
+  dato?: Date;
+  feilmelding?: string;
+  placeholder?: string;
+  onChange: (dato: Date) => void;
+  id?: string;
+  className?: string;
+  minDate?: string | Date;
+  maxDate?: string | Date;
+  defaultDate?: string | Date;
+  disabled?: boolean;
 }
 
-const formatDato = (dato?: Date) => (dato ? dayjs(dato).format('DD.MM.YYYY') : '')
+const formatDato = (dato?: Date) =>
+  dato ? dayjs(dato).format('DD.MM.YYYY') : '';
 
 const DatoVelger = (props: DatoVelgerProps) => {
   const handleClose = (dato: Date) => {
@@ -30,14 +31,15 @@ const DatoVelger = (props: DatoVelgerProps) => {
     minDate: props.minDate,
     maxDate: props.maxDate,
     defaultDate: props.defaultDate
-  }
+  };
 
-  if(!props.minDate) delete callendarOptions.minDate;
-  if(!props.maxDate) delete callendarOptions.maxDate;
-  if(!props.defaultDate) delete callendarOptions.defaultDate;
+  if (!props.minDate) delete callendarOptions.minDate;
+  if (!props.maxDate) delete callendarOptions.maxDate;
+  if (!props.defaultDate) delete callendarOptions.defaultDate;
 
-
-  const feilmeldingClassName = props.feilmelding ? 'skjemaelement__input--harFeil': '';
+  const feilmeldingClassName = props.feilmelding
+    ? 'skjemaelement__input--harFeil'
+    : '';
 
   return (
     <div className={'skjemaelement'}>
@@ -45,7 +47,11 @@ const DatoVelger = (props: DatoVelgerProps) => {
       <Flatpickr
         id={props.id ?? 'datoVelgerId'}
         placeholder={props.placeholder}
-        className={classNames('skjemaelement__input', feilmeldingClassName , props.className)}
+        className={classNames(
+          'skjemaelement__input',
+          feilmeldingClassName,
+          props.className
+        )}
         value={props.dato}
         disabled={props.disabled}
         options={{
@@ -60,12 +66,11 @@ const DatoVelger = (props: DatoVelgerProps) => {
           ...callendarOptions
         }}
       />
-      {
-        props.feilmelding &&
+      {props.feilmelding && (
         <SkjemaelementFeilmelding>{props.feilmelding}</SkjemaelementFeilmelding>
-      }
+      )}
     </div>
-  )
+  );
 };
 
 export default DatoVelger;

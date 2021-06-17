@@ -10,7 +10,9 @@ describe('validateBekreft', () => {
   });
 
   it('should produce error message when not checked', () => {
-    expect(validateBekreft(false, true)?.key).toBe('VALIDATE_BEKREFT_NOT_CHECKED');
+    expect(validateBekreft(false, true)?.key).toBe(
+      'VALIDATE_BEKREFT_NOT_CHECKED'
+    );
   });
 
   it('should give no errors when checked', () => {

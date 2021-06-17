@@ -5,7 +5,11 @@ import { datoToString } from '../utils/dato/datoToString';
 import ValidationResult from './ValidationResult';
 
 export interface ValidateDagerResult extends ValidationResult {
-  key: 'VALIDATE_DAGER_MISSING' | 'VALIDATE_DAGER_DIGITS_ONLY' | 'VALIDATE_DAGER_TOO_HIGH' | 'VALIDATE_DAGER_INVALID'
+  key:
+    | 'VALIDATE_DAGER_MISSING'
+    | 'VALIDATE_DAGER_DIGITS_ONLY'
+    | 'VALIDATE_DAGER_TOO_HIGH'
+    | 'VALIDATE_DAGER_INVALID';
 }
 
 const validateDager = (
@@ -33,11 +37,16 @@ const validateDager = (
   if (
     fra &&
     til &&
-    parseInt(dager) > dayjs(datoToString(til), 'DD.MM.YYYY').diff(dayjs(datoToString(fra), 'DD.MM.YYYY'), 'day') + 1
+    parseInt(dager) >
+      dayjs(datoToString(til), 'DD.MM.YYYY').diff(
+        dayjs(datoToString(fra), 'DD.MM.YYYY'),
+        'day'
+      ) +
+        1
   ) {
     return { key: 'VALIDATE_DAGER_INVALID' };
   }
-  return undefined
+  return undefined;
 };
 
 export default validateDager;

@@ -16,9 +16,17 @@ interface SlettKravKnappProps {
   children: React.ReactNode;
 }
 
-const SlettKravKnapp = ({ onClick, disabled, children }: SlettKravKnappProps) => {
+const SlettKravKnapp = ({
+  onClick,
+  disabled,
+  children
+}: SlettKravKnappProps) => {
   return (
-    <Knapp onClick={onClick} className={'slett-krav-knapp lenke'} disabled={disabled}>
+    <Knapp
+      onClick={onClick}
+      className={'slett-krav-knapp lenke'}
+      disabled={disabled}
+    >
       <DeleteIcon />
       &nbsp;{children}
     </Knapp>

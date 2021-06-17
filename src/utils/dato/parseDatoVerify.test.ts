@@ -8,13 +8,21 @@ describe('parseDatoVerify', () => {
   it('should parse dato correct values', () => {
     expect(parseDatoVerify(2021, 1, 1, '01.01.2021').day).toBe(1);
     expect(parseDatoVerify(2021, 1, 31, '31.01.2021').day).toBe(31);
-    expect(parseDatoVerify(2020, 1, 32, '32.01.2020').error).not.toBeUndefined();
-    expect(parseDatoVerify(2020, 1, 32, '32.01.2020').error).toBe('Ugyldig dato');
+    expect(
+      parseDatoVerify(2020, 1, 32, '32.01.2020').error
+    ).not.toBeUndefined();
+    expect(parseDatoVerify(2020, 1, 32, '32.01.2020').error).toBe(
+      'Ugyldig dato'
+    );
   });
 
   it('should fail incorrect month', () => {
-    expect(parseDatoVerify(2020, 18, 3, '03.18.2020').error).not.toBeUndefined();
-    expect(parseDatoVerify(2020, 18, 3, '03.18.2020').error).toBe('Ugyldig måned');
+    expect(
+      parseDatoVerify(2020, 18, 3, '03.18.2020').error
+    ).not.toBeUndefined();
+    expect(parseDatoVerify(2020, 18, 3, '03.18.2020').error).toBe(
+      'Ugyldig måned'
+    );
   });
 
   it('should return correct month', () => {
@@ -34,10 +42,16 @@ describe('parseDatoVerify', () => {
   });
 
   it('should not allow invalid values', () => {
-    expect(parseDatoVerify(2020, 13, 1, '01.13.2020').error).not.toBeUndefined();
-    expect(parseDatoVerify(2020, 12, 0, '00.12.2020').error).not.toBeUndefined();
+    expect(
+      parseDatoVerify(2020, 13, 1, '01.13.2020').error
+    ).not.toBeUndefined();
+    expect(
+      parseDatoVerify(2020, 12, 0, '00.12.2020').error
+    ).not.toBeUndefined();
     expect(parseDatoVerify(2020, 0, 1, '01.00.2020').error).not.toBeUndefined();
-    expect(parseDatoVerify(2020, 1, 35, '35.01.2020').error).not.toBeUndefined();
+    expect(
+      parseDatoVerify(2020, 1, 35, '35.01.2020').error
+    ).not.toBeUndefined();
   });
 
   it('should parse dato to correct value', () => {

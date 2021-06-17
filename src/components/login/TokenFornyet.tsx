@@ -23,9 +23,7 @@ export const TokenFornyet = () => {
             </Innholdstittel>
           </Panel>
           <Panel>
-            <Normaltekst>
-              {t(TokenFornyetKeys.TOKEN_FORNYET_INFO)}
-            </Normaltekst>
+            <Normaltekst>{t(TokenFornyetKeys.TOKEN_FORNYET_INFO)}</Normaltekst>
           </Panel>
         </Row>
       </Container>

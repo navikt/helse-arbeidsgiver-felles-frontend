@@ -3,7 +3,9 @@ import zeroPadding from './zeroPadding';
 
 export const dateToDato = (date: Date): Dato => {
   return {
-    value: `${zeroPadding(date.getDate())}.${zeroPadding(date.getMonth() + 1)}.${zeroPadding(date.getFullYear())}`, //dd.mm.yyyy
+    value: `${zeroPadding(date.getDate())}.${zeroPadding(
+      date.getMonth() + 1
+    )}.${zeroPadding(date.getFullYear())}`, //dd.mm.yyyy
     day: date.getDate(),
     month: date.getMonth() + 1,
     year: date.getFullYear(),

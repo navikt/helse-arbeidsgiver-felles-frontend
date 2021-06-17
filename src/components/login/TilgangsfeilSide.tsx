@@ -20,4 +20,4 @@ export const TilgangsfeilSide = () => {
   );
 };
 
-export default TilgangsfeilSide
+export default TilgangsfeilSide;

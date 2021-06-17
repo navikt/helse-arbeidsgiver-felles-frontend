@@ -17,4 +17,4 @@ const parseDato = (date: string): Dato => {
   return parseDatoVerify(year, month, day, date);
 };
 
-export default parseDato
+export default parseDato;

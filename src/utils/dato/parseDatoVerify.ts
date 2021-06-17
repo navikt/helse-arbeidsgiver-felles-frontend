@@ -1,4 +1,9 @@
-const parseDatoVerify = (year: number, month: number, day: number, date: string) => {
+const parseDatoVerify = (
+  year: number,
+  month: number,
+  day: number,
+  date: string
+) => {
   const v = new Date(year, month - 1, day);
   if (v.getDate() != day) {
     return {

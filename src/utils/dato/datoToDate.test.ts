@@ -3,7 +3,9 @@ import Dato from './Dato';
 
 describe('datoToDate', () => {
   it('should map toString', () => {
-    expect(datoToDate({ year: 2020, month: 10, day: 5 } as Dato)!.getTime()).toBe(new Date(2020, 9, 5).getTime());
+    expect(
+      datoToDate({ year: 2020, month: 10, day: 5 } as Dato)!.getTime()
+    ).toBe(new Date(2020, 9, 5).getTime());
   });
 
   it('should not allow missing day', () => {

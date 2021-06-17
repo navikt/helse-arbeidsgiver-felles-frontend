@@ -2,12 +2,15 @@ import React from 'react';
 import { redirectUrl } from './redirectUrl';
 
 interface LoginRedirectProps {
-  loginServiceUrl: string
+  loginServiceUrl: string;
 }
 
 const LoginRedirect = (props: LoginRedirectProps) => {
-  window.location.href = redirectUrl(props.loginServiceUrl, window.location.href);
+  window.location.href = redirectUrl(
+    props.loginServiceUrl,
+    window.location.href
+  );
   return <div className='login-redirect' />;
 };
 
-export default LoginRedirect
+export default LoginRedirect;

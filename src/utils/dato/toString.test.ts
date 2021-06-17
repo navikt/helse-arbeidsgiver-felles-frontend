@@ -1,5 +1,5 @@
 import { datoToString } from './datoToString';
-import parseDato  from './parseDato';
+import parseDato from './parseDato';
 
 describe('toString', () => {
   it('should map toString', () => {

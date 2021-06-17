@@ -38,40 +38,45 @@ const App = () => (
       i18n={i18next}
       bundle={LanguageBundle}
     >
-        <Side
-          sidetittel={''}
-          bedriftsmeny={false}
-          subtitle={'helse-arbeidsgiver-frontend-felles'}
-        >
-          <Row>
-            <Column md='3'>
-              <DatoVelger  label={<HjelpeLabel label={'Dato'}>Lang tekst</HjelpeLabel>} onChange={() => {}} />
-            </Column>
-            <Column md='3'>
-              <Fnr label='Label' placeholder='11 siffer' onChange={() => {}}/>
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <Kvittering />
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <Feilmeldingspanel feilmeldinger={[lagFeil('dato', 'Feil i et komponent')]} />
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <BekreftOpplysningerPanel checked={false} onChange={() => {}} />
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <ServerFeilAdvarsel isOpen={false} onClose={() => {}} />
-            </Column>
-          </Row>
-        </Side>
+      <Side
+        sidetittel={''}
+        bedriftsmeny={false}
+        subtitle={'helse-arbeidsgiver-frontend-felles'}
+      >
+        <Row>
+          <Column md='3'>
+            <DatoVelger
+              label={<HjelpeLabel label={'Dato'}>Lang tekst</HjelpeLabel>}
+              onChange={() => {}}
+            />
+          </Column>
+          <Column md='3'>
+            <Fnr label='Label' placeholder='11 siffer' onChange={() => {}} />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <Kvittering />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <Feilmeldingspanel
+              feilmeldinger={[lagFeil('dato', 'Feil i et komponent')]}
+            />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <BekreftOpplysningerPanel checked={false} onChange={() => {}} />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <ServerFeilAdvarsel isOpen={false} onClose={() => {}} />
+          </Column>
+        </Row>
+      </Side>
     </LanguageProvider>
   </BrowserRouter>
 );

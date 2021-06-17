@@ -3,5 +3,5 @@ export enum Languages {
   Nn = 'nn',
   En = 'en',
   Se = 'se',
-  Pl = 'pl',
+  Pl = 'pl'
 }

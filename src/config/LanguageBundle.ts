@@ -7,11 +7,11 @@ export const bundle: Record<string, Locale> = {
   },
   KVITTERING_INFO: {
     nb: 'Litt infor',
-    en: 'Some info',
+    en: 'Some info'
   },
   SIDE_MIN_SIDE_ARBEIDSGIVER: {
     en: 'My page',
-    nb: 'Min side arbeidsgiver',
+    nb: 'Min side arbeidsgiver'
   },
   BEKREFTOPPLYSNINGER_BEKREFT_LABEL: {
     en: 'I confirm that...',
@@ -39,4 +39,4 @@ export const bundle: Record<string, Locale> = {
   }
 };
 
-export default bundle
+export default bundle;

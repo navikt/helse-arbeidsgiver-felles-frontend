@@ -6,11 +6,15 @@ timezone_mock.register('Europe/London');
 
 describe('loginExpiryAPI', () => {
   it('should ParseExpiryDate with same timezone', async () => {
-    expect(ParseExpiryDate('2020-01-23T08:27:57.125+0000')).toEqual(new Date(2020, 0, 23, 8, 27, 57, 125));
+    expect(ParseExpiryDate('2020-01-23T08:27:57.125+0000')).toEqual(
+      new Date(2020, 0, 23, 8, 27, 57, 125)
+    );
   });
 
   it('should ParseExpiryDate with timezone +2 hours', async () => {
-    expect(ParseExpiryDate('2020-01-23T08:27:57.125+0200')).toEqual(new Date(2020, 0, 23, 6, 27, 57, 125));
+    expect(ParseExpiryDate('2020-01-23T08:27:57.125+0200')).toEqual(
+      new Date(2020, 0, 23, 6, 27, 57, 125)
+    );
   });
 
   it('should return status and a string when stuff is OK and it is a time string', async () => {
@@ -21,7 +25,9 @@ describe('loginExpiryAPI', () => {
     } as Response);
     jest.spyOn(window, 'fetch').mockImplementationOnce(() => mockApi);
     const loginExpiry = await GetLoginExpiry('');
-    expect(loginExpiry.tidspunkt).toEqual(new Date(2020, 0, 23, 8, 27, 57, 125));
+    expect(loginExpiry.tidspunkt).toEqual(
+      new Date(2020, 0, 23, 8, 27, 57, 125)
+    );
   });
 
   it('should return a status and empty string when endpoint is not found', async () => {

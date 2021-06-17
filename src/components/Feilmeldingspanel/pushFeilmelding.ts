@@ -11,4 +11,4 @@ export const pushFeilmelding = (
   });
 };
 
-export default pushFeilmelding
+export default pushFeilmelding;

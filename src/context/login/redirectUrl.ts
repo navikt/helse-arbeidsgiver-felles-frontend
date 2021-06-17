@@ -1,3 +1,4 @@
-export const redirectUrl = (loginServiceUrl: string, href: string) => loginServiceUrl.replace('XXX', href);
+export const redirectUrl = (loginServiceUrl: string, href: string) =>
+  loginServiceUrl.replace('XXX', href);
 
-export default redirectUrl
+export default redirectUrl;

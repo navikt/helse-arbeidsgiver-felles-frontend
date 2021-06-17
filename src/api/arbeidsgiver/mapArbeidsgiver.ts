@@ -1,7 +1,9 @@
 import BackendOrganisasjon from './BackendOrganisasjon';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 
-export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjon[] =>
+export const mapArbeidsgiver = (
+  backendData: BackendOrganisasjon[]
+): Organisasjon[] =>
   backendData.map(
     (backendOrganisasjon) =>
       ({
@@ -10,7 +12,8 @@ export const mapArbeidsgiver = (backendData: BackendOrganisasjon[]): Organisasjo
         OrganizationNumber: backendOrganisasjon.organizationNumber,
         OrganizationForm: backendOrganisasjon.organizationForm,
         Status: backendOrganisasjon.status,
-        ParentOrganizationNumber: backendOrganisasjon.parentOrganizationNumber || ''
+        ParentOrganizationNumber:
+          backendOrganisasjon.parentOrganizationNumber || ''
       } as Organisasjon)
   );
 

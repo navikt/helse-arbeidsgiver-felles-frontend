@@ -5,5 +5,4 @@ const formatFilesize = (max: number): string => {
   return (max / (1000 * 1024)).toFixed(1) + ' MB';
 };
 
-
-export default formatFilesize
+export default formatFilesize;

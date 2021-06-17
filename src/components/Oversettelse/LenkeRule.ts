@@ -1,4 +1,9 @@
-import { ReactElementDescription, RegexMatch, Rule, RuleScope } from '@navikt/textparser';
+import {
+  ReactElementDescription,
+  RegexMatch,
+  Rule,
+  RuleScope
+} from '@navikt/textparser';
 import { Link } from 'react-router-dom';
 
 export const LenkeRule: Rule = {

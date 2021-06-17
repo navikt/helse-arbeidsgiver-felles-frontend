@@ -7,6 +7,6 @@ type ArbeidsgiverInterface = {
   setFirma: any;
   arbeidsgiverId: string;
   setArbeidsgiverId: any;
-}
+};
 
 export default ArbeidsgiverInterface;

@@ -5,8 +5,8 @@ import { act } from 'react-dom/test-utils';
 import { Router } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import mockHistory from '../../mock/mockHistory';
-import ArbeidsgiverStatus from "../../context/arbeidsgiver/ArbeidsgiverStatus";
-import { ArbeidsgiverProvider } from "../../context/arbeidsgiver/ArbeidsgiverContext";
+import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
+import { ArbeidsgiverProvider } from '../../context/arbeidsgiver/ArbeidsgiverContext';
 
 describe('Side', () => {
   let container = document.createElement('div');
@@ -29,8 +29,17 @@ describe('Side', () => {
   ) => {
     return (
       <Router history={mockHistory('/')}>
-        <ArbeidsgiverProvider baseUrl='' arbeidsgivere={arbeidsgivere} status={status}>
-          <Side bedriftsmeny={required} sidetittel='Skjema' title={title} subtitle=''>
+        <ArbeidsgiverProvider
+          baseUrl=''
+          arbeidsgivere={arbeidsgivere}
+          status={status}
+        >
+          <Side
+            bedriftsmeny={required}
+            sidetittel='Skjema'
+            title={title}
+            subtitle=''
+          >
             {BARNE_NODER}
           </Side>
         </ArbeidsgiverProvider>
@@ -41,13 +50,21 @@ describe('Side', () => {
   const IKKE_RETTIGHETER = 'INGENTILGANG_RETTIGHETER';
   const INGENTILGANGADVARSEL = 'INGENTILGANGADVARSEL';
   const BARNE_NODER = 'barnenoder';
-  const ARBEIDSGIVERE:Array<Organisasjon> = [{ Name: '' } as Organisasjon];
-  const UTEN_ARBEIDSGIVERE:Array<Organisasjon> = [];
+  const ARBEIDSGIVERE: Array<Organisasjon> = [{ Name: '' } as Organisasjon];
+  const UTEN_ARBEIDSGIVERE: Array<Organisasjon> = [];
   const SOKNAD_TITTEL = 'soknadtittel';
 
   it('should show advarsel - required and not arbeidsgivere', () => {
     act(() => {
-      render(buildSide(true, UTEN_ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, 'SØKNADSSKJEMA'), container);
+      render(
+        buildSide(
+          true,
+          UTEN_ARBEIDSGIVERE,
+          ArbeidsgiverStatus.Successfully,
+          'SØKNADSSKJEMA'
+        ),
+        container
+      );
     });
     expect(container.textContent).not.toContain(BARNE_NODER);
     expect(container.textContent).toContain(INGENTILGANGADVARSEL);
@@ -55,7 +72,15 @@ describe('Side', () => {
 
   it('should show children - required and arbeidsgivere', () => {
     act(() => {
-      render(buildSide(true, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, 'SØKNADSSKJEMA'), container);
+      render(
+        buildSide(
+          true,
+          ARBEIDSGIVERE,
+          ArbeidsgiverStatus.Successfully,
+          'SØKNADSSKJEMA'
+        ),
+        container
+      );
     });
     expect(container.textContent).toContain(BARNE_NODER);
     expect(container.textContent).not.toContain(INGENTILGANGADVARSEL);
@@ -63,7 +88,15 @@ describe('Side', () => {
 
   it('should show children - not required and empty arbeidsgivere', () => {
     act(() => {
-      render(buildSide(false, UTEN_ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, 'SØKNADSSKJEMA'), container);
+      render(
+        buildSide(
+          false,
+          UTEN_ARBEIDSGIVERE,
+          ArbeidsgiverStatus.Successfully,
+          'SØKNADSSKJEMA'
+        ),
+        container
+      );
     });
     expect(container.textContent).toContain(BARNE_NODER);
     expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
@@ -71,7 +104,15 @@ describe('Side', () => {
 
   it('should show children - not required and arbeidsgivere', () => {
     act(() => {
-      render(buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, 'SØKNADSSKJEMA'), container);
+      render(
+        buildSide(
+          false,
+          ARBEIDSGIVERE,
+          ArbeidsgiverStatus.Successfully,
+          'SØKNADSSKJEMA'
+        ),
+        container
+      );
     });
     expect(container.textContent).toContain(BARNE_NODER);
     expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
@@ -79,7 +120,10 @@ describe('Side', () => {
 
   it('should not show SoknadTittel', () => {
     act(() => {
-      render(buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, ''), container);
+      render(
+        buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, ''),
+        container
+      );
     });
     expect(container.textContent).toContain(BARNE_NODER);
     expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
@@ -88,7 +132,15 @@ describe('Side', () => {
 
   it('should show SoknadTittel', () => {
     act(() => {
-      render(buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, 'TITTELEN'), container);
+      render(
+        buildSide(
+          false,
+          ARBEIDSGIVERE,
+          ArbeidsgiverStatus.Successfully,
+          'TITTELEN'
+        ),
+        container
+      );
     });
     expect(container.textContent).toContain(BARNE_NODER);
     expect(container.textContent).not.toContain(IKKE_RETTIGHETER);

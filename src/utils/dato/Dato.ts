@@ -5,6 +5,6 @@ type Dato = {
   month?: number;
   day?: number;
   millis?: number;
-}
+};
 
 export default Dato;
