@@ -20,7 +20,10 @@
     "build": "tsc --module CommonJS",
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint src/**/*.ts* --fix",
-    "test": "jest"
+    "test": "jest",
+    "pretty-please": "pretty-quick --staged",
+    "pretty-commit": "pretty-quick --staged --pattern '**/*.*(ts|tsx|js)'",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -73,12 +76,14 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "4.x",
     "eslint-plugin-typescript": "0.x",
+    "husky": "^6.0.0",
     "isomorphic-fetch": "3.x",
     "jest": "26.6.0",
     "jest-axe": "4.x",
     "jest-css-modules": "2.x",
     "mockdate": "^3.0.5",
     "prettier": "2.x",
+    "pretty-quick": "^3.1.0",
     "react-scripts": "4.x",
     "sass": "^1.x",
     "timezone-mock": "1.x",
