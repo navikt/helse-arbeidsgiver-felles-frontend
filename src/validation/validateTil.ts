@@ -12,7 +12,8 @@ export enum validateTilKeys {
 
 
 export interface ValidateTilResult extends ValidationResult {
-  key: validateTilKeys.VALIDATE_TIL_MISSING | validateTilKeys.VALIDATE_TIL_INVALID | validateTilKeys.VALIDATE_TIL_FOM_ERROR | validateTilKeys.VALIDATE_TIL_ERROR| validateTilKeys.VALIDATE_TIL_TOO_EARLY
+  key: validateTilKeys.VALIDATE_TIL_MISSING | validateTilKeys.VALIDATE_TIL_INVALID |
+    validateTilKeys.VALIDATE_TIL_FOM_ERROR | validateTilKeys.VALIDATE_TIL_ERROR| validateTilKeys.VALIDATE_TIL_TOO_EARLY
 }
 
 const validateTil = (
