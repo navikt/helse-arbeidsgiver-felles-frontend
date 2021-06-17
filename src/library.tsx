@@ -110,13 +110,13 @@ import formatFilesize from './utils/formatFilesize';
 import formatValidation from './validation/formatValidation';
 import isValidFnr from './validation/isValidFnr';
 import isValidOrgnr from './validation/isValidOrgnr';
-import validateBekreft from './validation/validateBekreft';
-import validateBeloep from './validation/validateBeloep';
+import validateBekreft, { validateBekreftKeys } from './validation/validateBekreft';
+import validateBeloep, { validateBeloepKeys } from './validation/validateBeloep';
 import validateDager from './validation/validateDager';
-import validateFnr from './validation/validateFnr';
-import validateFra from './validation/validateFra';
-import validateOrgnr from './validation/validateOrgnr';
-import validateTil from './validation/validateTil';
+import validateFnr, { validateFnrKeys } from './validation/validateFnr';
+import validateFra, { validateFraKeys } from './validation/validateFra';
+import validateOrgnr, { validateOrgnrKeys } from './validation/validateOrgnr';
+import validateTil, { validateTilKeys } from './validation/validateTil';
 import ValidationResult from './validation/ValidationResult';
 
 /**
@@ -196,5 +196,11 @@ export type {
   TokenFornyetKeys,
   PageNotFoundKeys,
   ServerFeilAdvarselKeys,
-  UploadKeys
+  UploadKeys,
+  validateBekreftKeys,
+  validateBeloepKeys,
+  validateFnrKeys,
+  validateFraKeys,
+  validateTilKeys,
+  validateOrgnrKeys,
 };

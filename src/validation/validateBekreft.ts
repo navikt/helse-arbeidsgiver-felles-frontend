@@ -1,12 +1,16 @@
 import ValidationResult from './ValidationResult';
 
+export enum validateBekreftKeys {
+  VALIDATE_BEKREFT_NOT_CHECKED = 'VALIDATE_BEKREFT_NOT_CHECKED',
+}
+
 const validateBekreft = (bekreft?: boolean, required: boolean = false): ValidationResult | undefined => {
   if (required === false) {
     return;
   }
   if (bekreft !== true) {
     return {
-      key: 'VALIDATE_BEKREFT_NOT_CHECKED'
+      key: validateBekreftKeys.VALIDATE_BEKREFT_NOT_CHECKED
     };
   }
   return undefined

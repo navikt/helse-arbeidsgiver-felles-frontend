@@ -2,8 +2,17 @@ import Dato from '../utils/dato/Dato';
 import isBeforeDate from '../utils/dato/isBeforeDate';
 import ValidationResult from './ValidationResult';
 
+export enum validateTilKeys {
+  VALIDATE_TIL_MISSING = 'VALIDATE_TIL_MISSING',
+  VALIDATE_TIL_INVALID = 'VALIDATE_TIL_INVALID',
+  VALIDATE_TIL_FOM_ERROR = 'VALIDATE_TIL_FOM_ERROR',
+  VALIDATE_TIL_ERROR = 'VALIDATE_TIL_ERROR',
+  VALIDATE_TIL_TOO_EARLY = 'VALIDATE_TIL_TOO_EARLY',
+}
+
+
 export interface ValidateTilResult extends ValidationResult {
-  key: 'VALIDATE_TIL_MISSING' | 'VALIDATE_TIL_INVALID' | 'VALIDATE_TIL_FOM_ERROR' | 'VALIDATE_TIL_ERROR'| 'VALIDATE_TIL_TOO_EARLY'
+  key: validateTilKeys.VALIDATE_TIL_MISSING | validateTilKeys.VALIDATE_TIL_INVALID | validateTilKeys.VALIDATE_TIL_FOM_ERROR | validateTilKeys.VALIDATE_TIL_ERROR| validateTilKeys.VALIDATE_TIL_TOO_EARLY
 }
 
 const validateTil = (
@@ -13,12 +22,12 @@ const validateTil = (
   required: boolean = false
 ): ValidateTilResult | undefined => {
   if (!til?.value) {
-    return required ? { key: 'VALIDATE_TIL_MISSING' } : undefined;
+    return required ? { key: validateTilKeys.VALIDATE_TIL_MISSING } : undefined;
   }
 
   if (required && til?.value && isBeforeDate(til, minDate)) {
     return {
-      key: 'VALIDATE_TIL_INVALID',
+      key: validateTilKeys.VALIDATE_TIL_INVALID,
       value: minDate.toLocaleDateString('nb')
     };
   }
@@ -31,13 +40,13 @@ const validateTil = (
     return;
   }
   if (fra.error || !fra.millis) {
-    return { key: 'VALIDATE_TIL_FOM_ERROR' };
+    return { key: validateTilKeys.VALIDATE_TIL_FOM_ERROR };
   }
   if (til.error || !til.millis) {
-    return { key: 'VALIDATE_TIL_ERROR' };
+    return { key: validateTilKeys.VALIDATE_TIL_ERROR };
   }
   if (fra.millis > til.millis) {
-    return { key: 'VALIDATE_TIL_TOO_EARLY' };
+    return { key: validateTilKeys.VALIDATE_TIL_TOO_EARLY };
   }
   return undefined
 };
