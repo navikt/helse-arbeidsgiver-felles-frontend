@@ -100,7 +100,7 @@
     "dayjs": "1.x",
     "flatpickr": "4.x",
     "history": "5.x",
-    "i18next": "20.3.1",
+    "i18next": "20.x",
     "less-loader": "^7.0.2",
     "nav-frontend-alertstriper": "3.x",
     "nav-frontend-alertstriper-style": "2.x",
