@@ -11,6 +11,7 @@ import React from 'react';
 
 interface OversettelseProps {
   langKey: string;
+  as?: string;
   variables?: any;
   className?: any;
 }
@@ -22,12 +23,12 @@ ul end: ##-
 bold: _text_
 link: [link name](link url)
  */
-const Oversettelse = ({ className, langKey, variables }: OversettelseProps) => {
+const Oversettelse = ({ className, langKey, variables, as = 'span' }: OversettelseProps) => {
   const { t } = useTranslation();
   return (
     <Tekstomrade
       className={className}
-      as='span'
+      as={as}
       rules={[
         ListeRule,
         UListeRule,
