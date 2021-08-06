@@ -15,12 +15,12 @@ jobs:
       - name: Hent kode
         uses: actions/checkout@v2
       - name: Create Pull Request
-          uses: peter-evans/create-pull-request@v3
-          with:
-            commit-message: Update report
-            committer: Helse Arbeidsgiver <helsearbeidsgiver@nav.no>
-            author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-            signoff: false
-            labels: |
-              report
-              automated pr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update report
+          committer: Helse Arbeidsgiver <helsearbeidsgiver@nav.no>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          labels: |
+            report
+            automated pr
