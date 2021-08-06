@@ -5,14 +5,15 @@ on:
 #  schedule:
 #    - cron: '30 11 * * *'
 
-name: Update packages
+name: Oppdatering av dependencies
+
 jobs:
-  release:
-    name: Update npm packages
+
+  Bygg:
     runs-on: ubuntu-latest
     steps:
-      - name: Update npm packages
-        uses: technote-space/create-pr-action@v2
+      - uses: actions/checkout@master
+      - uses: technote-space/create-pr-action@v2
         with:
           EXECUTE_COMMANDS: |
             npx npm-check-updates -u --packageFile package.json
