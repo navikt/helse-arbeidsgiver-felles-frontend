@@ -1,9 +1,9 @@
-on:
-  push:
-    branches: [ main ]
 #on:
-#  schedule:
-#    - cron: '30 11 * * *'
+#  push:
+#    branches: [ main ]
+on:
+  schedule:
+    - cron: '0 8 * * *'
 
 name: Oppdatering av dependencies
 
