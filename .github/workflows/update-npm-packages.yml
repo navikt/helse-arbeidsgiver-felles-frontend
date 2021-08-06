@@ -20,10 +20,11 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: update authors
-          title: Oppdatering av dependencies
+          title: Automatisk oppdatering av dependencies
           body: Dette er en automatisk oppdatering av alle siste dependencies
           committer: Helse Arbeidsgiver <helsearbeidsgiver@nav.no>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: automatisk/dependencies
           signoff: false
           labels: |
             report
