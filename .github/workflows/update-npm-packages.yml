@@ -14,10 +14,14 @@ jobs:
     steps:
       - name: Hent kode
         uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn upgrade
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update report
+          commit-message: update authors
+          title: Update AUTHORS
+          body: Credit new contributors by updating AUTHORS
           committer: Helse Arbeidsgiver <helsearbeidsgiver@nav.no>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
