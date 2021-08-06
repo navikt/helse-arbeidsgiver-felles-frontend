@@ -12,16 +12,15 @@ jobs:
   Bygg:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: technote-space/create-pr-action@v2
-        with:
-          EXECUTE_COMMANDS: |
-            npx npm-check-updates -u --packageFile package.json
-            yarn install
-            yarn upgrade
-            yarn audit
-          COMMIT_MESSAGE: 'chore: update npm dependencies'
-          COMMIT_NAME: 'GitHub Actions'
-          COMMIT_EMAIL: 'helsearbeidsgiver@nav.no'
-          PR_BRANCH_NAME: 'chore-npm-update-${PR_ID}'
-          PR_TITLE: 'chore: update npm dependencies'
+      - name: Hent kode
+        uses: actions/checkout@v2
+      - name: Create Pull Request
+          uses: peter-evans/create-pull-request@v3
+          with:
+            commit-message: Update report
+            committer: Helse Arbeidsgiver <helsearbeidsgiver@nav.no>
+            author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+            signoff: false
+            labels: |
+              report
+              automated pr
