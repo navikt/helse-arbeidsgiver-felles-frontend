@@ -4,6 +4,7 @@ import { TilgangsfeilSide } from '../../components/login/TilgangsfeilSide';
 import { LoginStatus } from './LoginStatus';
 import LoginRedirect from './LoginRedirect';
 import LoginChecking from './LoginChecking';
+import { buildLoginUrl } from './BuildLoginUrl';
 
 const LoginContext = createContext({});
 
@@ -38,12 +39,11 @@ export const LoginProvider = ({
       });
     }
   });
-
   switch (expiry) {
     case LoginStatus.Checking:
       return <LoginChecking />;
     case LoginStatus.MustLogin:
-      return <LoginRedirect loginServiceUrl={loginServiceUrl} />;
+      return <LoginRedirect loginServiceUrl={buildLoginUrl(loginServiceUrl)} />;
     case LoginStatus.Failed:
       return <TilgangsfeilSide />;
     default:
