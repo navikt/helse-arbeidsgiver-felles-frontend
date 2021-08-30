@@ -1,7 +1,9 @@
 export const buildLoginUrl = (loginServiceUrl: String) => {
-  if (document.location.href.indexOf('?')) {
-    return loginServiceUrl + '=' + document.location.href + '&loggedIn=true';
-  } else {
-    return loginServiceUrl + '=' + document.location.href + '?loggedIn=true';
-  }
+  return (
+    loginServiceUrl +
+    '=' +
+    document.location.href +
+    (document.location.href.indexOf('?') ? '&' : '?') +
+    'loggedIn=true'
+  );
 };
