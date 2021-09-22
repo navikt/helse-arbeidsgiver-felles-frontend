@@ -23,7 +23,7 @@
     "test": "jest",
     "pretty-please": "pretty-quick --staged",
     "pretty-commit": "pretty-quick --staged --pattern '**/*.*(ts|tsx|js)'",
-    "prepare": "husky install"
+    "prepare": "husky install; install-peers"
   },
   "repository": {
     "type": "git",
@@ -77,6 +77,7 @@
     "eslint-plugin-react-hooks": "4.x",
     "eslint-plugin-typescript": "0.x",
     "husky": "^6.0.0",
+    "install-peers-cli": "^2.2.0",
     "isomorphic-fetch": "3.x",
     "jest": "26.6.0",
     "jest-axe": "4.x",
