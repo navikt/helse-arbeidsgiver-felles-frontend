@@ -34,3 +34,6 @@ Interne henvendelser sendes via Slack i kanalen #helse-arbeidsgiver
 #### For alle andre
 
 Eksterne henvendelser gjøres ved ved å lage en ny issue.
+
+
+
