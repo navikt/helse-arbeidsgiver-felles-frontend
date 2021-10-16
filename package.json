@@ -94,7 +94,7 @@
   "dependencies": {
     "@navikt/bedriftsmeny": "3.x",
     "@navikt/fnrvalidator": "1.x",
-    "@navikt/nav-dekoratoren-moduler": "^1.3.0",
+    "@navikt/nav-dekoratoren-moduler": "^1.6.3",
     "@navikt/textparser": "2.x",
     "classnames": "^2.3.1",
     "dayjs": "1.x",
