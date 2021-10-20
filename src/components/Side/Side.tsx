@@ -19,6 +19,7 @@ interface SideProps {
   title?: string;
   subtitle?: string;
   bedriftsmeny?: boolean;
+  skjulTilbakeLenke?: boolean;
 }
 
 const Side = (props: SideProps) => {
@@ -38,17 +39,19 @@ const Side = (props: SideProps) => {
       />
 
       <main className={'side ' + props.className}>
-        <Container>
-          <Row>
-            <Column>
-              <div className={'side__minside_arbeidsgiver'}>
-                <Lenke href='/min-side-arbeidsgiver/'>
-                  &lt;&lt; {t(SideKeys.SIDE_MIN_SIDE_ARBEIDSGIVER)}
-                </Lenke>
-              </div>
-            </Column>
-          </Row>
-        </Container>
+        {!props.skjulTilbakeLenke && (
+          <Container>
+            <Row>
+              <Column>
+                <div className={'side__minside_arbeidsgiver'}>
+                  <Lenke href='/min-side-arbeidsgiver/'>
+                    &lt;&lt; {t(SideKeys.SIDE_MIN_SIDE_ARBEIDSGIVER)}
+                  </Lenke>
+                </div>
+              </Column>
+            </Row>
+          </Container>
+        )}
 
         <Container className={'side__innhold'}>
           <Row>
