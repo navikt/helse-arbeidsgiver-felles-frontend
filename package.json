@@ -99,7 +99,7 @@
     "classnames": "^2.3.1",
     "dayjs": "1.x",
     "flatpickr": "4.x",
-    "history": "5.x",
+    "history": "5.0.1",
     "i18next": "^21.3.2",
     "less-loader": "^7.0.2",
     "nav-frontend-alertstriper": "3.x",
