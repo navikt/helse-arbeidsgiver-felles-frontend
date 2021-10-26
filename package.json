@@ -101,7 +101,7 @@
     "flatpickr": "4.x",
     "history": "5.0.1",
     "i18next": "^21.3.2",
-    "less-loader": "^7.0.2",
+    "less-loader": "^10.2.0",
     "nav-frontend-alertstriper": "3.x",
     "nav-frontend-alertstriper-style": "2.x",
     "nav-frontend-chevron": "1.x",
