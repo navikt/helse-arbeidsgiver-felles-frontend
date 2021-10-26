@@ -15,6 +15,7 @@ interface SideProps {
   children: React.ReactNode;
   className?: string;
   sideTittel: string;
+  hide;
 }
 
 const InnloggetSide = (props: SideProps) => {
