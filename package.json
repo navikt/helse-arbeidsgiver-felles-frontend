@@ -57,7 +57,7 @@
     "@testing-library/user-event": "13.x",
     "@types/classnames": "2.x",
     "@types/history": "4.x",
-    "@types/jest": "26.x",
+    "@types/jest": "27.x",
     "@types/jest-axe": "3.x",
     "@types/react": "^17.0.6",
     "@types/react-collapse": "5.x",
