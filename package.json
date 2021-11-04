@@ -97,7 +97,7 @@
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
     "@navikt/textparser": "2.x",
     "classnames": "^2.3.1",
-    "dayjs": "1.x",
+    "dayjs": "1.10.7",
     "flatpickr": "4.x",
     "history": "5.0.1",
     "i18next": "^21.3.2",
