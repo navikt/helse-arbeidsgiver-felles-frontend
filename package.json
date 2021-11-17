@@ -24,8 +24,7 @@
     "pretty-please": "pretty-quick --staged",
     "pretty-commit": "pretty-quick --staged --pattern '**/*.*(ts|tsx|js)'",
     "prepare": "husky install",
-    "install-peers": "install-peers",
-    "postinstall": "install-peers"
+    "install-peers": "install-peers -f"
   },
   "repository": {
     "type": "git",
@@ -98,10 +97,7 @@
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
     "@navikt/textparser": "2.x",
     "classnames": "^2.3.1",
-    "dayjs": "1.10.7",
     "flatpickr": "4.x",
-    "history": "5.0.1",
-    "i18next": "^21.3.2",
     "lodash.throttle": "^4.1.1",
     "nav-datovelger": "^12.1.2",
     "nav-frontend-alertstriper": "^4.0.1",
@@ -139,14 +135,17 @@
     "nav-frontend-veileder": "^3.0.2",
     "nav-frontend-veileder-style": "^3.0.1",
     "nav-frontend-veilederpanel": "^2.0.2",
-    "nav-frontend-veilederpanel-style": "^2.0.1",
-    "prop-types": "^15.7.2"
+    "nav-frontend-veilederpanel-style": "^2.0.1"
   },
   "peerDependencies": {
-    "react": "17.0.2",
+    "dayjs": "^1.10.7",
+    "history": "^5.0.1",
+    "i18next": "^21.3.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
     "react-day-picker": "^7.4.10",
-    "react-dom": "17.0.2",
-    "react-flatpickr": "3.x",
+    "react-dom": "^17.0.2",
+    "react-flatpickr": "^3.x",
     "react-i18next": "^11.12.0",
     "react-modal": "^3.14.3",
     "react-router-dom": "^5.3.0",
