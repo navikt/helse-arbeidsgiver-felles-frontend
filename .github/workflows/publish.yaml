@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: yarn install --frozen-lockfile
+      - run: yarn install-peers
       - run: yarn run build
       - uses: actions/upload-artifact@v2
         with:
@@ -35,6 +36,7 @@ jobs:
         with:
           node-version: '14'
       - run: yarn install --frozen-lockfile --no-build
+      - run: yarn install-peers
       - run: yarn test
 
   Sonar:
