@@ -77,7 +77,7 @@
     "install-peers-cli": "^2.2.0",
     "isomorphic-fetch": "3.x",
     "jest": "26.6.3",
-    "jest-axe": "4.x",
+    "jest-axe": "5.x",
     "jest-css-modules": "2.x",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
