@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Kodekvalitet
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on: [pull_request]
+
+env:
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+jobs:
+  Kodekvalitet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: yarn install --frozen-lockfile --no-build
+      - run: yarn test

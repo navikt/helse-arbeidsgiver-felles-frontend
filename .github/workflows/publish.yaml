@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Publish
+name: Produksjon
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -15,7 +15,6 @@ env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
-
   Bygg:
     runs-on: ubuntu-latest
     steps:
@@ -38,37 +37,6 @@ jobs:
       - run: yarn install --frozen-lockfile --no-build
       - run: yarn install-peers
       - run: yarn test
-
-  Sonar:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-  Eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: yarn install --frozen-lockfile
-      - run: yarn run lint
-
-
-  Snyk:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
 
   Publiser:
     needs: [Eslint,Kodekvalitet,Sonar,Snyk,Bygg]
