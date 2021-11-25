@@ -4,12 +4,11 @@ name: Snyk
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
-on: [pull_request]
-
-env:
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   Snyk:
@@ -18,3 +17,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
