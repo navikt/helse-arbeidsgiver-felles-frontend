@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Kodekvalitet
+name: Test
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -19,5 +19,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: yarn install --frozen-lockfile --no-build
+      - run: yarn install --frozen-lockfile
       - run: yarn test
