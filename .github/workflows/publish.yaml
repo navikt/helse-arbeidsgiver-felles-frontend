@@ -39,7 +39,7 @@ jobs:
       - run: yarn test
 
   Publiser:
-    needs: [Eslint,Kodekvalitet,Sonar,Snyk,Bygg]
+    needs: [Kodekvalitet,Bygg]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
