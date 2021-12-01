@@ -10715,9 +10715,9 @@ snapdragon@^0.8.1:
     use "^3.1.0"
 
 snyk@^1.741.0:
-  version "1.773.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.773.0.tgz#1295a96a07a5aab5f1b4b80a24924651352c7754"
-  integrity sha512-OY8Qvcggmlpp36cVU47USjFz0lnmHBP8yyTxG1DjPhs6IrtPkQoh4aWB5wpZ06Ahf4a116IMkhoaUIZ7e+tl/A==
+  version "1.780.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.780.0.tgz#687c093f75ba6bfce2595506855b11fac0fff167"
+  integrity sha512-HadbD3tPdIgjDBvesh6JYbJcNgE/AkuCqhvF/kiUQUM/7QOcWgTxTx8hoXkondRR7MDZ3dH+H+ccFdIiM4wcBQ==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
