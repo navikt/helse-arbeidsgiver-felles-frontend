@@ -45,7 +45,7 @@ const LanguageProvider = (props: LanguageContextProviderProps) => {
   });
   setAvailableLanguages(
     props.languages.map((l) => ({
-      locale: l,
+      locale: Language[l],
       url: '/' + l + '/',
       handleInApp: true
     }))
