@@ -93,7 +93,6 @@
     "yet-another-fetch-mock": "4.x"
   },
   "dependencies": {
-    "@navikt/bedriftsmeny": "^3.4.0",
     "@navikt/fnrvalidator": "1.x",
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
     "@navikt/textparser": "2.x",
@@ -140,6 +139,7 @@
     "react-flatpickr": "^3.x"
   },
   "peerDependencies": {
+    "@navikt/bedriftsmeny": "^3.5.0",
     "dayjs": "^1.10.7",
     "i18next": "^21.3.2",
     "prop-types": "^15.7.2",
