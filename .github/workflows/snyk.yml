@@ -20,3 +20,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --org=helsearbeidsgiver --project-name=helse-arbeidsgiver-felles-frontend
