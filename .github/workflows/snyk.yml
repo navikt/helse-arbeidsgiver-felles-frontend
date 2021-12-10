@@ -10,6 +10,10 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
 jobs:
   Snyk:
     runs-on: ubuntu-latest
@@ -17,8 +21,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --org=helsearbeidsgiver --project-name=helse-arbeidsgiver-felles-frontend
