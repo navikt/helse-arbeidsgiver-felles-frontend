@@ -6,8 +6,6 @@ name: Snyk
 # events but only for the main branch
 on:
   pull_request:
-    branches:
-      - main
     branches-ignore:
       - dependabot/*
 
