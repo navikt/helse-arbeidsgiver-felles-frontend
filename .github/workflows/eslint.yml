@@ -4,7 +4,11 @@ name: Eslint
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
-on: [pull_request]
+on:
+  pull_request:
+    branches-ignore:
+      - 'dependabot/*'
+      - 'snyk-upgrade-*'
 
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
