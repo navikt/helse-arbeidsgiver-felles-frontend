@@ -94,7 +94,7 @@
   "dependencies": {
     "@navikt/fnrvalidator": "1.x",
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
-    "@navikt/textparser": "2.x",
+    "@navikt/textparser": "2.2.1",
     "classnames": "^2.3.1",
     "flatpickr": "4.x",
     "history": "^5.0.1",
