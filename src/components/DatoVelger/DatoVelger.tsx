@@ -17,6 +17,7 @@ interface DatoVelgerProps {
   maxDate?: string | Date;
   defaultDate?: string | Date;
   disabled?: boolean;
+  disable?: any;
 }
 
 const formatDato = (dato?: Date) =>
@@ -30,12 +31,14 @@ const DatoVelger = (props: DatoVelgerProps) => {
   const callendarOptions = {
     minDate: props.minDate,
     maxDate: props.maxDate,
-    defaultDate: props.defaultDate
+    defaultDate: props.defaultDate,
+    disable: props.disable
   };
 
   if (!props.minDate) delete callendarOptions.minDate;
   if (!props.maxDate) delete callendarOptions.maxDate;
   if (!props.defaultDate) delete callendarOptions.defaultDate;
+  if (!props.disable) delete callendarOptions.disable;
 
   const feilmeldingClassName = props.feilmelding
     ? 'skjemaelement__input--harFeil'

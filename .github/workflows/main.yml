@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16.x'
       - run: yarn install --frozen-lockfile --no-build
       - run: yarn install-peers
       - run: yarn test
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16.x'
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16.x'
       - run: yarn install --frozen-lockfile
       - run: yarn run lint
 

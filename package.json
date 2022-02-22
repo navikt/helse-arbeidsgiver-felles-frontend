@@ -14,6 +14,9 @@
     "node": ">=14",
     "yarn": ">=1.22"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "scripts": {
     "start": "BROWSER=firefox react-scripts start --development",
     "prebuild": "sass src:dist",
