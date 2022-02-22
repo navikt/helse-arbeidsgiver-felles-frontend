@@ -24,5 +24,9 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn install-peers
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn test
