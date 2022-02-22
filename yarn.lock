@@ -1538,7 +1538,12 @@
     prop-types "^15.7.2"
     react "^17.0.2"
 
-"@navikt/textparser@2.x", "@navikt/textparser@^2.0.0":
+"@navikt/textparser@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@navikt/textparser/-/textparser-2.2.1.tgz#df19263858af683c1e9fd47272b47a263c15fb3a"
+  integrity sha512-LD/2G6ez/+7JwT1gJmdQyfFTPf51nWFXnOD/cn5oFL6stmOKGrk3Fxi2Rchr5fBRk3O0MCkGhC5ay8+aI7KT4Q==
+
+"@navikt/textparser@^2.0.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@navikt/textparser/-/textparser-2.2.0.tgz#c4a3b1e12e722e10666920c1d5df5752f8d25f2b"
   integrity sha512-856IJtaD8l0kA1pAokvzqorJZeouzaZ/wNv86ECm0ObYQI6vRhWPay/OdjiLYNN/yUnpDInY4CMdmAgEOQw5kQ==
