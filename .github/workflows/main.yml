@@ -22,9 +22,6 @@ jobs:
       - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
-      - run: yarn install-peers
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run build
       - uses: actions/upload-artifact@v2
         with:
@@ -39,9 +36,6 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn install --frozen-lockfile --no-build
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
-      - run: yarn install-peers
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn test
