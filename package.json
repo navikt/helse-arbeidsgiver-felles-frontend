@@ -96,7 +96,7 @@
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
     "@navikt/textparser": "2.2.1",
     "classnames": "^2.3.1",
-    "flatpickr": "4.x",
+    "flatpickr": "4.6.10",
     "history": "^5.2.0",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-alertstriper": "^4.0.1",
