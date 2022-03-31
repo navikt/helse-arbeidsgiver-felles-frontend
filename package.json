@@ -135,7 +135,7 @@
     "nav-frontend-veileder-style": "^3.0.1",
     "nav-frontend-veilederpanel": "^2.0.2",
     "nav-frontend-veilederpanel-style": "^2.0.1",
-    "react-flatpickr": "^3.x"
+    "react-flatpickr": "^3.10.8"
   },
   "peerDependencies": {
     "@navikt/bedriftsmeny": "^3.5.0",
