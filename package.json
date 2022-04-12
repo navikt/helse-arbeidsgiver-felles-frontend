@@ -51,7 +51,7 @@
     "@babel/eslint-plugin": "7.x",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/classnames": "2.x",
     "@types/history": "4.x",
