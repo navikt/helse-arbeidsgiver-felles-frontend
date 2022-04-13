@@ -84,7 +84,7 @@
     "mockdate": "^3.0.5",
     "prettier": "2.x",
     "pretty-quick": "^3.1.0",
-    "react-scripts": "4.x",
+    "react-scripts": "5.x",
     "sass": "^1.x",
     "timezone-mock": "1.x",
     "ts-jest": "^26.5.6",
