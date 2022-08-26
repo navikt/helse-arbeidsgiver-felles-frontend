@@ -105,7 +105,7 @@
     "nav-frontend-chevron-style": "1.x",
     "nav-frontend-core": "^6.0.1",
     "nav-frontend-grid": "^2.0.1",
-    "nav-frontend-grid-style": "1.x",
+    "nav-frontend-grid-style": "1.0.3",
     "nav-frontend-hjelpetekst": "^3.1.2",
     "nav-frontend-hjelpetekst-style": "^3.0.1",
     "nav-frontend-ikoner-assets": "^3.0.1",
