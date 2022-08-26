@@ -100,7 +100,7 @@
     "history": "^5.2.0",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-alertstriper": "^4.0.1",
-    "nav-frontend-alertstriper-style": "^3.0.1",
+    "nav-frontend-alertstriper-style": "^3.0.2",
     "nav-frontend-chevron": "1.x",
     "nav-frontend-chevron-style": "1.x",
     "nav-frontend-core": "^6.0.1",
