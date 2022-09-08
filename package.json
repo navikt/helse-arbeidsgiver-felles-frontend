@@ -58,7 +58,7 @@
     "@types/history": "4.x",
     "@types/jest": "^27.0.2",
     "@types/jest-axe": "3.x",
-    "@types/react": "^17.0.6",
+    "@types/react": "^18.0.18",
     "@types/react-collapse": "5.x",
     "@types/react-dom": "17.x",
     "@types/react-flatpickr": "3.x",
