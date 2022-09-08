@@ -1,3 +1,4 @@
+import { testFnr } from '../library';
 import { validateFnr } from './validateFnr';
 
 describe('validateFnr', () => {
@@ -25,7 +26,9 @@ describe('validateFnr', () => {
   });
 
   it('should not give error when the fnr is valid and required', async () => {
-    // expect(validateFnr(testFnr.GyldigeFraDolly.TestPerson1, true)).toBeUndefined();
-    // expect(validateFnr(testFnr.GyldigeFraDolly.TestPerson1)).toBeUndefined();
+    expect(
+      validateFnr(testFnr.GyldigeFraDolly.TestPerson1, true)
+    ).toBeUndefined();
+    expect(validateFnr(testFnr.GyldigeFraDolly.TestPerson1)).toBeUndefined();
   });
 });
