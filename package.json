@@ -83,7 +83,7 @@
     "jest-axe": "6.x",
     "jest-css-modules": "2.x",
     "less": "^4.1.2",
-    "less-loader": "^10.2.0",
+    "less-loader": "^11.0.0",
     "mockdate": "^3.0.5",
     "prettier": "2.x",
     "pretty-quick": "^3.1.0",
