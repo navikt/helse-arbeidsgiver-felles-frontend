@@ -9,7 +9,7 @@ import mockHistory from '../../mock/mockHistory';
 describe('LoggetUtAdvarsel', () => {
   it('should display the modal if the token is invalid', () => {
     render(
-      <Router history={mockHistory('/')}>
+      <Router history={mockHistory('/') as any}>
         <LoggetUtAdvarsel
           onClose={jest.fn()}
           loginServiceUrl={''}
@@ -25,7 +25,7 @@ describe('LoggetUtAdvarsel', () => {
   it('should display the modal if the token is invalid and close it when close is clicked', () => {
     const mockCallback = jest.fn();
     render(
-      <Router history={mockHistory('/')}>
+      <Router history={mockHistory('/') as any}>
         <LoggetUtAdvarsel
           onClose={mockCallback}
           loginServiceUrl={''}

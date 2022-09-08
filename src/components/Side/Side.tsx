@@ -3,7 +3,6 @@ import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
 import Bedriftsmeny from '@navikt/bedriftsmeny';
 import { useHistory } from 'react-router-dom';
-import { History } from 'history';
 import SoknadTittel from './SoknadTittel';
 import SideIndentering from './SideIndentering';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
@@ -23,13 +22,13 @@ interface SideProps {
 }
 
 const Side = (props: SideProps) => {
-  const history: History = useHistory();
+  const history = useHistory();
   const { t } = useTranslation();
   const { arbeidsgivere, setArbeidsgiverId, setFirma } = useArbeidsgiver();
   return (
     <div className={'side ' + (props.className ? props.className : '')}>
       <Bedriftsmeny
-        history={history}
+        history={history as any}
         onOrganisasjonChange={(org: Organisasjon) => {
           setArbeidsgiverId(org.OrganizationNumber);
           setFirma(org.Name);

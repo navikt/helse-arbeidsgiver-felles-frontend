@@ -43,7 +43,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/')}>
+        <Router history={mockHistory('/') as any}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -66,7 +66,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/')}>
+        <Router history={mockHistory('/') as any}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -89,7 +89,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/')}>
+        <Router history={mockHistory('/') as any}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -112,7 +112,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/')}>
+        <Router history={mockHistory('/') as any}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -135,7 +135,7 @@ describe('LoginContext', () => {
     MockDate.set('2020-01-23T08:28:57.125+0000');
     act(() => {
       render(
-        <Router history={mockHistory('/')}>
+        <Router history={mockHistory('/') as any}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
@@ -158,7 +158,7 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true')}>
+        <Router history={mockHistory('/page?loggedIn=true') as any}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
@@ -183,7 +183,7 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true')}>
+        <Router history={mockHistory('/page?loggedIn=true') as any}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
@@ -208,7 +208,7 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true')}>
+        <Router history={mockHistory('/page?loggedIn=true') as any}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
@@ -231,7 +231,7 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page')}>
+        <Router history={mockHistory('/page') as any}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'

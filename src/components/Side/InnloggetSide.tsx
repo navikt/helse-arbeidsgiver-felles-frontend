@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Bedriftsmeny from '@navikt/bedriftsmeny';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
-import { History } from 'history';
 import { Column, Container, Row } from 'nav-frontend-grid';
 import Lenke from 'nav-frontend-lenker';
 import './InnloggetSide.css';
@@ -20,14 +19,14 @@ interface SideProps {
 const InnloggetSide = (props: SideProps) => {
   const { t } = useTranslation();
   const { arbeidsgivere, setArbeidsgiverId, setFirma } = useArbeidsgiver();
-  const history: History = useHistory();
+  const history = useHistory();
   return (
     <main className={'innloggetside ' + props.className}>
       {arbeidsgivere.length === 0 && <IngenTilgangAdvarsel />}
       {arbeidsgivere.length > 0 && (
         <>
           <Bedriftsmeny
-            history={history}
+            history={history as any}
             onOrganisasjonChange={(org: Organisasjon) => {
               setArbeidsgiverId(org.OrganizationNumber);
               setFirma(org.Name);
