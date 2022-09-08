@@ -51,11 +51,6 @@ jobs:
         with:
           name: helse-arbeidsgiver-felles-frontend-artifact
           path: dist
-      - run: |
-          git config --global user.email "helsearbeidsgiver@nav.no"
-          git config --global user.name "HelseArbeidsgiver"
-          npm version ${{ github.event.release.tag_name }}
-          git push origin HEAD:main
       - run: npm publish --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
