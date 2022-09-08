@@ -28,7 +28,7 @@ describe('Side', () => {
     title: string
   ) => {
     return (
-      <Router history={mockHistory('/')}>
+      <Router history={mockHistory('/') as any}>
         <ArbeidsgiverProvider
           baseUrl=''
           arbeidsgivere={arbeidsgivere}
