@@ -20,4 +20,8 @@ describe('datoToDate', () => {
   it('should not allow missing', () => {
     expect(datoToDate({} as Dato)).toBeUndefined();
   });
+
+  it('should allow undefined as param and return undefined', () => {
+    expect(datoToDate(undefined)).toBeUndefined();
+  });
 });

@@ -42,16 +42,23 @@ describe('parseDatoVerify', () => {
   });
 
   it('should not allow invalid values', () => {
-    expect(
-      parseDatoVerify(2020, 13, 1, '01.13.2020').error
-    ).not.toBeUndefined();
-    expect(
-      parseDatoVerify(2020, 12, 0, '00.12.2020').error
-    ).not.toBeUndefined();
-    expect(parseDatoVerify(2020, 0, 1, '01.00.2020').error).not.toBeUndefined();
-    expect(
-      parseDatoVerify(2020, 1, 35, '35.01.2020').error
-    ).not.toBeUndefined();
+    expect(parseDatoVerify(2020, 13, 1, '01.13.2020').error).toBe(
+      'Ugyldig måned'
+    );
+    expect(parseDatoVerify(2020, 12, 0, '00.12.2020').error).toBe(
+      'Ugyldig dato'
+    );
+    expect(parseDatoVerify(2020, 0, 1, '01.00.2020').error).toBe(
+      'Ugyldig måned'
+    );
+
+    expect(parseDatoVerify(2020, 1, 35, '35.01.2020').error).toBe(
+      'Ugyldig dato'
+    );
+    expect(parseDatoVerify(2020, 1, 35, '35.01.2020').value).toBe('35.01.2020');
+
+    expect(parseDatoVerify(-0.202, 1, 3, 'Ost').error).toBe('Ugyldig år');
+    expect(parseDatoVerify(-0.202, 1, 3, 'Ost').value).toBe('Ost');
   });
 
   it('should parse dato to correct value', () => {
