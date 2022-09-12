@@ -68,7 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "dayjs": "^1.11.1",
-    "eslint": "7.x",
+    "eslint": "8.x",
     "eslint-plugin-babel": "5.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-prettier": "4.x",
