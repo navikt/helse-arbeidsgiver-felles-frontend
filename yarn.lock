@@ -1754,7 +1754,7 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@navikt/bedriftsmeny@^3.5.3":
+"@navikt/bedriftsmeny@^4.0.0":
   version "4.0.0"
   resolved "https://npm.pkg.github.com/download/@navikt/bedriftsmeny/4.0.0/a18f9699bab37725cf092dfd32b1ab89c710c2aa#a18f9699bab37725cf092dfd32b1ab89c710c2aa"
   integrity sha512-wDYCCU4C67lu1UPMkWbhgrX7eG/Y1DbbcNhp20Bo28fR0WoJ66SDizoON5drciRYD9Xe6r8doObQpF7rAD43EQ==
@@ -1779,7 +1779,7 @@
     prop-types "^15.7.2"
     react "^17.0.2"
 
-"@navikt/textparser@2.2.1", "@navikt/textparser@^2.0.0":
+"@navikt/textparser@^2.0.0", "@navikt/textparser@^2.2.0":
   version "2.2.0"
   resolved "https://npm.pkg.github.com/download/@navikt/textparser/2.2.0/c4a3b1e12e722e10666920c1d5df5752f8d25f2b#c4a3b1e12e722e10666920c1d5df5752f8d25f2b"
   integrity sha512-856IJtaD8l0kA1pAokvzqorJZeouzaZ/wNv86ECm0ObYQI6vRhWPay/OdjiLYNN/yUnpDInY4CMdmAgEOQw5kQ==
