@@ -21,10 +21,10 @@ jobs:
       - uses: actions/checkout@master
       - run: yarn install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn install-peers
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run build
       - uses: actions/upload-artifact@v2
         with:
@@ -40,10 +40,10 @@ jobs:
           node-version: '14'
       - run: yarn install --frozen-lockfile --no-build
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn install-peers
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn test
 
   Sonar:
@@ -68,7 +68,7 @@ jobs:
           node-version: '14'
       - run: yarn install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run lint
 
   Snyk:

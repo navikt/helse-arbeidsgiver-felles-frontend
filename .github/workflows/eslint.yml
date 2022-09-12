@@ -17,8 +17,6 @@ env:
 
 jobs:
   Eslint:
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -26,4 +24,6 @@ jobs:
         with:
           node-version: '14'
       - run: yarn install --frozen-lockfile
+        env:
+         NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run lint
