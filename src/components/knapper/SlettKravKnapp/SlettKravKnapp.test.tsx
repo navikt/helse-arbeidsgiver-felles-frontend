@@ -1,13 +1,14 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import { axe, toHaveNoViolations } from 'jest-axe';
-
-expect.extend(toHaveNoViolations);
+import { axe } from 'jest-axe';
 
 import SlettKravKnapp from './SlettKravKnapp';
 
 describe('SlettKravKnapp', () => {
+  /**
+   * @jest-environment jsdom
+   */
   it('should display the component and handle a button click', () => {
     const mockKnapp = jest.fn();
     const component = render(

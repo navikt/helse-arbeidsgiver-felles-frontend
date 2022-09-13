@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import Side, { showChildren } from './Side';
 import { render, unmountComponentAtNode } from 'react-dom';

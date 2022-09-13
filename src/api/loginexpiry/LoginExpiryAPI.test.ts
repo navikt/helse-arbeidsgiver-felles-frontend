@@ -50,6 +50,9 @@ describe('loginExpiryAPI', () => {
     expect(loginExpiry.tidspunkt).toBeUndefined();
   });
 
+  /**
+   * @jest-environment jsdom
+   */
   it('should return a status and empty string when endpoint has error', async () => {
     const mockApi = Promise.resolve({
       status: 500,
