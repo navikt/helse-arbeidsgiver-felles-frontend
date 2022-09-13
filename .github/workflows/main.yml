@@ -21,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+          registry-url: "https://npm.pkg.github.com"
       - run: yarn install --frozen-lockfile
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn install-peers
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run build
       - uses: actions/upload-artifact@v2
         with:
@@ -42,11 +42,7 @@ jobs:
           node-version: '18'
           registry-url: "https://npm.pkg.github.com"
       - run: yarn install --frozen-lockfile --no-build
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn install-peers
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn test
 
   Sonar:
@@ -72,8 +68,6 @@ jobs:
           node-version: '18'
           registry-url: "https://npm.pkg.github.com"
       - run: yarn install --frozen-lockfile
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn run lint
 
   Snyk:
