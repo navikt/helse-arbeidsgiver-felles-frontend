@@ -58,3 +58,5 @@ jobs:
           name: helse-arbeidsgiver-felles-frontend-artifact
           path: dist
       - run: npm publish --access public --ignore-scripts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
