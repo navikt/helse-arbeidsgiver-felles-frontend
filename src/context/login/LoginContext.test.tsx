@@ -1,13 +1,12 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { LoginProvider } from './LoginContext';
-import { act } from 'react-dom/test-utils';
-import { render, unmountComponentAtNode } from 'react-dom';
+
 import { LoginStatus } from './LoginStatus';
 import mockHistory from '../../mock/mockHistory';
 import timezone_mock from 'timezone-mock';
 import MockDate from 'mockdate';
-import { waitFor } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 import mockFetch from '../../mock/mockFetch';
 
 timezone_mock.register('Europe/London');
@@ -28,13 +27,13 @@ describe('LoginContext', () => {
       pathname: '/gravid',
       search: 'loggedIn=true'
     };
-    container = document.createElement('div');
+    // container = document.createElement('div');
     document.body.appendChild(container);
   });
 
   afterEach(() => {
     assignMock.mockClear();
-    unmountComponentAtNode(container);
+    // unmountComponentAtNode(container);
     container.remove();
   });
 
@@ -51,8 +50,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -74,8 +72,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -97,8 +94,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -120,8 +116,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
     waitFor(() => {
@@ -142,8 +137,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -165,8 +159,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -190,8 +183,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -215,8 +207,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 
@@ -238,8 +229,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>,
-        container
+        </Router>
       );
     });
 

@@ -3,60 +3,47 @@
  */
 import React from 'react';
 import Side, { showChildren } from './Side';
-import { render, unmountComponentAtNode } from 'react-dom';
-import { act } from 'react-dom/test-utils';
 import { Router } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import mockHistory from '../../mock/mockHistory';
 import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
 import { ArbeidsgiverProvider } from '../../context/arbeidsgiver/ArbeidsgiverContext';
+import { act, render, screen } from '@testing-library/react';
+
+const IKKE_RETTIGHETER = 'INGENTILGANG_RETTIGHETER';
+const INGENTILGANGADVARSEL = 'INGENTILGANGADVARSEL';
+const BARNE_NODER = 'barnenoder';
+const ARBEIDSGIVERE: Array<Organisasjon> = [{ Name: '' } as Organisasjon];
+const UTEN_ARBEIDSGIVERE: Array<Organisasjon> = [];
+const SOKNAD_TITTEL = 'soknadtittel';
+
+const buildSide = (
+  required: boolean,
+  arbeidsgivere: Array<Organisasjon>,
+  status: ArbeidsgiverStatus,
+  title: string
+) => {
+  return (
+    <Router history={mockHistory('/') as any}>
+      <ArbeidsgiverProvider
+        baseUrl=''
+        arbeidsgivere={arbeidsgivere}
+        status={status}
+      >
+        <Side
+          bedriftsmeny={required}
+          sidetittel='Skjema'
+          title={title}
+          subtitle=''
+        >
+          {BARNE_NODER}
+        </Side>
+      </ArbeidsgiverProvider>
+    </Router>
+  );
+};
 
 describe('Side', () => {
-  let container = document.createElement('div');
-
-  beforeEach(() => {
-    container = document.createElement('div');
-    document.body.appendChild(container);
-  });
-
-  afterEach(() => {
-    unmountComponentAtNode(container);
-    container.remove();
-  });
-
-  const buildSide = (
-    required: boolean,
-    arbeidsgivere: Array<Organisasjon>,
-    status: ArbeidsgiverStatus,
-    title: string
-  ) => {
-    return (
-      <Router history={mockHistory('/') as any}>
-        <ArbeidsgiverProvider
-          baseUrl=''
-          arbeidsgivere={arbeidsgivere}
-          status={status}
-        >
-          <Side
-            bedriftsmeny={required}
-            sidetittel='Skjema'
-            title={title}
-            subtitle=''
-          >
-            {BARNE_NODER}
-          </Side>
-        </ArbeidsgiverProvider>
-      </Router>
-    );
-  };
-
-  const IKKE_RETTIGHETER = 'INGENTILGANG_RETTIGHETER';
-  const INGENTILGANGADVARSEL = 'INGENTILGANGADVARSEL';
-  const BARNE_NODER = 'barnenoder';
-  const ARBEIDSGIVERE: Array<Organisasjon> = [{ Name: '' } as Organisasjon];
-  const UTEN_ARBEIDSGIVERE: Array<Organisasjon> = [];
-  const SOKNAD_TITTEL = 'soknadtittel';
-
   it('should show advarsel - required and not arbeidsgivere', () => {
     act(() => {
       render(
@@ -65,12 +52,11 @@ describe('Side', () => {
           UTEN_ARBEIDSGIVERE,
           ArbeidsgiverStatus.Successfully,
           'SØKNADSSKJEMA'
-        ),
-        container
+        )
       );
     });
-    expect(container.textContent).not.toContain(BARNE_NODER);
-    expect(container.textContent).toContain(INGENTILGANGADVARSEL);
+    expect(screen.queryByText(BARNE_NODER)).not.toBeInTheDocument();
+    expect(screen.getByText(/INGEN/)).toBeInTheDocument();
   });
 
   it('should show children - required and arbeidsgivere', () => {
@@ -81,12 +67,11 @@ describe('Side', () => {
           ARBEIDSGIVERE,
           ArbeidsgiverStatus.Successfully,
           'SØKNADSSKJEMA'
-        ),
-        container
+        )
       );
     });
-    expect(container.textContent).toContain(BARNE_NODER);
-    expect(container.textContent).not.toContain(INGENTILGANGADVARSEL);
+    expect(screen.queryByText(/INGEN/)).not.toBeInTheDocument();
+    expect(screen.getByText(BARNE_NODER)).toBeInTheDocument();
   });
 
   it('should show children - not required and empty arbeidsgivere', () => {
@@ -97,12 +82,12 @@ describe('Side', () => {
           UTEN_ARBEIDSGIVERE,
           ArbeidsgiverStatus.Successfully,
           'SØKNADSSKJEMA'
-        ),
-        container
+        )
       );
     });
-    expect(container.textContent).toContain(BARNE_NODER);
-    expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
+
+    expect(screen.queryByText(/IKKE_RETTIGHETER/)).not.toBeInTheDocument();
+    expect(screen.getByText(BARNE_NODER)).toBeInTheDocument();
   });
 
   it('should show children - not required and arbeidsgivere', () => {
@@ -113,24 +98,24 @@ describe('Side', () => {
           ARBEIDSGIVERE,
           ArbeidsgiverStatus.Successfully,
           'SØKNADSSKJEMA'
-        ),
-        container
+        )
       );
     });
-    expect(container.textContent).toContain(BARNE_NODER);
-    expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
+
+    expect(screen.queryByText(/IKKE_RETTIGHETER/)).not.toBeInTheDocument();
+    expect(screen.getByText(BARNE_NODER)).toBeInTheDocument();
   });
 
   it('should not show SoknadTittel', () => {
     act(() => {
       render(
-        buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, ''),
-        container
+        buildSide(false, ARBEIDSGIVERE, ArbeidsgiverStatus.Successfully, '')
       );
     });
-    expect(container.textContent).toContain(BARNE_NODER);
-    expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
-    expect(container).not.toContain(SOKNAD_TITTEL);
+
+    expect(screen.queryByText(/SOKNAD_TITTEL/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/IKKE_RETTIGHETER/)).not.toBeInTheDocument();
+    expect(screen.getByText(BARNE_NODER)).toBeInTheDocument();
   });
 
   it('should show SoknadTittel', () => {
@@ -141,13 +126,13 @@ describe('Side', () => {
           ARBEIDSGIVERE,
           ArbeidsgiverStatus.Successfully,
           'TITTELEN'
-        ),
-        container
+        )
       );
     });
-    expect(container.textContent).toContain(BARNE_NODER);
-    expect(container.textContent).not.toContain(IKKE_RETTIGHETER);
-    expect(container.textContent).toContain('TITTELEN');
+
+    expect(screen.queryByText(/IKKE_RETTIGHETER/)).not.toBeInTheDocument();
+    expect(screen.getByText(BARNE_NODER)).toBeInTheDocument();
+    expect(screen.getByText(/TITTELEN/)).toBeInTheDocument();
   });
 
   it('should ikke vise barn', () => {

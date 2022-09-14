@@ -2,26 +2,14 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { render, screen } from '@testing-library/react';
+
 import { MemoryRouter } from 'react-router-dom';
 import DatoVelger from './DatoVelger';
 import { ArbeidsgiverProvider } from '../../context/arbeidsgiver/ArbeidsgiverContext';
 import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
 
 describe('DatoVelger', () => {
-  let container: Element = document.createElement('div');
-
-  beforeEach(() => {
-    container = document.createElement('div');
-    document.body.appendChild(container);
-  });
-
-  afterEach(() => {
-    unmountComponentAtNode(container);
-    container.remove();
-    container = document.createElement('div');
-  });
-
   it('skal vise datovelger uten feilmelding', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
@@ -36,11 +24,10 @@ describe('DatoVelger', () => {
             feilmelding={''}
           />
         </ArbeidsgiverProvider>
-      </MemoryRouter>,
-      container
+      </MemoryRouter>
     );
-    expect(container.textContent).toContain('dato-velger-label');
-    expect(container.textContent).not.toContain('feilmelding');
+    expect(screen.getByLabelText('dato-velger-label')).toBeInTheDocument();
+    expect(screen.queryByText('feilmelding')).not.toBeInTheDocument();
   });
 
   it('skal vise datovelger med feilmelding', () => {
@@ -57,10 +44,9 @@ describe('DatoVelger', () => {
             feilmelding={'feilmelding'}
           />
         </ArbeidsgiverProvider>
-      </MemoryRouter>,
-      container
+      </MemoryRouter>
     );
-    expect(container.textContent).toContain('dato-velger-label');
-    expect(container.textContent).toContain('feilmelding');
+    expect(screen.getByLabelText('dato-velger-label')).toBeInTheDocument();
+    expect(screen.getByText('feilmelding')).toBeInTheDocument();
   });
 });
