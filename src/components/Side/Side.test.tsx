@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Side, { showChildren } from './Side';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { Organisasjon } from '@navikt/bedriftsmeny/lib/organisasjon';
 import mockHistory from '../../mock/mockHistory';
 import ArbeidsgiverStatus from '../../context/arbeidsgiver/ArbeidsgiverStatus';
@@ -16,6 +16,7 @@ const BARNE_NODER = 'barnenoder';
 const ARBEIDSGIVERE: Array<Organisasjon> = [{ Name: '' } as Organisasjon];
 const UTEN_ARBEIDSGIVERE: Array<Organisasjon> = [];
 const SOKNAD_TITTEL = 'soknadtittel';
+const initHistory = ['/'];
 
 const buildSide = (
   required: boolean,
@@ -24,7 +25,7 @@ const buildSide = (
   title: string
 ) => {
   return (
-    <Router history={mockHistory('/') as any}>
+    <MemoryRouter initialEntries={initHistory}>
       <ArbeidsgiverProvider
         baseUrl=''
         arbeidsgivere={arbeidsgivere}
@@ -39,7 +40,7 @@ const buildSide = (
           {BARNE_NODER}
         </Side>
       </ArbeidsgiverProvider>
-    </Router>
+    </MemoryRouter>
   );
 };
 

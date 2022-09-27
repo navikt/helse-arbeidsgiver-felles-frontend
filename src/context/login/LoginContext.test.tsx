@@ -1,15 +1,15 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { LoginProvider } from './LoginContext';
 
 import { LoginStatus } from './LoginStatus';
-import mockHistory from '../../mock/mockHistory';
 import timezone_mock from 'timezone-mock';
 import MockDate from 'mockdate';
 import { act, render, waitFor } from '@testing-library/react';
 import mockFetch from '../../mock/mockFetch';
 
 timezone_mock.register('Europe/London');
+const initHistory = ['/'];
 
 describe('LoginContext', () => {
   let assignMock = jest.fn();
@@ -42,7 +42,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/') as any}>
+        <MemoryRouter initialEntries={initHistory}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -50,7 +50,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -64,7 +64,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/') as any}>
+        <MemoryRouter initialEntries={initHistory}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -72,7 +72,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -86,7 +86,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/') as any}>
+        <MemoryRouter initialEntries={initHistory}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -94,7 +94,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -108,7 +108,7 @@ describe('LoginContext', () => {
     mockFetch(200, input);
     act(() => {
       render(
-        <Router history={mockHistory('/') as any}>
+        <MemoryRouter initialEntries={initHistory}>
           <LoginProvider
             loginServiceUrl=''
             baseUrl=''
@@ -116,7 +116,7 @@ describe('LoginContext', () => {
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
     waitFor(() => {
@@ -130,14 +130,14 @@ describe('LoginContext', () => {
     MockDate.set('2020-01-23T08:28:57.125+0000');
     act(() => {
       render(
-        <Router history={mockHistory('/') as any}>
+        <MemoryRouter initialEntries={initHistory}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -152,14 +152,14 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true') as any}>
+        <MemoryRouter initialEntries={['/page?loggedIn=true']}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -176,14 +176,14 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true') as any}>
+        <MemoryRouter initialEntries={['/page?loggedIn=true']}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -200,14 +200,14 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page?loggedIn=true') as any}>
+        <MemoryRouter initialEntries={['/page?loggedIn=true']}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 
@@ -222,14 +222,14 @@ describe('LoginContext', () => {
 
     act(() => {
       render(
-        <Router history={mockHistory('/page') as any}>
+        <MemoryRouter initialEntries={['/page']}>
           <LoginProvider
             loginServiceUrl='https://mock.it'
             baseUrl='https://mock.it'
           >
             ChildrenHere
           </LoginProvider>
-        </Router>
+        </MemoryRouter>
       );
     });
 

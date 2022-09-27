@@ -3,19 +3,20 @@ import '@testing-library/jest-dom';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import LoggetUtAdvarsel from './LoggetUtAdvarsel';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import mockHistory from '../../mock/mockHistory';
+const initHistory = ['/'];
 
 describe('LoggetUtAdvarsel', () => {
   it('should display the modal if the token is invalid', () => {
     render(
-      <Router history={mockHistory('/') as any}>
+      <MemoryRouter initialEntries={initHistory}>
         <LoggetUtAdvarsel
           onClose={jest.fn()}
           loginServiceUrl={''}
           tokenFornyet={''}
         />
-      </Router>
+      </MemoryRouter>
     );
     expect(
       screen.getByText('LOGGET_UT_ADVARSEL_LOGGET_UT')
@@ -25,13 +26,13 @@ describe('LoggetUtAdvarsel', () => {
   it('should display the modal if the token is invalid and close it when close is clicked', () => {
     const mockCallback = jest.fn();
     render(
-      <Router history={mockHistory('/') as any}>
+      <MemoryRouter initialEntries={initHistory}>
         <LoggetUtAdvarsel
           onClose={mockCallback}
           loginServiceUrl={''}
           tokenFornyet={''}
         />
-      </Router>
+      </MemoryRouter>
     );
     const closeLink = screen.getByText('LOGGET_UT_ADVARSEL_LOGIN');
     expect(

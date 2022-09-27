@@ -7,8 +7,8 @@ import { useParams } from 'react-router-dom';
 import Oversettelse from '../Oversettelse/Oversettelse';
 import InternLenke from '../InternLenke/InternLenke';
 import injectRedirectPath from './injectRedirectPath';
-import { LanguageParams } from '../../context/language/LanguageContext';
 import { LoggetUtAdvarselKeys } from './LoggetUtAdvarselKeys';
+import { Language } from '../../library';
 
 interface LoggetUtAdvarselProps {
   onClose: Function;
@@ -22,11 +22,11 @@ const LoggetUtAdvarsel = ({
   tokenFornyet
 }: LoggetUtAdvarselProps) => {
   const { t } = useTranslation();
-  let { language } = useParams<LanguageParams>();
+  let { language } = useParams();
   const loginServiceUrlAfterRedirect = injectRedirectPath(
     loginServiceUrl,
     tokenFornyet,
-    language
+    language as Language
   );
   const handleCloseModal = () => {
     onClose();
