@@ -4,7 +4,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import LoggetUtAdvarsel from './LoggetUtAdvarsel';
 import { MemoryRouter } from 'react-router-dom';
-import mockHistory from '../../mock/mockHistory';
+
 const initHistory = ['/'];
 
 describe('LoggetUtAdvarsel', () => {
