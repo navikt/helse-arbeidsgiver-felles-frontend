@@ -9,9 +9,12 @@ const formatValidation = (
     return;
   }
   if (validationResult.value === undefined) {
-    return translate.t(validationResult.key);
+    const retval = translate.t(validationResult.key);
+
+    return retval || undefined;
   }
-  return translate.t(validationResult.key, validationResult.value);
+  const retval = translate.t(validationResult.key, validationResult.value);
+  return (retval as unknown as string) || undefined;
 };
 
 export default formatValidation;
