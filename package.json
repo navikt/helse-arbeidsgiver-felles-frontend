@@ -24,8 +24,7 @@
     "pretty-please": "pretty-quick --staged",
     "pretty-commit": "pretty-quick --staged --pattern '**/*.*(ts|tsx|js)'",
     "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
-    "install-peers": "install-peers -f",
-    "postinstall": "install-peers -f"
+    "install-peers": "install-peers -f"
   },
   "repository": {
     "type": "git",
