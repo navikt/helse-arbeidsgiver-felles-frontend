@@ -12,8 +12,8 @@ export const TokenFornyet = () => {
     <Side
       bedriftsmeny={false}
       sidetittel={t(TokenFornyetKeys.TOKEN_FORNYET_SIDETITTEL)}
-      title={t(TokenFornyetKeys.TOKEN_FORNYET_TITLE)}
-      subtitle={t(TokenFornyetKeys.TOKEN_FORNYET_LOGIN)}
+      title={t(TokenFornyetKeys.TOKEN_FORNYET_TITLE) as unknown as string}
+      subtitle={t(TokenFornyetKeys.TOKEN_FORNYET_LOGIN) as unknown as string}
     >
       <Container className={'side__innhold'}>
         <Row>

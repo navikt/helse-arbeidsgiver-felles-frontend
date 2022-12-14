@@ -9,8 +9,12 @@ export const TilgangsfeilSide = () => {
   return (
     <Side
       className='tilgangsfeil-side'
-      sidetittel={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_DENIED)}
-      subtitle={t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_ERROR)}
+      sidetittel={
+        t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_DENIED) as unknown as string
+      }
+      subtitle={
+        t(TilgangsfeilSideKeys.TILGANGSFEILSIDE_ERROR) as unknown as string
+      }
       bedriftsmeny={false}
     >
       <Alertstripe type='feil'>

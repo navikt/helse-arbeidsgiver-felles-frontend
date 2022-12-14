@@ -23,7 +23,12 @@ ul end: ##-
 bold: _text_
 link: [link name](link url)
  */
-const Oversettelse = ({ className, langKey, variables, as = 'span' }: OversettelseProps) => {
+const Oversettelse = ({
+  className,
+  langKey,
+  variables,
+  as = 'span'
+}: OversettelseProps) => {
   const { t } = useTranslation();
   return (
     <Tekstomrade
@@ -38,7 +43,7 @@ const Oversettelse = ({ className, langKey, variables, as = 'span' }: Oversettel
         LinebreakRule
       ]}
     >
-      {t(langKey, variables)}
+      {t(langKey, variables) as unknown as string}
     </Tekstomrade>
   );
 };

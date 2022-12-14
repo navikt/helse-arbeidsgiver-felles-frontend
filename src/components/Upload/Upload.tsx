@@ -23,7 +23,7 @@ const Upload = (props: UploadProps) => {
       const file = event.target.files[0];
       if (file.size > props.fileSize) {
         setFilnavn(props.label);
-        setFeilmelding(t(UploadKeys.UPLOAD_TOO_BIG));
+        setFeilmelding(t(UploadKeys.UPLOAD_TOO_BIG) as unknown as string);
       } else {
         setFilnavn(file.name);
         setFeilmelding('');
