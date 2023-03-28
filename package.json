@@ -65,7 +65,7 @@
     "@types/react-modal": "3.x",
     "@types/react-router-dom": "^5.3.3",
     "@types/uuid": "^9.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.36.2",
     "dayjs": "^1.11.1",
     "eslint": "8.x",
